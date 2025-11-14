@@ -749,9 +749,9 @@ Generating RTLIL representation for module `\$__ECP5_PDPW16KD_'.
 Successfully finished Verilog frontend.
 
 9.28.3. Continuing TECHMAP pass.
-Using template $paramod$6a3371b3c1a3e4db69a083b46674d3712af0db2a\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
-Using template $paramod$a684804052eff33ad785870929151a01fd119605\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
-Using template $paramod$0e4785cbaa9ca3348d0dfff36e0c9aaf0bf3e41c\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
+Using template $paramod$c2cdbb4e35aa2e789ad54e2c97ed01a40a229796\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
+Using template $paramod$e97bb64af54605276ab9fd5d05812a045724ecaf\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
+Using template $paramod$7d9455f8d7aa768170e358152174acac81af7a6b\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
 No more expansions possible.
 <suppressed ~95 debug messages>
 
@@ -1677,6 +1677,6 @@ Found and reported 0 problems.
 10. Executing JSON backend.
 
 Warnings: 3 unique messages, 3 total
-End of script. Logfile hash: 39b1d51a85, CPU: user 0.52s system 0.01s, MEM: 44.09 MB peak
+End of script. Logfile hash: 4aa5f1ba9c, CPU: user 0.50s system 0.01s, MEM: 43.78 MB peak
 Yosys 0.56 (git sha1 9c447ad9d4b1ea589369364eea38b4d70da2c599, clang++ 17.0.0 -fPIC -O3)
-Time spent: 35% 11x techmap (0 sec), 27% 27x read_verilog (0 sec), ...
+Time spent: 36% 11x techmap (0 sec), 27% 27x read_verilog (0 sec), ...
