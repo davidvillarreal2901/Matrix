@@ -1,0 +1,1682 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.56 (git sha1 9c447ad9d4b1ea589369364eea38b4d70da2c599, clang++ 17.0.0 -fPIC -O3)
+
+-- Running command `verilog_defaults -push; verilog_defaults -add -defer; read_verilog -formal count.v  ctrl_lp4k.v led_panel_4k.v memory.v comp.v lsr_led.v mux_led.v; verilog_defaults -pop; attrmap -tocase keep -imap keep="true" keep=1 -imap keep="false" keep=0 -remove keep=0; synth_ecp5 -top led_panel_4k; write_json build/led_panel_4k_i9.json' --
+
+1. Executing Verilog-2005 frontend: count.v
+Parsing formal Verilog input from `count.v' to AST representation.
+Storing AST representation for module `$abstract\count'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ctrl_lp4k.v
+Parsing formal Verilog input from `ctrl_lp4k.v' to AST representation.
+Storing AST representation for module `$abstract\ctrl_lp4k'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: led_panel_4k.v
+Parsing formal Verilog input from `led_panel_4k.v' to AST representation.
+Storing AST representation for module `$abstract\led_panel_4k'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: memory.v
+Parsing formal Verilog input from `memory.v' to AST representation.
+Storing AST representation for module `$abstract\memory'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: comp.v
+Parsing formal Verilog input from `comp.v' to AST representation.
+Storing AST representation for module `$abstract\comp_4k'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: lsr_led.v
+Parsing formal Verilog input from `lsr_led.v' to AST representation.
+Storing AST representation for module `$abstract\lsr_led'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: mux_led.v
+Parsing formal Verilog input from `mux_led.v' to AST representation.
+Storing AST representation for module `$abstract\mux_led'.
+Successfully finished Verilog frontend.
+
+8. Executing ATTRMAP pass (move or copy attributes).
+
+9. Executing SYNTH_ECP5 pass.
+
+9.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\$__ABC9_LUT5'.
+Generating RTLIL representation for module `\$__ABC9_LUT6'.
+Generating RTLIL representation for module `\$__ABC9_LUT7'.
+Generating RTLIL representation for module `\L6MUX21'.
+Generating RTLIL representation for module `\CCU2C'.
+Generating RTLIL representation for module `\TRELLIS_RAM16X2'.
+Generating RTLIL representation for module `\PFUMX'.
+Generating RTLIL representation for module `\TRELLIS_DPR16X4'.
+Generating RTLIL representation for module `\DPR16X4C'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\TRELLIS_FF'.
+Generating RTLIL representation for module `\TRELLIS_IO'.
+Generating RTLIL representation for module `\INV'.
+Generating RTLIL representation for module `\TRELLIS_COMB'.
+Generating RTLIL representation for module `\DP16KD'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Successfully finished Verilog frontend.
+
+9.2. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/cells_bb.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/cells_bb.v' to AST representation.
+Generating RTLIL representation for module `\MULT18X18D'.
+Generating RTLIL representation for module `\ALU54B'.
+Generating RTLIL representation for module `\EHXPLLL'.
+Generating RTLIL representation for module `\DTR'.
+Generating RTLIL representation for module `\OSCG'.
+Generating RTLIL representation for module `\USRMCLK'.
+Generating RTLIL representation for module `\JTAGG'.
+Generating RTLIL representation for module `\DELAYF'.
+Generating RTLIL representation for module `\DELAYG'.
+Generating RTLIL representation for module `\IDDRX1F'.
+Generating RTLIL representation for module `\IDDRX2F'.
+Generating RTLIL representation for module `\IDDR71B'.
+Generating RTLIL representation for module `\IDDRX2DQA'.
+Generating RTLIL representation for module `\ODDRX1F'.
+Generating RTLIL representation for module `\ODDRX2F'.
+Generating RTLIL representation for module `\ODDR71B'.
+Generating RTLIL representation for module `\OSHX2A'.
+Generating RTLIL representation for module `\ODDRX2DQA'.
+Generating RTLIL representation for module `\ODDRX2DQSB'.
+Generating RTLIL representation for module `\TSHX2DQA'.
+Generating RTLIL representation for module `\TSHX2DQSA'.
+Generating RTLIL representation for module `\DQSBUFM'.
+Generating RTLIL representation for module `\DDRDLLA'.
+Generating RTLIL representation for module `\DLLDELD'.
+Generating RTLIL representation for module `\CLKDIVF'.
+Generating RTLIL representation for module `\ECLKSYNCB'.
+Generating RTLIL representation for module `\ECLKBRIDGECS'.
+Generating RTLIL representation for module `\DCCA'.
+Generating RTLIL representation for module `\DCSC'.
+Generating RTLIL representation for module `\DCUA'.
+Generating RTLIL representation for module `\EXTREFB'.
+Generating RTLIL representation for module `\PCSCLKDIV'.
+Generating RTLIL representation for module `\PUR'.
+Generating RTLIL representation for module `\GSR'.
+Generating RTLIL representation for module `\SGSR'.
+Generating RTLIL representation for module `\PDPW16KD'.
+Successfully finished Verilog frontend.
+
+9.3. Executing HIERARCHY pass (managing design hierarchy).
+
+9.4. Executing AST frontend in derive mode using pre-parsed AST for module `\led_panel_4k'.
+Generating RTLIL representation for module `\led_panel_4k'.
+led_panel_4k.v:77: Warning: Identifier `\PX_CLK_EN' is implicitly declared.
+
+9.4.1. Analyzing design hierarchy..
+Top module:  \led_panel_4k
+
+9.4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\ctrl_lp4k'.
+Generating RTLIL representation for module `\ctrl_lp4k'.
+
+9.4.3. Executing AST frontend in derive mode using pre-parsed AST for module `\mux_led'.
+Generating RTLIL representation for module `\mux_led'.
+Parameter \size = 2047
+Parameter \width = 10
+
+9.4.4. Executing AST frontend in derive mode using pre-parsed AST for module `\memory'.
+Parameter \size = 2047
+Parameter \width = 10
+Generating RTLIL representation for module `$paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory'.
+Parameter \width = 10
+
+9.4.5. Executing AST frontend in derive mode using pre-parsed AST for module `\comp_4k'.
+Parameter \width = 10
+Generating RTLIL representation for module `$paramod\comp_4k\width=s32'00000000000000000000000000001010'.
+Parameter \init_value = 50
+Parameter \width = 10
+
+9.4.6. Executing AST frontend in derive mode using pre-parsed AST for module `\lsr_led'.
+Parameter \init_value = 50
+Parameter \width = 10
+Generating RTLIL representation for module `$paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led'.
+Parameter \width = 1
+
+9.4.7. Executing AST frontend in derive mode using pre-parsed AST for module `\count'.
+Parameter \width = 1
+Generating RTLIL representation for module `$paramod\count\width=s32'00000000000000000000000000000001'.
+Parameter \width = 10
+
+9.4.8. Executing AST frontend in derive mode using pre-parsed AST for module `\count'.
+Parameter \width = 10
+Generating RTLIL representation for module `$paramod\count\width=s32'00000000000000000000000000001010'.
+Parameter \width = 5
+
+9.4.9. Executing AST frontend in derive mode using pre-parsed AST for module `\count'.
+Parameter \width = 5
+Generating RTLIL representation for module `$paramod\count\width=s32'00000000000000000000000000000101'.
+Parameter \width = 10
+Found cached RTLIL representation for module `$paramod\count\width=s32'00000000000000000000000000001010'.
+
+9.4.10. Analyzing design hierarchy..
+Top module:  \led_panel_4k
+Used module:     \ctrl_lp4k
+Used module:     \mux_led
+Used module:     $paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory
+Used module:     $paramod\comp_4k\width=s32'00000000000000000000000000001010
+Used module:     $paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led
+Used module:     $paramod\count\width=s32'00000000000000000000000000000001
+Used module:     $paramod\count\width=s32'00000000000000000000000000001010
+Used module:     $paramod\count\width=s32'00000000000000000000000000000101
+
+9.4.11. Analyzing design hierarchy..
+Top module:  \led_panel_4k
+Used module:     \ctrl_lp4k
+Used module:     \mux_led
+Used module:     $paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory
+Used module:     $paramod\comp_4k\width=s32'00000000000000000000000000001010
+Used module:     $paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led
+Used module:     $paramod\count\width=s32'00000000000000000000000000000001
+Used module:     $paramod\count\width=s32'00000000000000000000000000001010
+Used module:     $paramod\count\width=s32'00000000000000000000000000000101
+Removing unused module `$abstract\mux_led'.
+Removing unused module `$abstract\lsr_led'.
+Removing unused module `$abstract\comp_4k'.
+Removing unused module `$abstract\memory'.
+Removing unused module `$abstract\led_panel_4k'.
+Removing unused module `$abstract\ctrl_lp4k'.
+Removing unused module `$abstract\count'.
+Removed 7 unused modules.
+Warning: Resizing cell port led_panel_4k.mem0.address from 12 bits to 11 bits.
+Warning: Resizing cell port led_panel_4k.count_row.outc from 5 bits to 11 bits.
+
+9.5. Executing PROC pass (convert processes to netlists).
+
+9.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.$proc$memory.v:0$238'.
+Cleaned up 0 empty switches.
+
+9.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$ctrl_lp4k.v:100$233 in module ctrl_lp4k.
+Marked 7 switch rules as full_case in process $proc$ctrl_lp4k.v:38$232 in module ctrl_lp4k.
+Marked 2 switch rules as full_case in process $proc$led_panel_4k.v:61$227 in module led_panel_4k.
+Marked 1 switch rules as full_case in process $proc$count.v:11$253 in module $paramod\count\width=s32'00000000000000000000000000000101.
+Marked 1 switch rules as full_case in process $proc$count.v:11$248 in module $paramod\count\width=s32'00000000000000000000000000001010.
+Marked 1 switch rules as full_case in process $proc$count.v:11$243 in module $paramod\count\width=s32'00000000000000000000000000000001.
+Marked 2 switch rules as full_case in process $proc$lsr_led.v:10$241 in module $paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.
+Marked 1 switch rules as full_case in process $proc$comp.v:9$239 in module $paramod\comp_4k\width=s32'00000000000000000000000000001010.
+Removed 1 dead cases from process $proc$mux_led.v:7$234 in module mux_led.
+Marked 1 switch rules as full_case in process $proc$mux_led.v:7$234 in module mux_led.
+Removed a total of 1 dead cases.
+
+9.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 16 assignments to connections.
+
+9.5.4. Executing PROC_INIT pass (extract init attributes).
+
+9.5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+9.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~20 debug messages>
+
+9.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+     1/1: { $1\PX_CLK_EN[0:0] $1\NOE[0:0] $1\LATCH[0:0] $1\SHD[0:0] $1\LD[0:0] $1\INC_I[0:0] $1\INC_D[0:0] $1\INC_C[0:0] $1\INC_R[0:0] $1\RST_I[0:0] $1\RST_D[0:0] $1\RST_C[0:0] $1\RST_R[0:0] }
+Creating decoders for process `\ctrl_lp4k.$proc$ctrl_lp4k.v:38$232'.
+     1/7: $7\state[3:0]
+     2/7: $6\state[3:0]
+     3/7: $5\state[3:0]
+     4/7: $4\state[3:0]
+     5/7: $3\state[3:0]
+     6/7: $2\state[3:0]
+     7/7: $1\state[3:0]
+Creating decoders for process `\led_panel_4k.$proc$led_panel_4k.v:61$227'.
+     1/2: $0\clk_counter[4:0]
+     2/2: $0\clk1[0:0]
+Creating decoders for process `$paramod\count\width=s32'00000000000000000000000000000101.$proc$count.v:11$253'.
+     1/1: $0\outc[5:0]
+Creating decoders for process `$paramod\count\width=s32'00000000000000000000000000001010.$proc$count.v:11$248'.
+     1/1: $0\outc[10:0]
+Creating decoders for process `$paramod\count\width=s32'00000000000000000000000000000001.$proc$count.v:11$243'.
+     1/1: $0\outc[1:0]
+Creating decoders for process `$paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.$proc$lsr_led.v:10$241'.
+     1/1: $0\s_A[10:0]
+Creating decoders for process `$paramod\comp_4k\width=s32'00000000000000000000000000001010.$proc$comp.v:9$239'.
+     1/1: $1\out[0:0]
+Creating decoders for process `$paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.$proc$memory.v:16$235'.
+     1/1: $0\rdata[23:0]
+Creating decoders for process `\mux_led.$proc$mux_led.v:7$234'.
+     1/1: $1\out0[5:0]
+
+9.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\ctrl_lp4k.\LATCH' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\NOE' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\PX_CLK_EN' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\RST_R' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\RST_C' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\RST_D' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\RST_I' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\INC_R' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\INC_C' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\INC_D' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\INC_I' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\LD' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `\ctrl_lp4k.\SHD' from process `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+No latch inferred for signal `$paramod\comp_4k\width=s32'00000000000000000000000000001010.\out' from process `$paramod\comp_4k\width=s32'00000000000000000000000000001010.$proc$comp.v:9$239'.
+No latch inferred for signal `\mux_led.\out0' from process `\mux_led.$proc$mux_led.v:7$234'.
+
+9.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ctrl_lp4k.\state' using process `\ctrl_lp4k.$proc$ctrl_lp4k.v:38$232'.
+  created $dff cell `$procdff$389' with positive edge clock.
+Creating register for signal `\led_panel_4k.\clk1' using process `\led_panel_4k.$proc$led_panel_4k.v:61$227'.
+  created $dff cell `$procdff$390' with positive edge clock.
+Creating register for signal `\led_panel_4k.\clk_counter' using process `\led_panel_4k.$proc$led_panel_4k.v:61$227'.
+  created $dff cell `$procdff$391' with positive edge clock.
+Creating register for signal `$paramod\count\width=s32'00000000000000000000000000000101.\outc' using process `$paramod\count\width=s32'00000000000000000000000000000101.$proc$count.v:11$253'.
+  created $dff cell `$procdff$392' with negative edge clock.
+Creating register for signal `$paramod\count\width=s32'00000000000000000000000000001010.\outc' using process `$paramod\count\width=s32'00000000000000000000000000001010.$proc$count.v:11$248'.
+  created $dff cell `$procdff$393' with negative edge clock.
+Creating register for signal `$paramod\count\width=s32'00000000000000000000000000000001.\outc' using process `$paramod\count\width=s32'00000000000000000000000000000001.$proc$count.v:11$243'.
+  created $dff cell `$procdff$394' with negative edge clock.
+Creating register for signal `$paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.\s_A' using process `$paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.$proc$lsr_led.v:10$241'.
+  created $dff cell `$procdff$395' with negative edge clock.
+Creating register for signal `$paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.\rdata' using process `$paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.$proc$memory.v:16$235'.
+  created $dff cell `$procdff$396' with negative edge clock.
+
+9.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+9.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+Removing empty process `ctrl_lp4k.$proc$ctrl_lp4k.v:100$233'.
+Found and cleaned up 7 empty switches in `\ctrl_lp4k.$proc$ctrl_lp4k.v:38$232'.
+Removing empty process `ctrl_lp4k.$proc$ctrl_lp4k.v:38$232'.
+Found and cleaned up 2 empty switches in `\led_panel_4k.$proc$led_panel_4k.v:61$227'.
+Removing empty process `led_panel_4k.$proc$led_panel_4k.v:61$227'.
+Found and cleaned up 2 empty switches in `$paramod\count\width=s32'00000000000000000000000000000101.$proc$count.v:11$253'.
+Removing empty process `$paramod\count\width=s32'00000000000000000000000000000101.$proc$count.v:11$253'.
+Found and cleaned up 2 empty switches in `$paramod\count\width=s32'00000000000000000000000000001010.$proc$count.v:11$248'.
+Removing empty process `$paramod\count\width=s32'00000000000000000000000000001010.$proc$count.v:11$248'.
+Found and cleaned up 2 empty switches in `$paramod\count\width=s32'00000000000000000000000000000001.$proc$count.v:11$243'.
+Removing empty process `$paramod\count\width=s32'00000000000000000000000000000001.$proc$count.v:11$243'.
+Found and cleaned up 2 empty switches in `$paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.$proc$lsr_led.v:10$241'.
+Removing empty process `$paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.$proc$lsr_led.v:10$241'.
+Found and cleaned up 1 empty switch in `$paramod\comp_4k\width=s32'00000000000000000000000000001010.$proc$comp.v:9$239'.
+Removing empty process `$paramod\comp_4k\width=s32'00000000000000000000000000001010.$proc$comp.v:9$239'.
+Found and cleaned up 1 empty switch in `$paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.$proc$memory.v:16$235'.
+Removing empty process `$paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.$proc$memory.v:16$235'.
+Found and cleaned up 1 empty switch in `\mux_led.$proc$mux_led.v:7$234'.
+Removing empty process `mux_led.$proc$mux_led.v:7$234'.
+Cleaned up 21 empty switches.
+
+9.5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ctrl_lp4k.
+<suppressed ~2 debug messages>
+Optimizing module led_panel_4k.
+Optimizing module $paramod\count\width=s32'00000000000000000000000000000101.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\count\width=s32'00000000000000000000000000001010.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\count\width=s32'00000000000000000000000000000001.
+<suppressed ~2 debug messages>
+Optimizing module $paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\comp_4k\width=s32'00000000000000000000000000001010.
+Optimizing module $paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.
+Optimizing module mux_led.
+<suppressed ~1 debug messages>
+
+9.6. Executing FLATTEN pass (flatten design).
+Deleting now unused module ctrl_lp4k.
+Deleting now unused module $paramod\count\width=s32'00000000000000000000000000000101.
+Deleting now unused module $paramod\count\width=s32'00000000000000000000000000001010.
+Deleting now unused module $paramod\count\width=s32'00000000000000000000000000000001.
+Deleting now unused module $paramod$0c216828c8105f75f8c874c5278a89844b76dec2\lsr_led.
+Deleting now unused module $paramod\comp_4k\width=s32'00000000000000000000000000001010.
+Deleting now unused module $paramod$cb3f66db98a25f2c5abd7b8ba8ebe22e820c320a\memory.
+Deleting now unused module mux_led.
+<suppressed ~9 debug messages>
+
+9.7. Executing TRIBUF pass.
+
+9.8. Executing DEMINOUT pass (demote inout ports to input or output).
+
+9.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+<suppressed ~2 debug messages>
+
+9.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 6 unused cells and 91 unused wires.
+<suppressed ~9 debug messages>
+
+9.11. Executing CHECK pass (checking for obvious problems).
+Checking module led_panel_4k...
+Found and reported 0 problems.
+
+9.12. Executing OPT pass (performing simple optimizations).
+
+9.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+9.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $flatten\ctrl0.$procmux$268.
+    dead port 1/2 on $mux $flatten\ctrl0.$procmux$271.
+    dead port 2/2 on $mux $flatten\ctrl0.$procmux$279.
+    dead port 1/2 on $mux $flatten\ctrl0.$procmux$282.
+    dead port 2/2 on $mux $flatten\ctrl0.$procmux$292.
+    dead port 1/2 on $mux $flatten\ctrl0.$procmux$295.
+    dead port 2/2 on $mux $flatten\ctrl0.$procmux$307.
+    dead port 1/2 on $mux $flatten\ctrl0.$procmux$310.
+    dead port 2/2 on $mux $flatten\ctrl0.$procmux$324.
+    dead port 1/2 on $mux $flatten\ctrl0.$procmux$327.
+    dead port 1/2 on $mux $flatten\ctrl0.$procmux$341.
+Removed 11 multiplexer ports.
+<suppressed ~13 debug messages>
+
+9.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+9.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+9.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.12.16. Finished OPT passes. (There is nothing left to do.)
+
+9.13. Executing FSM pass (extract and optimize FSM).
+
+9.13.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking led_panel_4k.ctrl0.state as FSM state register:
+    Users of register don't seem to benefit from recoding.
+
+9.13.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+9.13.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.13.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.13.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.13.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+9.13.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+9.13.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+9.14. Executing OPT pass (performing simple optimizations).
+
+9.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+9.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$391 ($dff) from module led_panel_4k (D = $add$led_panel_4k.v:71$230_Y [4:0], Q = \clk_counter, rval = 5'00000).
+Adding SRST signal on $procdff$390 ($dff) from module led_panel_4k (D = $procmux$353_Y, Q = \clk1, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$409 ($sdff) from module led_panel_4k (D = $not$led_panel_4k.v:67$229_Y, Q = \clk1).
+Adding SRST signal on $flatten\lsr_led0.$procdff$395 ($dff) from module led_panel_4k (D = $flatten\lsr_led0.$procmux$374_Y, Q = \lsr_led0.s_A, rval = 11'00000110010).
+Adding EN signal on $auto$ff.cc:266:slice$411 ($sdff) from module led_panel_4k (D = { \lsr_led0.s_A [9:0] 1'0 }, Q = \lsr_led0.s_A).
+Adding SRST signal on $flatten\ctrl0.$procdff$389 ($dff) from module led_panel_4k (D = $flatten\ctrl0.$2\state[3:0], Q = \ctrl0.state, rval = 4'0000).
+Adding SRST signal on $flatten\count_row.$procdff$393 ($dff) from module led_panel_4k (D = $flatten\count_row.$procmux$363_Y, Q = \count_row.outc, rval = 11'00000000000).
+Adding EN signal on $auto$ff.cc:266:slice$414 ($sdff) from module led_panel_4k (D = $flatten\count_row.$add$count.v:15$250_Y [10:0], Q = \count_row.outc).
+Adding SRST signal on $flatten\count_index.$procdff$394 ($dff) from module led_panel_4k (D = $flatten\count_index.$procmux$368_Y, Q = \count_index.outc, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$416 ($sdff) from module led_panel_4k (D = $flatten\count_index.$add$count.v:15$245_Y [1:0], Q = \count_index.outc).
+Adding SRST signal on $flatten\count_col.$procdff$392 ($dff) from module led_panel_4k (D = $flatten\count_col.$procmux$358_Y, Q = \count_col.outc, rval = 6'000000).
+Adding EN signal on $auto$ff.cc:266:slice$418 ($sdff) from module led_panel_4k (D = $flatten\count_col.$add$count.v:15$255_Y [5:0], Q = \count_col.outc).
+Adding SRST signal on $flatten\cnt_delay.$procdff$393 ($dff) from module led_panel_4k (D = $flatten\cnt_delay.$procmux$363_Y, Q = \cnt_delay.outc, rval = 11'00000000000).
+Adding EN signal on $auto$ff.cc:266:slice$420 ($sdff) from module led_panel_4k (D = $flatten\cnt_delay.$add$count.v:15$250_Y [10:0], Q = \cnt_delay.outc).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$412 ($sdffe) from module led_panel_4k.
+
+9.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 15 unused cells and 15 unused wires.
+<suppressed ~16 debug messages>
+
+9.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+9.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.14.16. Finished OPT passes. (There is nothing left to do.)
+
+9.15. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 address bits (of 32) from memory init port led_panel_4k.$flatten\ctrl0.$auto$mem.cc:328:emit$262 ($flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260).
+Removed top 21 address bits (of 32) from memory init port led_panel_4k.$flatten\mem0.$meminit$\MEM$memory.v:0$237 (mem0.MEM).
+Removed top 3 bits (of 5) from port B of cell led_panel_4k.$eq$led_panel_4k.v:66$228 ($eq).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$add$led_panel_4k.v:71$230 ($add).
+Removed top 27 bits (of 32) from port Y of cell led_panel_4k.$add$led_panel_4k.v:71$230 ($add).
+Removed top 31 bits (of 32) from mux cell led_panel_4k.$flatten\count_row.$ternary$count.v:17$252 ($mux).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\count_row.$add$count.v:15$250 ($add).
+Removed top 21 bits (of 32) from port Y of cell led_panel_4k.$flatten\count_row.$add$count.v:15$250 ($add).
+Removed top 31 bits (of 32) from mux cell led_panel_4k.$flatten\count_col.$ternary$count.v:17$257 ($mux).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\count_col.$add$count.v:15$255 ($add).
+Removed top 26 bits (of 32) from port Y of cell led_panel_4k.$flatten\count_col.$add$count.v:15$255 ($add).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\cnt_delay.$add$count.v:15$250 ($add).
+Removed top 21 bits (of 32) from port Y of cell led_panel_4k.$flatten\cnt_delay.$add$count.v:15$250 ($add).
+Removed top 31 bits (of 32) from mux cell led_panel_4k.$flatten\count_index.$ternary$count.v:17$247 ($mux).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\count_index.$add$count.v:15$245 ($add).
+Removed top 30 bits (of 32) from port Y of cell led_panel_4k.$flatten\count_index.$add$count.v:15$245 ($add).
+Removed top 1 bits (of 2) from port B of cell led_panel_4k.$flatten\mux0.$procmux$387_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell led_panel_4k.$flatten\ctrl0.$procmux$338_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell led_panel_4k.$flatten\ctrl0.$procmux$336_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell led_panel_4k.$flatten\ctrl0.$procmux$332_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell led_panel_4k.$flatten\ctrl0.$procmux$308_CMP0 ($eq).
+Removed top 3 bits (of 4) from mux cell led_panel_4k.$flatten\ctrl0.$procmux$305 ($mux).
+Removed top 1 bits (of 4) from port B of cell led_panel_4k.$flatten\ctrl0.$procmux$293_CMP0 ($eq).
+Removed top 1 bits (of 4) from mux cell led_panel_4k.$flatten\ctrl0.$procmux$277 ($mux).
+Removed top 1 bits (of 4) from port B of cell led_panel_4k.$flatten\ctrl0.$procmux$269_CMP0 ($eq).
+Removed top 3 bits (of 4) from mux cell led_panel_4k.$flatten\ctrl0.$procmux$266 ($mux).
+Removed top 27 bits (of 32) from wire led_panel_4k.$add$led_panel_4k.v:71$230_Y.
+Removed top 21 bits (of 32) from wire led_panel_4k.$flatten\cnt_delay.$add$count.v:15$250_Y.
+Removed top 28 bits (of 32) from wire led_panel_4k.$flatten\count_col.$add$count.v:15$255_Y.
+Removed top 30 bits (of 32) from wire led_panel_4k.$flatten\count_index.$add$count.v:15$245_Y.
+Removed top 21 bits (of 32) from wire led_panel_4k.$flatten\count_row.$add$count.v:15$250_Y.
+Removed top 3 bits (of 4) from wire led_panel_4k.$flatten\ctrl0.$4\state[3:0].
+Removed top 1 bits (of 4) from wire led_panel_4k.$flatten\ctrl0.$6\state[3:0].
+Removed top 3 bits (of 4) from wire led_panel_4k.$flatten\ctrl0.$7\state[3:0].
+
+9.16. Executing PEEPOPT pass (run peephole optimizers).
+
+9.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+9.18. Executing SHARE pass (SAT-based resource sharing).
+
+9.19. Executing TECHMAP pass (map to technology primitives).
+
+9.19.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+9.19.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+9.20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.22. Executing TECHMAP pass (map to technology primitives).
+
+9.22.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+9.22.2. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/dsp_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__MUL18X18'.
+Successfully finished Verilog frontend.
+
+9.22.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~5 debug messages>
+
+9.23. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module led_panel_4k:
+  creating $macc model for $add$led_panel_4k.v:71$230 ($add).
+  creating $macc model for $flatten\cnt_delay.$add$count.v:15$250 ($add).
+  creating $macc model for $flatten\count_col.$add$count.v:15$255 ($add).
+  creating $macc model for $flatten\count_index.$add$count.v:15$245 ($add).
+  creating $macc model for $flatten\count_row.$add$count.v:15$250 ($add).
+  creating $alu model for $macc $flatten\count_row.$add$count.v:15$250.
+  creating $alu model for $macc $flatten\count_index.$add$count.v:15$245.
+  creating $alu model for $macc $flatten\count_col.$add$count.v:15$255.
+  creating $alu model for $macc $flatten\cnt_delay.$add$count.v:15$250.
+  creating $alu model for $macc $add$led_panel_4k.v:71$230.
+  creating $alu cell for $add$led_panel_4k.v:71$230: $auto$alumacc.cc:495:replace_alu$432
+  creating $alu cell for $flatten\cnt_delay.$add$count.v:15$250: $auto$alumacc.cc:495:replace_alu$435
+  creating $alu cell for $flatten\count_col.$add$count.v:15$255: $auto$alumacc.cc:495:replace_alu$438
+  creating $alu cell for $flatten\count_index.$add$count.v:15$245: $auto$alumacc.cc:495:replace_alu$441
+  creating $alu cell for $flatten\count_row.$add$count.v:15$250: $auto$alumacc.cc:495:replace_alu$444
+  created 5 $alu and 0 $macc cells.
+
+9.24. Executing OPT pass (performing simple optimizations).
+
+9.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+9.24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.24.9. Finished OPT passes. (There is nothing left to do.)
+
+9.25. Executing MEMORY pass.
+
+9.25.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+9.25.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+9.25.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+9.25.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+9.25.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260'[0] in module `\led_panel_4k': no output FF found.
+Checking read port `\mem0.MEM'[0] in module `\led_panel_4k': merging output FF to cell.
+Checking read port address `$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260'[0] in module `\led_panel_4k': merged address FF to cell.
+
+9.25.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 1 unused cells and 25 unused wires.
+<suppressed ~2 debug messages>
+
+9.25.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+9.25.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+9.25.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.25.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+9.26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.27. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+using FF mapping for memory led_panel_4k.$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260
+mapping memory led_panel_4k.mem0.MEM via $__ECP5_DP16KD_
+<suppressed ~290 debug messages>
+
+9.28. Executing TECHMAP pass (map to technology primitives).
+
+9.28.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/lutrams_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/lutrams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__TRELLIS_DPR16X4_'.
+Successfully finished Verilog frontend.
+
+9.28.2. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/brams_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ECP5_DP16KD_'.
+Generating RTLIL representation for module `\$__ECP5_PDPW16KD_'.
+Successfully finished Verilog frontend.
+
+9.28.3. Continuing TECHMAP pass.
+Using template $paramod$6a3371b3c1a3e4db69a083b46674d3712af0db2a\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
+Using template $paramod$a684804052eff33ad785870929151a01fd119605\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
+Using template $paramod$0e4785cbaa9ca3348d0dfff36e0c9aaf0bf3e41c\$__ECP5_DP16KD_ for cells of type $__ECP5_DP16KD_.
+No more expansions possible.
+<suppressed ~95 debug messages>
+
+9.29. Executing OPT pass (performing simple optimizations).
+
+9.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+<suppressed ~9 debug messages>
+
+9.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.29.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.29.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 0 unused cells and 73 unused wires.
+<suppressed ~1 debug messages>
+
+9.29.5. Finished fast OPT passes.
+
+9.30. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260 in module \led_panel_4k:
+  created 16 $dff cells and 0 static cells of width 13.
+Extracted data FF from read port 0 of led_panel_4k.$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260: $$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0]
+  read interface: 1 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+
+9.31. Executing OPT pass (performing simple optimizations).
+
+9.31.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+<suppressed ~4 debug messages>
+
+9.31.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.31.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+9.31.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][3][2]$837:
+      Old ports: A=13'0100000001000, B=13'0000001001111, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [0] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [12] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [10:1] } = { 5'00000 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [0] 3'001 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][3][1]$834:
+      Old ports: A=13'1100000101111, B=13'0010000001111, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [10] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [5] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [12:11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [9:6] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [4:0] } = { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [5] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [5] 9'000001111 }
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][3][0]$831:
+      Old ports: A=13'0100100000000, B=13'0100000001111, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [0] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [12:9] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [7:1] } = { 8'01000000 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][3][3]$840:
+      Old ports: A=13'0101100011001, B=13'0100000001111, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [4] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [1] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [12:5] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [3:2] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [0] } = { 3'010 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [4] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [4] 4'0001 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][3][4]$843:
+      Old ports: A=13'0001010001011, B=13'0000001001111, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [2] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [12:8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [6:3] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [1:0] } = { 3'000 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [7] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [2] 5'00111 }
+    Consolidated identical input bits for $mux cell $flatten\ctrl0.$procmux$277:
+      Old ports: A=3'001, B=3'110, Y=$auto$wreduce.cc:514:run$429 [2:0]
+      New ports: A=2'01, B=2'10, Y=$auto$wreduce.cc:514:run$429 [1:0]
+      New connections: $auto$wreduce.cc:514:run$429 [2] = $auto$wreduce.cc:514:run$429 [1]
+    Consolidated identical input bits for $mux cell $flatten\ctrl0.$procmux$290:
+      Old ports: A=4'0101, B=4'1000, Y=$flatten\ctrl0.$5\state[3:0]
+      New ports: A=2'01, B=2'10, Y={ $flatten\ctrl0.$5\state[3:0] [3] $flatten\ctrl0.$5\state[3:0] [0] }
+      New connections: $flatten\ctrl0.$5\state[3:0] [2:1] = { $flatten\ctrl0.$5\state[3:0] [0] 1'0 }
+  Optimizing cells in module \led_panel_4k.
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$825:
+      Old ports: A=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826, B=13'0100000001000, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817
+      New ports: A={ 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][2]$a$826 [2] 1'1 }, B=4'1000, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [2] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [0] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [12] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [10:8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [6:3] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [1] } = { 2'00 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [7] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [2] 3'001 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$822:
+      Old ports: A=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823, B=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815
+      New ports: A={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [0] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$a$823 [0] }, B={ 2'10 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [4] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$b$824 [1] 1'1 }, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [6] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [4] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [1:0] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [12] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [10:7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [5] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [3:2] } = { 2'00 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [4] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [4] 3'001 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$819:
+      Old ports: A=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820, B=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814
+      New ports: A={ 2'10 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [8] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [0] }, B={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [5] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [10] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [5] 1'1 }, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [11:10] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [5] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [12] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [9] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [7:6] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [4:1] } = { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [5] 4'0000 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0] }
+  Optimizing cells in module \led_panel_4k.
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$816:
+      Old ports: A=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817, B=13'0100000001000, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812
+      New ports: A={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [2] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][1]$a$817 [0] }, B=4'1000, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [2] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [0] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [12] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [10:8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [6:3] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [1] } = { 2'00 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [7] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [2] 3'001 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$813:
+      Old ports: A=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814, B=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815, Y=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811
+      New ports: A={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [11:10] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [8] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [5] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0] }, B={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [11] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [4] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [6] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [4] 1'1 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [1:0] }, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [11:10] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [6:3] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [1:0] }
+      New connections: { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [12] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [9] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [2] } = { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [5:4] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [1] }
+  Optimizing cells in module \led_panel_4k.
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$810:
+      Old ports: A=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811, B=$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812, Y=$$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0]$d
+      New ports: A={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [11:10] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [4] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [8] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [6:3] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [1] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [1:0] }, B={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [11] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [7] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [7] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [2] 3'001 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [2] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [0] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [0] }, Y=$$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0]$d [11:0]
+      New connections: $$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0]$d [12] = $$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0]$d [5]
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 13 changes.
+
+9.31.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+9.31.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0] ($dff) from module led_panel_4k (D = $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$b$821 [10], Q = \tmp_latch, rval = 1'0).
+Adding SRST signal on $$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0] ($dff) from module led_panel_4k (D = $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [0], Q = \count_index.reset, rval = 1'1).
+Adding SRST signal on $$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0] ($dff) from module led_panel_4k (D = $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$b$812 [7], Q = \count_index.inc, rval = 1'0).
+Adding SRST signal on $$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdreg[0] ($dff) from module led_panel_4k (D = { $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811 [4] }, Q = { \ctrl0.LD \count_row.inc }, rval = 2'00).
+
+9.31.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 0 unused cells and 23 unused wires.
+<suppressed ~1 debug messages>
+
+9.31.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.31.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.31.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+9.31.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+    Consolidated identical input bits for $mux cell $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][1]$822:
+      Old ports: A={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [3] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [3] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [3] }, B={ 2'10 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [3] 1'1 }, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [6] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [9] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [2] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [0] }
+      New ports: A={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [8] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [3] 1'0 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [3] }, B={ 2'10 $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [8] 1'1 }, Y={ $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [11] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [6] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [9] $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [0] }
+      New connections: $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$b$815 [2] = $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][2][0]$a$820 [3]
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 1 changes.
+
+9.31.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.31.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.31.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.31.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.31.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.31.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+9.31.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.31.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.31.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.31.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.31.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.31.23. Finished OPT passes. (There is nothing left to do.)
+
+9.32. Executing TECHMAP pass (map to technology primitives).
+
+9.32.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+9.32.2. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/arith_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ecp5_alu'.
+Successfully finished Verilog frontend.
+
+9.32.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$2f5fb04daf2da94d981bf9455fa4454c6ec8b705\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$175e67c02b86e96b1288b9dc100122520d7240d8\_90_alu for cells of type $alu.
+Using template $paramod$32efbfac1c4dc57230cf86180788fdfd12e3b511\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod$c15e84c77f007506123baf6c4be45847f0e33a3b\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $dff.
+Using template $paramod$4d45682f6d5f8751d24fc75184ef72226da353f7\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~492 debug messages>
+
+9.33. Executing OPT pass (performing simple optimizations).
+
+9.33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+<suppressed ~246 debug messages>
+
+9.33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+<suppressed ~135 debug messages>
+Removed a total of 45 cells.
+
+9.33.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:266:slice$1238 ($_DFF_P_) from module led_panel_4k (D = $memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][1][0]$a$814 [12], Q = \count_col.inc, rval = 1'0).
+
+9.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 58 unused cells and 311 unused wires.
+<suppressed ~62 debug messages>
+
+9.33.5. Rerunning OPT passes. (Removed registers in this run.)
+
+9.33.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+<suppressed ~1 debug messages>
+
+9.33.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+9.33.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.33.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+9.33.10. Finished fast OPT passes.
+
+9.34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.35. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+9.36. Executing TECHMAP pass (map to technology primitives).
+
+9.36.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/cells_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1N_'.
+Generating RTLIL representation for module `\$_ALDFF_NP_'.
+Generating RTLIL representation for module `\$_ALDFF_PP_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPP_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPP_'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Successfully finished Verilog frontend.
+
+9.36.2. Continuing TECHMAP pass.
+Using template \$_SDFFE_PP0N_ for cells of type $_SDFFE_PP0N_.
+Using template \$_SDFF_PP0_ for cells of type $_SDFF_PP0_.
+Using template \$_SDFFE_NP0P_ for cells of type $_SDFFE_NP0P_.
+Using template $paramod\$_DFF_P_\_TECHMAP_WIREINIT_Q_=1'x for cells of type $_DFF_P_.
+Using template \$_SDFF_PP1_ for cells of type $_SDFF_PP1_.
+Using template \$_SDFFE_NP1P_ for cells of type $_SDFFE_NP1P_.
+No more expansions possible.
+<suppressed ~144 debug messages>
+
+9.37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.38. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+9.39. Executing LATTICE_GSR pass (implement FF init values).
+Handling GSR in led_panel_4k.
+
+9.40. Executing ATTRMVCP pass (move or copy attributes).
+
+9.41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 0 unused cells and 345 unused wires.
+<suppressed ~1 debug messages>
+
+9.42. Executing TECHMAP pass (map to technology primitives).
+
+9.42.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/latches_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+9.42.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+9.43. Executing ABC9 pass.
+
+9.43.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+9.43.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+9.43.3. Executing SCC pass (detecting logic loops).
+Found an SCC: $auto$ff.cc:266:slice$1147 $auto$dfflegalize.cc:941:flip_pol$1878 $auto$simplemap.cc:134:simplemap_reduce$1681 $auto$simplemap.cc:83:simplemap_bitop$1736 $auto$simplemap.cc:204:simplemap_lognot$1150 $auto$simplemap.cc:175:logic_reduce$1149 $auto$ff.cc:266:slice$1146 $auto$dfflegalize.cc:941:flip_pol$1876 $auto$ff.cc:266:slice$1230 $auto$simplemap.cc:134:simplemap_reduce$1188 $auto$simplemap.cc:275:simplemap_mux$1245 $auto$simplemap.cc:275:simplemap_mux$1749 $auto$simplemap.cc:134:simplemap_reduce$1684
+Found an SCC: $auto$simplemap.cc:134:simplemap_reduce$1172 $auto$simplemap.cc:83:simplemap_bitop$1159 $auto$ff.cc:266:slice$1258 $auto$simplemap.cc:83:simplemap_bitop$1160 $auto$ff.cc:266:slice$1259 $auto$simplemap.cc:134:simplemap_reduce$1178 $auto$simplemap.cc:134:simplemap_reduce$1173 $auto$simplemap.cc:83:simplemap_bitop$1161 $auto$ff.cc:266:slice$1260 $auto$simplemap.cc:83:simplemap_bitop$1168 $auto$ff.cc:266:slice$1267 $auto$simplemap.cc:83:simplemap_bitop$1167 $auto$ff.cc:266:slice$1266 $auto$ff.cc:266:slice$1265 $auto$simplemap.cc:83:simplemap_bitop$1165 $auto$ff.cc:266:slice$1264 $auto$simplemap.cc:134:simplemap_reduce$1175 $auto$simplemap.cc:83:simplemap_bitop$1164 $auto$ff.cc:266:slice$1263 $auto$simplemap.cc:83:simplemap_bitop$1163 $auto$ff.cc:266:slice$1262 $auto$simplemap.cc:134:simplemap_reduce$1182 $auto$simplemap.cc:134:simplemap_reduce$1179 $auto$simplemap.cc:134:simplemap_reduce$1174 $auto$simplemap.cc:83:simplemap_bitop$1162 $auto$ff.cc:266:slice$1261 $auto$ff.cc:266:slice$1234 $auto$simplemap.cc:275:simplemap_mux$1246 $auto$simplemap.cc:275:simplemap_mux$1750 $auto$simplemap.cc:134:simplemap_reduce$1672 $auto$simplemap.cc:83:simplemap_bitop$1730 $auto$simplemap.cc:204:simplemap_lognot$1186 $auto$simplemap.cc:134:simplemap_reduce$1184 $auto$simplemap.cc:134:simplemap_reduce$1180 $auto$simplemap.cc:134:simplemap_reduce$1176 $auto$simplemap.cc:83:simplemap_bitop$1166
+Found an SCC: $auto$ff.cc:266:slice$1253 $auto$ff.cc:266:slice$1257 $auto$ff.cc:266:slice$1255 $auto$simplemap.cc:134:simplemap_reduce$979 $auto$ff.cc:266:slice$1256 $auto$ff.cc:266:slice$1254 $auto$simplemap.cc:134:simplemap_reduce$1248 $auto$simplemap.cc:204:simplemap_lognot$985 $auto$simplemap.cc:134:simplemap_reduce$983 $auto$simplemap.cc:134:simplemap_reduce$981 $auto$simplemap.cc:134:simplemap_reduce$978 $auto$simplemap.cc:38:simplemap_not$1499
+Found 3 SCCs in module led_panel_4k.
+Found 3 SCCs.
+
+9.43.4. Executing ABC9_OPS pass (helper functions for ABC9).
+
+9.43.5. Executing TECHMAP pass (map to technology primitives).
+
+9.43.5.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+9.43.5.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~162 debug messages>
+
+9.43.6. Executing OPT pass (performing simple optimizations).
+
+9.43.6.1. Executing OPT_EXPR pass (perform const folding).
+
+9.43.6.2. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+9.43.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Removed 0 multiplexer ports.
+
+9.43.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+Performed a total of 0 changes.
+
+9.43.6.5. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+9.43.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.43.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+
+9.43.6.8. Executing OPT_EXPR pass (perform const folding).
+
+9.43.6.9. Finished OPT passes. (There is nothing left to do.)
+
+9.43.7. Executing TECHMAP pass (map to technology primitives).
+
+9.43.7.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/abc9_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/abc9_map.v' to AST representation.
+Successfully finished Verilog frontend.
+
+9.43.7.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2 debug messages>
+
+9.43.8. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/abc9_model.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+9.43.9. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+9.43.10. Executing ABC9_OPS pass (helper functions for ABC9).
+
+9.43.11. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+9.43.12. Executing TECHMAP pass (map to technology primitives).
+
+9.43.12.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+9.43.12.2. Continuing TECHMAP pass.
+Using template $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C for cells of type $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod\LUT4\INIT=16'1001011010101010 for cells of type LUT4.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\LUT2\INIT=4'1010 for cells of type LUT2.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $mux.
+No more expansions possible.
+<suppressed ~201 debug messages>
+
+9.43.13. Executing OPT pass (performing simple optimizations).
+
+9.43.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+<suppressed ~18 debug messages>
+
+9.43.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+9.43.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.43.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.43.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.43.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.43.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+Removed 0 unused cells and 55 unused wires.
+<suppressed ~1 debug messages>
+
+9.43.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.43.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.43.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \led_panel_4k..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+9.43.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \led_panel_4k.
+Performed a total of 0 changes.
+
+9.43.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\led_panel_4k'.
+Removed a total of 0 cells.
+
+9.43.13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.43.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \led_panel_4k..
+
+9.43.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module led_panel_4k.
+
+9.43.13.16. Finished OPT passes. (There is nothing left to do.)
+
+9.43.14. Executing AIGMAP pass (map logic to AIG).
+Module led_panel_4k: replaced 18 cells with 120 new cells, skipped 39 cells.
+  replaced 3 cell types:
+       2 $_OR_
+       2 $_XOR_
+      14 $_MUX_
+  not replaced 3 cell types:
+      31 $specify2
+       4 $_NOT_
+       4 $_AND_
+
+9.43.15. Executing AIGMAP pass (map logic to AIG).
+Module led_panel_4k: replaced 132 cells with 666 new cells, skipped 176 cells.
+  replaced 3 cell types:
+      86 $_OR_
+      11 $_XOR_
+      35 $_MUX_
+  not replaced 7 cell types:
+       9 $scopeinfo
+      58 $_NOT_
+      25 $_AND_
+      62 TRELLIS_FF
+       3 DP16KD
+       1 $__ABC9_SCC_BREAKER
+      18 $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C
+
+9.43.15.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+9.43.15.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+9.43.15.3. Executing XAIGER backend.
+<suppressed ~11 debug messages>
+Extracted 249 AND gates and 960 wires from module `led_panel_4k' to a netlist network with 92 inputs and 132 outputs.
+
+9.43.15.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+9.43.15.5. Executing ABC9.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     92/    132  and =     202  lev =   19 (1.12)  mem = 0.01 MB  box = 18  bb = 0
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     92/    132  and =     281  lev =   15 (0.87)  mem = 0.01 MB  ch =   28  box = 18  bb = 0
+ABC: cst =       0  cls =     21  lit =      28  unused =     378  proof =     0
+ABC: + &if -W 300 -v 
+ABC: K = 7. Memory (bytes): Truth =    0. Cut =   64. Obj =  148. Set =  672. CutMin = no
+ABC: Node =     281.  Ch =    21.  Total mem =    0.11 MB. Peak cut mem =    0.02 MB.
+ABC: P:  Del = 2711.00.  Ar =     229.0.  Edge =      321.  Cut =     3371.  T =     0.00 sec
+ABC: P:  Del = 2658.00.  Ar =     205.0.  Edge =      289.  Cut =     3363.  T =     0.00 sec
+ABC: P:  Del = 2658.00.  Ar =     195.0.  Edge =      337.  Cut =     4732.  T =     0.00 sec
+ABC: F:  Del = 2641.00.  Ar =     149.0.  Edge =      301.  Cut =     3692.  T =     0.00 sec
+ABC: A:  Del = 2641.00.  Ar =     134.0.  Edge =      270.  Cut =     3581.  T =     0.00 sec
+ABC: A:  Del = 2641.00.  Ar =     134.0.  Edge =      270.  Cut =     3541.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =     92/    132  and =     242  lev =   15 (0.93)  mem = 0.01 MB  box = 18  bb = 0
+ABC: Mapping (K=7)  :  lut =     60  edge =     241  lev =    5 (0.36)  levB =    6  mem = 0.00 MB
+ABC: LUT = 60 : 2=13 21.7 %  3=5 8.3 %  4=20 33.3 %  5=16 26.7 %  6=2 3.3 %  7=4 6.7 %  Ave = 4.02
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + time 
+ABC: elapse: 0.02 seconds, total: 0.02 seconds
+
+9.43.15.6. Executing AIGER frontend.
+<suppressed ~460 debug messages>
+Removed 348 unused cells and 792 unused wires.
+
+9.43.15.7. Executing ABC9_OPS pass (helper functions for ABC9).
+ABC RESULTS:              $lut cells:       72
+ABC RESULTS:   $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C cells:       18
+ABC RESULTS:           input signals:       24
+ABC RESULTS:          output signals:       67
+Removing temp directory.
+
+9.43.16. Executing TECHMAP pass (map to technology primitives).
+
+9.43.16.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/abc9_unmap.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `\$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `\$__ABC9_SCC_BREAKER'.
+Successfully finished Verilog frontend.
+
+9.43.16.2. Continuing TECHMAP pass.
+Using template $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C for cells of type $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C.
+Using template $paramod\$__ABC9_SCC_BREAKER\WIDTH=32'00000000000000000000000000000011 for cells of type $__ABC9_SCC_BREAKER.
+No more expansions possible.
+<suppressed ~36 debug messages>
+Removed 18 unused cells and 1201 unused wires.
+
+9.44. Executing TECHMAP pass (map to technology primitives).
+
+9.44.1. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/ecp5/cells_map.v
+Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/ecp5/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1N_'.
+Generating RTLIL representation for module `\$_ALDFF_NP_'.
+Generating RTLIL representation for module `\$_ALDFF_PP_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPP_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPP_'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+9.44.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0010 for cells of type $lut.
+Using template $paramod$82a5c63568625c703a25be3b608488f57d9e711e\$lut for cells of type $lut.
+Using template $paramod$8b09f347504cfc0d3d65fbb4601497936543b1b3\$lut for cells of type $lut.
+Using template $paramod$eced46750b43aa9efabd63e9db30cd976a863157\$lut for cells of type $lut.
+Using template $paramod$992bdc10cff2c6edd722994f0e1044bc863f79f7\$lut for cells of type $lut.
+Using template $paramod$43779580bfffd5d5a9f321249a174febf1dac288\$lut for cells of type $lut.
+Using template $paramod$251994398653c4cf8de320f1e306e535d5d2d624\$lut for cells of type $lut.
+Using template $paramod$c28a8b7ce0535d090c4cfb52e9c74affd52b110c\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$20f3f4b8e32f8a8b038b0056872dc94926194798\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010001 for cells of type $lut.
+Using template $paramod$cae45ff85b946d8cfe295bf4feda7db55ee71cea\$lut for cells of type $lut.
+Using template $paramod$51f09467e40de53c6edaa1074acf47337b836f7c\$lut for cells of type $lut.
+Using template $paramod$7f8dcbbcc0931c3398304053d9bb53ce1acb1b1f\$lut for cells of type $lut.
+Using template $paramod$7bb6a37e65823eeb4b38c370fec30ab082759a14\$lut for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$75aa17f67c94f07a416afe2a2128a1ec0e421b84\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$1e3ca31a0ac8f3cfb8ba116e0e105e9c295fc9a3\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$077d0cc1547f9de6aad5ff55771325b4c5812de2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$4ae4444ab62544d409267a647dc9e7cc74fad2c6\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+Using template $paramod$6c3e18e23bda7ee129173f5fe1da644710e98c5e\$lut for cells of type $lut.
+Using template $paramod$7faebb5be80bac00c34f231878d190cd815ba43d\$lut for cells of type $lut.
+Using template $paramod$a35029c5660c58945e0261cc4585d83ede3d6ef0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11011100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod$ea79e410ad0f4fc3326666c891e1f3992816d636\$lut for cells of type $lut.
+Using template $paramod$ddbca43ec7499847ac8285f49bfc3c9124e335be\$lut for cells of type $lut.
+Using template $paramod$c6a234b1fd9b047d8452094c01e2bc4b0dcb4298\$lut for cells of type $lut.
+Using template $paramod$6b111d3a6bbaf32008f6e5ed41c8ac39249f7138\$lut for cells of type $lut.
+Using template $paramod$668cb187b6ea03ec1473bddd830bbf44d46a845c\$lut for cells of type $lut.
+Using template $paramod$82abb8f9ddaac453e6ee24bf456879be259b8e87\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001111 for cells of type $lut.
+Using template $paramod$db5c437c23aa8c4778f9a832f644910b9256ea9f\$lut for cells of type $lut.
+Using template $paramod$4972722c284f07fee673f7cb99e6a36ce4a244f0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00100011 for cells of type $lut.
+Using template $paramod$32abbd1d449a67fb913b4733374e345d4c17175b\$lut for cells of type $lut.
+Using template $paramod$2950c9afa59915e8e634130cbccbee424cd7fd7d\$lut for cells of type $lut.
+Using template $paramod$5a3b94595bae16e71471cdd9970065a110cf97cd\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$80fd3f90b6a7b38da9d25588666decbe3adaf5ec\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~757 debug messages>
+
+9.45. Executing OPT_LUT_INS pass (discard unused LUT inputs).
+Optimizing LUTs in led_panel_4k.
+  Optimizing lut $abc$3803$lut$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811[9].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$3803$lut$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811[9].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$3803$lut$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811[9].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$3803$lut$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811[9].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 3)
+  Optimizing lut $abc$3803$lut$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811[9].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 1)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 1)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 3)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 2)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 3)
+  Optimizing lut $abc$3803$lut$aiger3802$249.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 2)
+  Optimizing lut $abc$3803$lut$aiger3802$249.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 3)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3822.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3822.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3822.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 3)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3822.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3822.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 2)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3822.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$175.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$175.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$164.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$164.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$164.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$164.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$164.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$164.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$181.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$191.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$204.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$218.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$249.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$3803$lut$aiger3802$336.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$3803$lut$aiger3802$345.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$3803$lut$aiger3802$355.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$3803$lut$aiger3802$375.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$3803$lut$aiger3802$385.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$3803$lut$auto$abc9_ops.cc:595:break_scc$2096.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3822.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$3803$lut$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811[9].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$3803$lut$aiger3802$385.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
+  Optimizing lut $abc$3803$lut$aiger3802$375.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
+  Optimizing lut $abc$3803$lut$aiger3802$355.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
+  Optimizing lut $abc$3803$lut$aiger3802$345.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
+  Optimizing lut $abc$3803$lut$aiger3802$336.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
+  Optimizing lut $abc$3803$lut$memory$flatten\ctrl0.$auto$proc_rom.cc:155:do_switch$260$rdmux[0][0][0]$a$811[9].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3813.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3818.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$3824.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+Removed 0 unused cells and 160 unused wires.
+
+9.46. Executing AUTONAME pass.
+Renamed 2371 objects in module led_panel_4k (30 iterations).
+<suppressed ~428 debug messages>
+
+9.47. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `led_panel_4k'. Setting top module to led_panel_4k.
+
+9.47.1. Analyzing design hierarchy..
+Top module:  \led_panel_4k
+
+9.47.2. Analyzing design hierarchy..
+Top module:  \led_panel_4k
+Removed 0 unused modules.
+
+9.48. Printing statistics.
+
+=== led_panel_4k ===
+
+   Number of wires:                250
+   Number of wire bits:            691
+   Number of public wires:         250
+   Number of public wire bits:     691
+   Number of ports:                  9
+   Number of port bits:             17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                266
+     $scopeinfo                      9
+     CCU2C                          18
+     DP16KD                          3
+     L6MUX21                        14
+     LUT4                          124
+     PFUMX                          36
+     TRELLIS_FF                     62
+
+9.49. Executing CHECK pass (checking for obvious problems).
+Checking module led_panel_4k...
+Found and reported 0 problems.
+
+10. Executing JSON backend.
+
+Warnings: 3 unique messages, 3 total
+End of script. Logfile hash: 39b1d51a85, CPU: user 0.52s system 0.01s, MEM: 44.09 MB peak
+Yosys 0.56 (git sha1 9c447ad9d4b1ea589369364eea38b4d70da2c599, clang++ 17.0.0 -fPIC -O3)
+Time spent: 35% 11x techmap (0 sec), 27% 27x read_verilog (0 sec), ...
