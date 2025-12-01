@@ -1,0 +1,16 @@
+**** module/scope: memory
+     Flip-Flops   : 24
+     Logic Gates  : 64
+     ADDER[32]: 1 units
+     LPM[4]: 1 unaccounted
+     LPM[30]: 1 unaccounted
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
+**** TOTALS
+     Flip-Flops   : 24
+     Logic Gates  : 64
+     ADDER[32]: 1 units
+     LPM[4]: 1 unaccounted
+     LPM[30]: 1 unaccounted
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
