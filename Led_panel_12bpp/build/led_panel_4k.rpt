@@ -185,9 +185,9 @@ Removed 9 unused modules.
 Cleaned up 0 empty switches.
 
 11.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 8 switch rules as full_case in process $proc$SPI_flash_diag.v:103$244 in module spi_flash_diag.
+Marked 12 switch rules as full_case in process $proc$SPI_flash_diag.v:101$244 in module spi_flash_diag.
 Marked 5 switch rules as full_case in process $proc$SPI_flash_diag.v:17$234 in module spi_flash_diag.
-Marked 1 switch rules as full_case in process $proc$led_panel_4k.v:30$226 in module led_panel_4k.
+Marked 1 switch rules as full_case in process $proc$led_panel_4k.v:25$226 in module led_panel_4k.
 Removed a total of 0 dead cases.
 
 11.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -195,124 +195,121 @@ Removed 2 redundant assignments.
 Promoted 6 assignments to connections.
 
 11.5.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\led_panel_4k.$proc$led_panel_4k.v:28$231'.
+Found init rule in `\led_panel_4k.$proc$led_panel_4k.v:24$231'.
   Set init value: \sys_rst_n = 1'0
-Found init rule in `\led_panel_4k.$proc$led_panel_4k.v:27$230'.
+Found init rule in `\led_panel_4k.$proc$led_panel_4k.v:23$230'.
   Set init value: \startup_cnt = 4'0000
 
 11.5.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_n in `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
+Found async reset \rst_n in `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
 Found async reset \rst_n in `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
 
 11.5.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
-<suppressed ~20 debug messages>
+<suppressed ~27 debug messages>
 
 11.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-     1/23: $3\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$279
-     2/23: $3\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$272
-     3/23: $2\to_ascii$func$SPI_flash_diag.v:212$233.val[3:0]$257
-     4/23: $2\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$256
-     5/23: $2\to_ascii$func$SPI_flash_diag.v:205$232.val[3:0]$255
-     6/23: $2\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$254
-     7/23: $1\to_ascii$func$SPI_flash_diag.v:212$233.val[3:0]$253
-     8/23: $1\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$252
-     9/23: $1\to_ascii$func$SPI_flash_diag.v:205$232.val[3:0]$251
-    10/23: $1\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$250
-    11/23: $0\uart_trigger[0:0]
-    12/23: $0\byte_counter[2:0]
-    13/23: $0\data_read[7:0]
-    14/23: $0\bit_cnt[5:0]
-    15/23: $0\addr_seq[31:0]
-    16/23: $0\spi_cmd[7:0]
-    17/23: $0\timer[23:0]
-    18/23: $0\state[5:0]
-    19/23: $0\uart_byte_to_send[7:0]
-    20/23: $0\diag_active[0:0]
-    21/23: $0\spi_mosi[0:0]
-    22/23: $0\spi_clk[0:0]
-    23/23: $0\spi_cs[0:0]
+Creating decoders for process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+     1/22: $3\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$299
+     2/22: $3\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$292
+     3/22: $2\to_ascii$func$SPI_flash_diag.v:323$233.val[3:0]$257
+     4/22: $2\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$256
+     5/22: $2\to_ascii$func$SPI_flash_diag.v:316$232.val[3:0]$255
+     6/22: $2\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$254
+     7/22: $1\to_ascii$func$SPI_flash_diag.v:323$233.val[3:0]$253
+     8/22: $1\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$252
+     9/22: $1\to_ascii$func$SPI_flash_diag.v:316$232.val[3:0]$251
+    10/22: $1\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$250
+    11/22: $0\uart_trigger[0:0]
+    12/22: $0\byte_counter[2:0]
+    13/22: $0\data_read[7:0]
+    14/22: $0\bit_cnt[5:0]
+    15/22: $0\write_seq[39:0]
+    16/22: $0\timer[25:0]
+    17/22: $0\state[7:0]
+    18/22: $0\uart_byte_to_send[7:0]
+    19/22: $0\diag_active[0:0]
+    20/22: $0\spi_mosi[0:0]
+    21/22: $0\spi_clk[0:0]
+    22/22: $0\spi_cs[0:0]
 Creating decoders for process `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
      1/5: $0\uart_shift_reg[7:0]
      2/5: $0\uart_bit_index[3:0]
      3/5: $0\uart_clk_count[12:0]
      4/5: $0\uart_busy[0:0]
      5/5: $0\uart_tx_line[0:0]
-Creating decoders for process `\led_panel_4k.$proc$led_panel_4k.v:28$231'.
-Creating decoders for process `\led_panel_4k.$proc$led_panel_4k.v:27$230'.
-Creating decoders for process `\led_panel_4k.$proc$led_panel_4k.v:30$226'.
+Creating decoders for process `\led_panel_4k.$proc$led_panel_4k.v:24$231'.
+Creating decoders for process `\led_panel_4k.$proc$led_panel_4k.v:23$230'.
+Creating decoders for process `\led_panel_4k.$proc$led_panel_4k.v:25$226'.
      1/2: $0\sys_rst_n[0:0]
      2/2: $0\startup_cnt[3:0]
 
 11.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 11.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\spi_flash_diag.\spi_cs' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$724' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\spi_clk' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$729' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\spi_mosi' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$734' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\diag_active' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$739' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\uart_byte_to_send' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $dff cell `$procdff$746' with positive edge clock.
-Creating register for signal `\spi_flash_diag.\uart_trigger' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$751' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\state' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$756' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\timer' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$761' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\spi_cmd' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $dff cell `$procdff$768' with positive edge clock.
-Creating register for signal `\spi_flash_diag.\addr_seq' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $dff cell `$procdff$775' with positive edge clock.
-Creating register for signal `\spi_flash_diag.\bit_cnt' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $dff cell `$procdff$782' with positive edge clock.
-Creating register for signal `\spi_flash_diag.\data_read' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $dff cell `$procdff$789' with positive edge clock.
-Creating register for signal `\spi_flash_diag.\byte_counter' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $dff cell `$procdff$796' with positive edge clock.
-Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:205$232.$result' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$801' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:205$232.val' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$806' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:212$233.$result' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$811' with positive edge clock and positive level reset.
-Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:212$233.val' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-  created $adff cell `$procdff$816' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\spi_cs' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$814' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\spi_clk' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$819' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\spi_mosi' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$824' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\diag_active' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$829' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\uart_byte_to_send' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$834' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\uart_trigger' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$839' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\state' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$844' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\timer' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$849' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\write_seq' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$854' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\bit_cnt' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$859' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\data_read' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$864' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\byte_counter' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$869' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:316$232.$result' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$874' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:316$232.val' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$879' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:323$233.$result' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$884' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_diag.\to_ascii$func$SPI_flash_diag.v:323$233.val' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+  created $adff cell `$procdff$889' with positive edge clock and positive level reset.
 Creating register for signal `\spi_flash_diag.\uart_tx_line' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
-  created $adff cell `$procdff$821' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$894' with positive edge clock and positive level reset.
 Creating register for signal `\spi_flash_diag.\uart_busy' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
-  created $adff cell `$procdff$826' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$899' with positive edge clock and positive level reset.
 Creating register for signal `\spi_flash_diag.\uart_clk_count' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
-  created $adff cell `$procdff$831' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$904' with positive edge clock and positive level reset.
 Creating register for signal `\spi_flash_diag.\uart_bit_index' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
-  created $adff cell `$procdff$836' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$909' with positive edge clock and positive level reset.
 Creating register for signal `\spi_flash_diag.\uart_shift_reg' using process `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
-  created $adff cell `$procdff$841' with positive edge clock and positive level reset.
-Creating register for signal `\led_panel_4k.\startup_cnt' using process `\led_panel_4k.$proc$led_panel_4k.v:30$226'.
-  created $dff cell `$procdff$842' with positive edge clock.
-Creating register for signal `\led_panel_4k.\sys_rst_n' using process `\led_panel_4k.$proc$led_panel_4k.v:30$226'.
-  created $dff cell `$procdff$843' with positive edge clock.
+  created $adff cell `$procdff$914' with positive edge clock and positive level reset.
+Creating register for signal `\led_panel_4k.\startup_cnt' using process `\led_panel_4k.$proc$led_panel_4k.v:25$226'.
+  created $dff cell `$procdff$915' with positive edge clock.
+Creating register for signal `\led_panel_4k.\sys_rst_n' using process `\led_panel_4k.$proc$led_panel_4k.v:25$226'.
+  created $dff cell `$procdff$916' with positive edge clock.
 
 11.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 11.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 14 empty switches in `\spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
-Removing empty process `spi_flash_diag.$proc$SPI_flash_diag.v:103$244'.
+Found and cleaned up 21 empty switches in `\spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
+Removing empty process `spi_flash_diag.$proc$SPI_flash_diag.v:101$244'.
 Found and cleaned up 5 empty switches in `\spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
 Removing empty process `spi_flash_diag.$proc$SPI_flash_diag.v:17$234'.
-Removing empty process `led_panel_4k.$proc$led_panel_4k.v:28$231'.
-Removing empty process `led_panel_4k.$proc$led_panel_4k.v:27$230'.
-Found and cleaned up 1 empty switch in `\led_panel_4k.$proc$led_panel_4k.v:30$226'.
-Removing empty process `led_panel_4k.$proc$led_panel_4k.v:30$226'.
-Cleaned up 20 empty switches.
+Removing empty process `led_panel_4k.$proc$led_panel_4k.v:24$231'.
+Removing empty process `led_panel_4k.$proc$led_panel_4k.v:23$230'.
+Found and cleaned up 1 empty switch in `\led_panel_4k.$proc$led_panel_4k.v:25$226'.
+Removing empty process `led_panel_4k.$proc$led_panel_4k.v:25$226'.
+Cleaned up 27 empty switches.
 
 11.5.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module spi_flash_diag.
-<suppressed ~51 debug messages>
+<suppressed ~53 debug messages>
 Optimizing module led_panel_4k.
 
 11.6. Executing FLATTEN pass (flatten design).
@@ -328,8 +325,8 @@ Optimizing module led_panel_4k.
 
 11.10. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 36 unused cells and 139 unused wires.
-<suppressed ~39 debug messages>
+Removed 35 unused cells and 151 unused wires.
+<suppressed ~38 debug messages>
 
 11.11. Executing CHECK pass (checking for obvious problems).
 Checking module led_panel_4k...
@@ -342,41 +339,44 @@ Optimizing module led_panel_4k.
 
 11.12.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\led_panel_4k'.
-<suppressed ~177 debug messages>
-Removed a total of 59 cells.
+<suppressed ~342 debug messages>
+Removed a total of 114 cells.
 
 11.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \led_panel_4k..
   Creating internal representation of mux trees.
   Evaluating internal representation of mux trees.
-      Replacing known input bits on port A of cell $flatten\u_diag.$procmux$695: \u_diag.uart_busy -> 1'0
-      Replacing known input bits on port B of cell $flatten\u_diag.$procmux$693: \u_diag.uart_busy -> 1'1
-      Replacing known input bits on port B of cell $flatten\u_diag.$procmux$690: \u_diag.uart_busy -> 1'1
-      Replacing known input bits on port B of cell $flatten\u_diag.$procmux$687: \u_diag.uart_busy -> 1'1
+      Replacing known input bits on port A of cell $flatten\u_diag.$procmux$785: \u_diag.uart_busy -> 1'0
+      Replacing known input bits on port B of cell $flatten\u_diag.$procmux$783: \u_diag.uart_busy -> 1'1
+      Replacing known input bits on port B of cell $flatten\u_diag.$procmux$780: \u_diag.uart_busy -> 1'1
+      Replacing known input bits on port B of cell $flatten\u_diag.$procmux$777: \u_diag.uart_busy -> 1'1
   Analyzing evaluation results.
-    dead port 2/2 on $mux $flatten\u_diag.$procmux$309.
-    dead port 2/2 on $mux $flatten\u_diag.$procmux$326.
+    dead port 2/2 on $mux $flatten\u_diag.$procmux$329.
+    dead port 2/2 on $mux $flatten\u_diag.$procmux$346.
 Removed 2 multiplexer ports.
-<suppressed ~20 debug messages>
+<suppressed ~19 debug messages>
 
 11.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
-    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$382: $auto$opt_reduce.cc:137:opt_pmux$846
-    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$635: { $auto$opt_reduce.cc:137:opt_pmux$850 $auto$opt_reduce.cc:137:opt_pmux$848 }
-    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$647: { $auto$opt_reduce.cc:137:opt_pmux$854 $auto$opt_reduce.cc:137:opt_pmux$852 }
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$694: { $auto$opt_reduce.cc:137:opt_pmux$921 $auto$opt_reduce.cc:137:opt_pmux$919 }
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$706: { $auto$opt_reduce.cc:137:opt_pmux$925 $auto$opt_reduce.cc:137:opt_pmux$923 }
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$497: { $flatten\u_diag.$procmux$474_CMP $auto$opt_reduce.cc:137:opt_pmux$927 $flatten\u_diag.$procmux$464_CMP $flatten\u_diag.$procmux$459_CMP $flatten\u_diag.$procmux$419_CMP }
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$402: $auto$opt_reduce.cc:137:opt_pmux$929
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$731: { $auto$opt_reduce.cc:137:opt_pmux$933 $auto$opt_reduce.cc:137:opt_pmux$931 }
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$444: { $flatten\u_diag.$procmux$478_CMP $flatten\u_diag.$procmux$473_CMP $auto$opt_reduce.cc:137:opt_pmux$937 $flatten\u_diag.$procmux$468_CMP $flatten\u_diag.$procmux$463_CMP $flatten\u_diag.$procmux$458_CMP $auto$opt_reduce.cc:137:opt_pmux$935 $flatten\u_diag.$procmux$453_CMP $flatten\u_diag.$procmux$434_CMP $flatten\u_diag.$procmux$418_CMP }
   Optimizing cells in module \led_panel_4k.
-Performed a total of 3 changes.
+Performed a total of 6 changes.
 
 11.12.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\led_panel_4k'.
-<suppressed ~3 debug messages>
-Removed a total of 1 cells.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
 
 11.12.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 11.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 0 unused cells and 62 unused wires.
+Removed 0 unused cells and 123 unused wires.
 <suppressed ~1 debug messages>
 
 11.12.8. Executing OPT_EXPR pass (perform const folding).
@@ -390,13 +390,14 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~20 debug messages>
+<suppressed ~19 debug messages>
 
 11.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
-    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$425: { $flatten\u_diag.$procmux$440_CMP $flatten\u_diag.$procmux$399_CMP $flatten\u_diag.$procmux$434_CMP $auto$opt_reduce.cc:137:opt_pmux$856 $flatten\u_diag.$procmux$398_CMP }
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$444: { $auto$opt_reduce.cc:137:opt_pmux$927 $auto$opt_reduce.cc:137:opt_pmux$935 $flatten\u_diag.$procmux$453_CMP $auto$opt_reduce.cc:137:opt_pmux$939 $flatten\u_diag.$procmux$418_CMP }
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$524: { $flatten\u_diag.$procmux$537_CMP $flatten\u_diag.$procmux$531_CMP $auto$opt_reduce.cc:137:opt_pmux$941 $flatten\u_diag.$procmux$525_CMP }
   Optimizing cells in module \led_panel_4k.
-Performed a total of 1 changes.
+Performed a total of 2 changes.
 
 11.12.12. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\led_panel_4k'.
@@ -418,7 +419,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~20 debug messages>
+<suppressed ~19 debug messages>
 
 11.12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -441,306 +442,452 @@ Optimizing module led_panel_4k.
 11.13. Executing FSM pass (extract and optimize FSM).
 
 11.13.1. Executing FSM_DETECT pass (finding FSMs in design).
-Not marking led_panel_4k.u_diag.addr_seq as FSM state register:
-    Users of register don't seem to benefit from recoding.
-Not marking led_panel_4k.u_diag.spi_cmd as FSM state register:
-    Users of register don't seem to benefit from recoding.
 Found FSM state register led_panel_4k.u_diag.state.
+Not marking led_panel_4k.u_diag.write_seq as FSM state register:
+    Users of register don't seem to benefit from recoding.
 
 11.13.2. Executing FSM_EXTRACT pass (extracting FSM from design).
 Extracting FSM `\u_diag.state' from module `\led_panel_4k'.
-  found $adff cell for state register: $flatten\u_diag.$procdff$756
-  root of input selection tree: $flatten\u_diag.$0\state[5:0]
-  found reset state: 6'000000 (from async reset)
-  found ctrl input: $flatten\u_diag.$procmux$516_CMP
-  found ctrl input: $flatten\u_diag.$procmux$383_CMP
-  found ctrl input: $flatten\u_diag.$procmux$520_CMP
-  found ctrl input: $flatten\u_diag.$procmux$384_CMP
-  found ctrl input: $flatten\u_diag.$procmux$522_CMP
-  found ctrl input: $flatten\u_diag.$procmux$398_CMP
-  found ctrl input: $flatten\u_diag.$procmux$529_CMP
-  found ctrl input: $flatten\u_diag.$procmux$385_CMP
-  found ctrl input: $flatten\u_diag.$procmux$533_CMP
-  found ctrl input: $flatten\u_diag.$procmux$310_CMP
-  found ctrl input: $flatten\u_diag.$procmux$537_CMP
-  found ctrl input: $flatten\u_diag.$procmux$327_CMP
-  found ctrl input: $flatten\u_diag.$procmux$430_CMP
-  found ctrl input: $flatten\u_diag.$procmux$415_CMP
-  found ctrl input: $flatten\u_diag.$procmux$434_CMP
+  found $adff cell for state register: $flatten\u_diag.$procdff$844
+  root of input selection tree: $flatten\u_diag.$0\state[7:0]
+  found reset state: 8'00000000 (from async reset)
+  found ctrl input: $flatten\u_diag.$procmux$542_CMP
+  found ctrl input: $flatten\u_diag.$procmux$403_CMP
+  found ctrl input: $flatten\u_diag.$procmux$546_CMP
+  found ctrl input: $flatten\u_diag.$procmux$404_CMP
   found ctrl input: $flatten\u_diag.$procmux$548_CMP
-  found ctrl input: $flatten\u_diag.$procmux$549_CMP
-  found ctrl input: $flatten\u_diag.$procmux$399_CMP
-  found ctrl input: $flatten\u_diag.$procmux$507_CMP
-  found ctrl input: $flatten\u_diag.$procmux$508_CMP
-  found ctrl input: $flatten\u_diag.$procmux$439_CMP
+  found ctrl input: $flatten\u_diag.$procmux$418_CMP
+  found ctrl input: $flatten\u_diag.$procmux$555_CMP
+  found ctrl input: $flatten\u_diag.$procmux$405_CMP
   found ctrl input: $flatten\u_diag.$procmux$559_CMP
-  found ctrl input: $flatten\u_diag.$procmux$560_CMP
-  found ctrl input: $flatten\u_diag.$procmux$440_CMP
-  found ctrl input: $flatten\u_diag.$procmux$511_CMP
-  found ctrl input: $flatten\u_diag.$logic_and$SPI_flash_diag.v:209$277_Y
-  found state code: 6'011000
-  found state code: 6'010111
-  found state code: 6'010110
-  found state code: 6'010101
-  found ctrl input: $flatten\u_diag.$lt$SPI_flash_diag.v:227$288_Y
-  found state code: 6'010100
-  found state code: 6'001011
-  found state code: 6'010011
-  found state code: 6'010010
-  found state code: 6'010001
-  found state code: 6'010000
-  found state code: 6'001111
-  found state code: 6'001110
-  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:144$262_Y
-  found state code: 6'001101
-  found state code: 6'001100
-  found state code: 6'001000
-  found state code: 6'001010
-  found state code: 6'001001
-  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:157$265_Y
-  found state code: 6'000111
-  found state code: 6'000110
-  found state code: 6'000010
-  found state code: 6'000101
-  found state code: 6'000100
-  found state code: 6'000011
-  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:120$259_Y
-  found state code: 6'000001
-  found ctrl output: $flatten\u_diag.$procmux$560_CMP
+  found ctrl input: $flatten\u_diag.$procmux$330_CMP
+  found ctrl input: $flatten\u_diag.$procmux$563_CMP
+  found ctrl input: $flatten\u_diag.$procmux$347_CMP
+  found ctrl input: $flatten\u_diag.$procmux$434_CMP
+  found ctrl input: $flatten\u_diag.$procmux$569_CMP
+  found ctrl input: $flatten\u_diag.$procmux$453_CMP
+  found ctrl input: $flatten\u_diag.$procmux$574_CMP
+  found ctrl input: $flatten\u_diag.$procmux$419_CMP
+  found ctrl input: $flatten\u_diag.$procmux$525_CMP
+  found ctrl input: $flatten\u_diag.$procmux$579_CMP
+  found ctrl input: $flatten\u_diag.$procmux$458_CMP
+  found ctrl input: $flatten\u_diag.$procmux$584_CMP
+  found ctrl input: $flatten\u_diag.$procmux$459_CMP
+  found ctrl input: $flatten\u_diag.$procmux$463_CMP
+  found ctrl input: $flatten\u_diag.$procmux$590_CMP
+  found ctrl input: $flatten\u_diag.$procmux$464_CMP
+  found ctrl input: $flatten\u_diag.$procmux$528_CMP
+  found ctrl input: $flatten\u_diag.$procmux$595_CMP
+  found ctrl input: $flatten\u_diag.$procmux$468_CMP
+  found ctrl input: $flatten\u_diag.$procmux$600_CMP
+  found ctrl input: $flatten\u_diag.$procmux$469_CMP
+  found ctrl input: $flatten\u_diag.$procmux$531_CMP
+  found ctrl input: $flatten\u_diag.$procmux$605_CMP
+  found ctrl input: $flatten\u_diag.$procmux$473_CMP
+  found ctrl input: $flatten\u_diag.$procmux$610_CMP
+  found ctrl input: $flatten\u_diag.$procmux$474_CMP
+  found ctrl input: $flatten\u_diag.$procmux$534_CMP
+  found ctrl input: $flatten\u_diag.$procmux$615_CMP
+  found ctrl input: $flatten\u_diag.$procmux$478_CMP
+  found ctrl input: $flatten\u_diag.$procmux$620_CMP
+  found ctrl input: $flatten\u_diag.$procmux$479_CMP
+  found ctrl input: $flatten\u_diag.$procmux$537_CMP
+  found ctrl input: $flatten\u_diag.$logic_and$SPI_flash_diag.v:320$297_Y
+  found state code: 8'00100000
+  found state code: 8'00011111
+  found state code: 8'00011110
+  found state code: 8'00011101
+  found ctrl input: $flatten\u_diag.$lt$SPI_flash_diag.v:337$308_Y
+  found state code: 8'00011100
+  found state code: 8'00010011
+  found state code: 8'00011011
+  found state code: 8'00011010
+  found state code: 8'00011001
+  found state code: 8'00011000
+  found state code: 8'00010111
+  found state code: 8'00010110
+  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:143$263_Y
+  found state code: 8'00010101
+  found state code: 8'01110111
+  found state code: 8'00010010
+  found state code: 8'01110110
+  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:271$285_Y
+  found state code: 8'00010001
+  found state code: 8'00010000
+  found state code: 8'11010111
+  found state code: 8'00001111
+  found state code: 8'11011000
+  found state code: 8'00001110
+  found state code: 8'11010110
+  found state code: 8'01110011
+  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:156$266_Y
+  found state code: 8'00001101
+  found state code: 8'00001100
+  found state code: 8'00001010
+  found state code: 8'00001011
+  found state code: 8'01101111
+  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:187$271_Y
+  found state code: 8'00001001
+  found state code: 8'00001000
+  found state code: 8'00000110
+  found state code: 8'00000111
+  found state code: 8'01101011
+  found state code: 8'00000101
+  found state code: 8'00000100
+  found state code: 8'00000010
+  found state code: 8'00000011
+  found state code: 8'01100111
+  found ctrl input: $flatten\u_diag.$eq$SPI_flash_diag.v:122$259_Y
+  found state code: 8'00000001
+  found ctrl output: $flatten\u_diag.$procmux$620_CMP
+  found ctrl output: $flatten\u_diag.$procmux$615_CMP
+  found ctrl output: $flatten\u_diag.$procmux$610_CMP
+  found ctrl output: $flatten\u_diag.$procmux$605_CMP
+  found ctrl output: $flatten\u_diag.$procmux$600_CMP
+  found ctrl output: $flatten\u_diag.$procmux$595_CMP
+  found ctrl output: $flatten\u_diag.$procmux$590_CMP
+  found ctrl output: $flatten\u_diag.$procmux$584_CMP
+  found ctrl output: $flatten\u_diag.$procmux$579_CMP
+  found ctrl output: $flatten\u_diag.$procmux$574_CMP
+  found ctrl output: $flatten\u_diag.$procmux$569_CMP
+  found ctrl output: $flatten\u_diag.$procmux$563_CMP
   found ctrl output: $flatten\u_diag.$procmux$559_CMP
-  found ctrl output: $flatten\u_diag.$procmux$549_CMP
+  found ctrl output: $flatten\u_diag.$procmux$555_CMP
   found ctrl output: $flatten\u_diag.$procmux$548_CMP
+  found ctrl output: $flatten\u_diag.$procmux$546_CMP
+  found ctrl output: $flatten\u_diag.$procmux$542_CMP
   found ctrl output: $flatten\u_diag.$procmux$537_CMP
-  found ctrl output: $flatten\u_diag.$procmux$533_CMP
-  found ctrl output: $flatten\u_diag.$procmux$529_CMP
-  found ctrl output: $flatten\u_diag.$procmux$522_CMP
-  found ctrl output: $flatten\u_diag.$procmux$520_CMP
-  found ctrl output: $flatten\u_diag.$procmux$516_CMP
-  found ctrl output: $flatten\u_diag.$procmux$511_CMP
-  found ctrl output: $flatten\u_diag.$procmux$508_CMP
-  found ctrl output: $flatten\u_diag.$procmux$507_CMP
-  found ctrl output: $flatten\u_diag.$procmux$440_CMP
-  found ctrl output: $flatten\u_diag.$procmux$439_CMP
+  found ctrl output: $flatten\u_diag.$procmux$534_CMP
+  found ctrl output: $flatten\u_diag.$procmux$531_CMP
+  found ctrl output: $flatten\u_diag.$procmux$528_CMP
+  found ctrl output: $flatten\u_diag.$procmux$525_CMP
+  found ctrl output: $flatten\u_diag.$procmux$479_CMP
+  found ctrl output: $flatten\u_diag.$procmux$478_CMP
+  found ctrl output: $flatten\u_diag.$procmux$474_CMP
+  found ctrl output: $flatten\u_diag.$procmux$473_CMP
+  found ctrl output: $flatten\u_diag.$procmux$469_CMP
+  found ctrl output: $flatten\u_diag.$procmux$468_CMP
+  found ctrl output: $flatten\u_diag.$procmux$464_CMP
+  found ctrl output: $flatten\u_diag.$procmux$463_CMP
+  found ctrl output: $flatten\u_diag.$procmux$459_CMP
+  found ctrl output: $flatten\u_diag.$procmux$458_CMP
+  found ctrl output: $flatten\u_diag.$procmux$453_CMP
   found ctrl output: $flatten\u_diag.$procmux$434_CMP
-  found ctrl output: $flatten\u_diag.$procmux$430_CMP
-  found ctrl output: $flatten\u_diag.$procmux$415_CMP
-  found ctrl output: $flatten\u_diag.$procmux$399_CMP
-  found ctrl output: $flatten\u_diag.$procmux$398_CMP
-  found ctrl output: $flatten\u_diag.$procmux$385_CMP
-  found ctrl output: $flatten\u_diag.$procmux$384_CMP
-  found ctrl output: $flatten\u_diag.$procmux$383_CMP
-  found ctrl output: $flatten\u_diag.$procmux$327_CMP
-  found ctrl output: $flatten\u_diag.$procmux$310_CMP
-  ctrl inputs: { $flatten\u_diag.$eq$SPI_flash_diag.v:120$259_Y $flatten\u_diag.$eq$SPI_flash_diag.v:144$262_Y $flatten\u_diag.$eq$SPI_flash_diag.v:157$265_Y $flatten\u_diag.$logic_and$SPI_flash_diag.v:209$277_Y $flatten\u_diag.$lt$SPI_flash_diag.v:227$288_Y }
-  ctrl outputs: { $flatten\u_diag.$0\state[5:0] $flatten\u_diag.$procmux$310_CMP $flatten\u_diag.$procmux$327_CMP $flatten\u_diag.$procmux$383_CMP $flatten\u_diag.$procmux$384_CMP $flatten\u_diag.$procmux$385_CMP $flatten\u_diag.$procmux$398_CMP $flatten\u_diag.$procmux$399_CMP $flatten\u_diag.$procmux$415_CMP $flatten\u_diag.$procmux$430_CMP $flatten\u_diag.$procmux$434_CMP $flatten\u_diag.$procmux$439_CMP $flatten\u_diag.$procmux$440_CMP $flatten\u_diag.$procmux$507_CMP $flatten\u_diag.$procmux$508_CMP $flatten\u_diag.$procmux$511_CMP $flatten\u_diag.$procmux$516_CMP $flatten\u_diag.$procmux$520_CMP $flatten\u_diag.$procmux$522_CMP $flatten\u_diag.$procmux$529_CMP $flatten\u_diag.$procmux$533_CMP $flatten\u_diag.$procmux$537_CMP $flatten\u_diag.$procmux$548_CMP $flatten\u_diag.$procmux$549_CMP $flatten\u_diag.$procmux$559_CMP $flatten\u_diag.$procmux$560_CMP }
-  transition:   6'000000 5'0---- ->   6'000000 31'0000000000000000000010000000000
-  transition:   6'000000 5'1---- ->   6'000001 31'0000010000000000000010000000000
-  transition:   6'010000 5'---0- ->   6'010000 31'0100000000000000000000000100000
-  transition:   6'010000 5'---1- ->   6'010001 31'0100010000000000000000000100000
-  transition:   6'001000 5'----- ->   6'001001 31'0010010000000000000000000000100
-  transition:   6'011000 5'---0- ->   6'011000 31'0110000000000000000001000000000
-  transition:   6'011000 5'---1- ->   6'000000 31'0000000000000000000001000000000
-  transition:   6'000100 5'-0--- ->   6'000010 31'0000100000000000100000000000000
-  transition:   6'000100 5'-1--- ->   6'000101 31'0001010000000000100000000000000
-  transition:   6'010100 5'----- ->   6'010101 31'0101010000000000000000010000000
-  transition:   6'001100 5'-0--- ->   6'001011 31'0010110000000010000000000000000
-  transition:   6'001100 5'-1--- ->   6'001101 31'0011010000000010000000000000000
-  transition:   6'000010 5'----- ->   6'000011 31'0000110000000000000000000000001
-  transition:   6'010010 5'---0- ->   6'010010 31'0100100000000000000000001000000
-  transition:   6'010010 5'---1- ->   6'010011 31'0100110000000000000000001000000
-  transition:   6'001010 5'-0--- ->   6'001000 31'0010000000000001000000000000000
-  transition:   6'001010 5'-1--- ->   6'001011 31'0010110000000001000000000000000
-  transition:   6'000110 5'--0-- ->   6'000110 31'0001100000000000001000000000000
-  transition:   6'000110 5'--1-- ->   6'000111 31'0001110000000000001000000000000
-  transition:   6'010110 5'---0- ->   6'010110 31'0101100000000000000000100000000
-  transition:   6'010110 5'---1- ->   6'010111 31'0101110000000000000000100000000
-  transition:   6'001110 5'---0- ->   6'001110 31'0011100000000000000000000010000
-  transition:   6'001110 5'---1- ->   6'001111 31'0011110000000000000000000010000
-  transition:   6'000001 5'----- ->   6'000010 31'0000100000000000010000000000000
-  transition:   6'010001 5'----- ->   6'010010 31'0100100000100000000000000000000
-  transition:   6'001001 5'----- ->   6'001010 31'0010100000000000000000000001000
-  transition:   6'000101 5'----- ->   6'000110 31'0001100000000000000100000000000
-  transition:   6'010101 5'----- ->   6'010110 31'0101100001000000000000000000000
-  transition:   6'001101 5'----- ->   6'001110 31'0011100100000000000000000000000
-  transition:   6'000011 5'----- ->   6'000100 31'0001000000000000000000000000010
-  transition:   6'010011 5'----0 ->   6'010100 31'0101000000010000000000000000000
-  transition:   6'010011 5'----1 ->   6'001011 31'0010110000010000000000000000000
-  transition:   6'001011 5'----- ->   6'001100 31'0011000000000100000000000000000
-  transition:   6'000111 5'----- ->   6'001000 31'0010000000001000000000000000000
-  transition:   6'010111 5'----- ->   6'011000 31'0110000010000000000000000000000
-  transition:   6'001111 5'----- ->   6'010000 31'0100001000000000000000000000000
+  found ctrl output: $flatten\u_diag.$procmux$419_CMP
+  found ctrl output: $flatten\u_diag.$procmux$418_CMP
+  found ctrl output: $flatten\u_diag.$procmux$405_CMP
+  found ctrl output: $flatten\u_diag.$procmux$404_CMP
+  found ctrl output: $flatten\u_diag.$procmux$403_CMP
+  found ctrl output: $flatten\u_diag.$procmux$347_CMP
+  found ctrl output: $flatten\u_diag.$procmux$330_CMP
+  ctrl inputs: { $flatten\u_diag.$eq$SPI_flash_diag.v:122$259_Y $flatten\u_diag.$eq$SPI_flash_diag.v:143$263_Y $flatten\u_diag.$eq$SPI_flash_diag.v:156$266_Y $flatten\u_diag.$eq$SPI_flash_diag.v:187$271_Y $flatten\u_diag.$eq$SPI_flash_diag.v:271$285_Y $flatten\u_diag.$logic_and$SPI_flash_diag.v:320$297_Y $flatten\u_diag.$lt$SPI_flash_diag.v:337$308_Y }
+  ctrl outputs: { $flatten\u_diag.$0\state[7:0] $flatten\u_diag.$procmux$330_CMP $flatten\u_diag.$procmux$347_CMP $flatten\u_diag.$procmux$403_CMP $flatten\u_diag.$procmux$404_CMP $flatten\u_diag.$procmux$405_CMP $flatten\u_diag.$procmux$418_CMP $flatten\u_diag.$procmux$419_CMP $flatten\u_diag.$procmux$434_CMP $flatten\u_diag.$procmux$453_CMP $flatten\u_diag.$procmux$458_CMP $flatten\u_diag.$procmux$459_CMP $flatten\u_diag.$procmux$463_CMP $flatten\u_diag.$procmux$464_CMP $flatten\u_diag.$procmux$468_CMP $flatten\u_diag.$procmux$469_CMP $flatten\u_diag.$procmux$473_CMP $flatten\u_diag.$procmux$474_CMP $flatten\u_diag.$procmux$478_CMP $flatten\u_diag.$procmux$479_CMP $flatten\u_diag.$procmux$525_CMP $flatten\u_diag.$procmux$528_CMP $flatten\u_diag.$procmux$531_CMP $flatten\u_diag.$procmux$534_CMP $flatten\u_diag.$procmux$537_CMP $flatten\u_diag.$procmux$542_CMP $flatten\u_diag.$procmux$546_CMP $flatten\u_diag.$procmux$548_CMP $flatten\u_diag.$procmux$555_CMP $flatten\u_diag.$procmux$559_CMP $flatten\u_diag.$procmux$563_CMP $flatten\u_diag.$procmux$569_CMP $flatten\u_diag.$procmux$574_CMP $flatten\u_diag.$procmux$579_CMP $flatten\u_diag.$procmux$584_CMP $flatten\u_diag.$procmux$590_CMP $flatten\u_diag.$procmux$595_CMP $flatten\u_diag.$procmux$600_CMP $flatten\u_diag.$procmux$605_CMP $flatten\u_diag.$procmux$610_CMP $flatten\u_diag.$procmux$615_CMP $flatten\u_diag.$procmux$620_CMP }
+  transition: 8'00000000 7'0------ -> 8'00000000 49'0000000000000000000000000000000100000000000000000
+  transition: 8'00000000 7'1------ -> 8'00000001 49'0000000100000000000000000000000100000000000000000
+  transition: 8'00100000 7'-----0- -> 8'00100000 49'0010000000000000000000000000000010000000000000000
+  transition: 8'00100000 7'-----1- -> 8'00000000 49'0000000000000000000000000000000010000000000000000
+  transition: 8'00010000 7'----0-- -> 8'00010000 49'0001000000000000000000000001000000000000000000000
+  transition: 8'00010000 7'----1-- -> 8'00010001 49'0001000100000000000000000001000000000000000000000
+  transition: 8'00001000 7'---0--- -> 8'00001000 49'0000100000000000000000000000010000000000000000000
+  transition: 8'00001000 7'---1--- -> 8'00001001 49'0000100100000000000000000000010000000000000000000
+  transition: 8'00011000 7'-----0- -> 8'00011000 49'0001100000000000000000000000000000001000000000000
+  transition: 8'00011000 7'-----1- -> 8'00011001 49'0001100100000000000000000000000000001000000000000
+  transition: 8'11011000 7'-0----- -> 8'11010111 49'1101011100000000010000000000000000000000000000000
+  transition: 8'11011000 7'-1----- -> 8'00001111 49'0000111100000000010000000000000000000000000000000
+  transition: 8'00000100 7'--0---- -> 8'00000100 49'0000010000000000000000000000001000000000000000000
+  transition: 8'00000100 7'--1---- -> 8'00000101 49'0000010100000000000000000000001000000000000000000
+  transition: 8'00001100 7'--0---- -> 8'00001100 49'0000110000000000000000000000100000000000000000000
+  transition: 8'00001100 7'--1---- -> 8'00001101 49'0000110100000000000000000000100000000000000000000
+  transition: 8'00011100 7'------- -> 8'00011101 49'0001110100000000000000000000000000100000000000000
+  transition: 8'00000010 7'------- -> 8'01100111 49'0110011100000000000000000000000000000000000000001
+  transition: 8'00010010 7'------- -> 8'01110110 49'0111011000000000000000000000000000000001000000000
+  transition: 8'00001010 7'------- -> 8'01101111 49'0110111100000000000000000000000000000000000010000
+  transition: 8'00011010 7'-----0- -> 8'00011010 49'0001101000000000000000000000000000010000000000000
+  transition: 8'00011010 7'-----1- -> 8'00011011 49'0001101100000000000000000000000000010000000000000
+  transition: 8'00000110 7'------- -> 8'01101011 49'0110101100000000000000000000000000000000000000100
+  transition: 8'00010110 7'-----0- -> 8'00010110 49'0001011000000000000000000000000000000100000000000
+  transition: 8'00010110 7'-----1- -> 8'00010111 49'0001011100000000000000000000000000000100000000000
+  transition: 8'11010110 7'------- -> 8'11010111 49'1101011100000000001000000000000000000000000000000
+  transition: 8'01110110 7'-0----- -> 8'00010010 49'0001001000000000100000000000000000000000000000000
+  transition: 8'01110110 7'-1----- -> 8'00010011 49'0001001100000000100000000000000000000000000000000
+  transition: 8'00001110 7'------- -> 8'01110011 49'0111001100000000000000000000000000000000001000000
+  transition: 8'00011110 7'-----0- -> 8'00011110 49'0001111000000000000000000000000001000000000000000
+  transition: 8'00011110 7'-----1- -> 8'00011111 49'0001111100000000000000000000000001000000000000000
+  transition: 8'00000001 7'------- -> 8'00000010 49'0000001000000000000000000010000000000000000000000
+  transition: 8'00010001 7'------- -> 8'00010010 49'0001001000000010000000000000000000000000000000000
+  transition: 8'00001001 7'------- -> 8'00001010 49'0000101000000000000000100000000000000000000000000
+  transition: 8'00011001 7'------- -> 8'00011010 49'0001101000001000000000000000000000000000000000000
+  transition: 8'00000101 7'------- -> 8'00000110 49'0000011000000000000000001000000000000000000000000
+  transition: 8'00010101 7'------- -> 8'00010110 49'0001011001000000000000000000000000000000000000000
+  transition: 8'00001101 7'------- -> 8'00001110 49'0000111000000000000010000000000000000000000000000
+  transition: 8'00011101 7'------- -> 8'00011110 49'0001111000010000000000000000000000000000000000000
+  transition: 8'00000011 7'------- -> 8'00000100 49'0000010000000000000000000000000000000000000000010
+  transition: 8'00010011 7'------- -> 8'01110111 49'0111011100000000000000000000000000000010000000000
+  transition: 8'01110011 7'-0----- -> 8'00001110 49'0000111000000000000100000000000000000000000000000
+  transition: 8'01110011 7'-1----- -> 8'11010110 49'1101011000000000000100000000000000000000000000000
+  transition: 8'00001011 7'------- -> 8'00001100 49'0000110000000000000000000000000000000000000100000
+  transition: 8'01101011 7'-0----- -> 8'00000110 49'0000011000000000000000010000000000000000000000000
+  transition: 8'01101011 7'-1----- -> 8'00000111 49'0000011100000000000000010000000000000000000000000
+  transition: 8'00011011 7'------0 -> 8'00011100 49'0001110000000100000000000000000000000000000000000
+  transition: 8'00011011 7'------1 -> 8'00010011 49'0001001100000100000000000000000000000000000000000
+  transition: 8'00000111 7'------- -> 8'00001000 49'0000100000000000000000000000000000000000000001000
+  transition: 8'01100111 7'-0----- -> 8'00000010 49'0000001000000000000000000100000000000000000000000
+  transition: 8'01100111 7'-1----- -> 8'00000011 49'0000001100000000000000000100000000000000000000000
+  transition: 8'00010111 7'------- -> 8'00011000 49'0001100010000000000000000000000000000000000000000
+  transition: 8'11010111 7'------- -> 8'11011000 49'1101100000000000000000000000000000000000010000000
+  transition: 8'01110111 7'-0----- -> 8'00010011 49'0001001100000001000000000000000000000000000000000
+  transition: 8'01110111 7'-1----- -> 8'00010101 49'0001010100000001000000000000000000000000000000000
+  transition: 8'00001111 7'------- -> 8'00010000 49'0001000000000000000000000000000000000000100000000
+  transition: 8'01101111 7'-0----- -> 8'00001010 49'0000101000000000000001000000000000000000000000000
+  transition: 8'01101111 7'-1----- -> 8'00001011 49'0000101100000000000001000000000000000000000000000
+  transition: 8'00011111 7'------- -> 8'00100000 49'0010000000100000000000000000000000000000000000000
 
 11.13.3. Executing FSM_OPT pass (simple optimizations of FSMs).
-Optimizing FSM `$fsm$\u_diag.state$857' from module `\led_panel_4k'.
+Optimizing FSM `$fsm$\u_diag.state$942' from module `\led_panel_4k'.
 
 11.13.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 38 unused cells and 38 unused wires.
-<suppressed ~39 debug messages>
+Removed 61 unused cells and 61 unused wires.
+<suppressed ~62 debug messages>
 
 11.13.5. Executing FSM_OPT pass (simple optimizations of FSMs).
-Optimizing FSM `$fsm$\u_diag.state$857' from module `\led_panel_4k'.
-  Removing unused output signal $flatten\u_diag.$procmux$537_CMP.
-  Removing unused output signal $flatten\u_diag.$procmux$533_CMP.
-  Removing unused output signal $flatten\u_diag.$procmux$529_CMP.
-  Removing unused output signal $flatten\u_diag.$procmux$520_CMP.
-  Removing unused output signal $flatten\u_diag.$procmux$516_CMP.
-  Removing unused output signal $flatten\u_diag.$0\state[5:0] [0].
-  Removing unused output signal $flatten\u_diag.$0\state[5:0] [1].
-  Removing unused output signal $flatten\u_diag.$0\state[5:0] [2].
-  Removing unused output signal $flatten\u_diag.$0\state[5:0] [3].
-  Removing unused output signal $flatten\u_diag.$0\state[5:0] [4].
-  Removing unused output signal $flatten\u_diag.$0\state[5:0] [5].
+Optimizing FSM `$fsm$\u_diag.state$942' from module `\led_panel_4k'.
+  Removing unused output signal $flatten\u_diag.$procmux$563_CMP.
+  Removing unused output signal $flatten\u_diag.$procmux$559_CMP.
+  Removing unused output signal $flatten\u_diag.$procmux$555_CMP.
+  Removing unused output signal $flatten\u_diag.$procmux$546_CMP.
+  Removing unused output signal $flatten\u_diag.$procmux$542_CMP.
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [0].
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [1].
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [2].
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [3].
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [4].
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [5].
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [6].
+  Removing unused output signal $flatten\u_diag.$0\state[7:0] [7].
 
 11.13.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
-Recoding FSM `$fsm$\u_diag.state$857' from module `\led_panel_4k' using `auto' encoding:
-  mapping auto encoding to `one-hot` for this FSM.
-  000000 -> ------------------------1
-  010000 -> -----------------------1-
-  001000 -> ----------------------1--
-  011000 -> ---------------------1---
-  000100 -> --------------------1----
-  010100 -> -------------------1-----
-  001100 -> ------------------1------
-  000010 -> -----------------1-------
-  010010 -> ----------------1--------
-  001010 -> ---------------1---------
-  000110 -> --------------1----------
-  010110 -> -------------1-----------
-  001110 -> ------------1------------
-  000001 -> -----------1-------------
-  010001 -> ----------1--------------
-  001001 -> ---------1---------------
-  000101 -> --------1----------------
-  010101 -> -------1-----------------
-  001101 -> ------1------------------
-  000011 -> -----1-------------------
-  010011 -> ----1--------------------
-  001011 -> ---1---------------------
-  000111 -> --1----------------------
-  010111 -> -1-----------------------
-  001111 -> 1------------------------
+Recoding FSM `$fsm$\u_diag.state$942' from module `\led_panel_4k' using `auto' encoding:
+  mapping auto encoding to `binary` for this FSM.
+  00000000 -> 000000
+  00100000 -> 000001
+  00010000 -> 000010
+  00001000 -> 000011
+  00011000 -> 000100
+  11011000 -> 000101
+  00000100 -> 000110
+  00001100 -> 000111
+  00011100 -> 001000
+  00000010 -> 001001
+  00010010 -> 001010
+  00001010 -> 001011
+  00011010 -> 001100
+  00000110 -> 001101
+  00010110 -> 001110
+  11010110 -> 001111
+  01110110 -> 010000
+  00001110 -> 010001
+  00011110 -> 010010
+  00000001 -> 010011
+  00010001 -> 010100
+  00001001 -> 010101
+  00011001 -> 010110
+  00000101 -> 010111
+  00010101 -> 011000
+  00001101 -> 011001
+  00011101 -> 011010
+  00000011 -> 011011
+  00010011 -> 011100
+  01110011 -> 011101
+  00001011 -> 011110
+  01101011 -> 011111
+  00011011 -> 100000
+  00000111 -> 100001
+  01100111 -> 100010
+  00010111 -> 100011
+  11010111 -> 100100
+  01110111 -> 100101
+  00001111 -> 100110
+  01101111 -> 100111
+  00011111 -> 101000
 
 11.13.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
 
-FSM `$fsm$\u_diag.state$857' from module `led_panel_4k':
+FSM `$fsm$\u_diag.state$942' from module `led_panel_4k':
 -------------------------------------
 
-  Information on FSM $fsm$\u_diag.state$857 (\u_diag.state):
+  Information on FSM $fsm$\u_diag.state$942 (\u_diag.state):
 
-  Number of input signals:    5
-  Number of output signals:  20
-  Number of state bits:      25
+  Number of input signals:    7
+  Number of output signals:  36
+  Number of state bits:       6
 
   Input signals:
-    0: $flatten\u_diag.$lt$SPI_flash_diag.v:227$288_Y
-    1: $flatten\u_diag.$logic_and$SPI_flash_diag.v:209$277_Y
-    2: $flatten\u_diag.$eq$SPI_flash_diag.v:157$265_Y
-    3: $flatten\u_diag.$eq$SPI_flash_diag.v:144$262_Y
-    4: $flatten\u_diag.$eq$SPI_flash_diag.v:120$259_Y
+    0: $flatten\u_diag.$lt$SPI_flash_diag.v:337$308_Y
+    1: $flatten\u_diag.$logic_and$SPI_flash_diag.v:320$297_Y
+    2: $flatten\u_diag.$eq$SPI_flash_diag.v:271$285_Y
+    3: $flatten\u_diag.$eq$SPI_flash_diag.v:187$271_Y
+    4: $flatten\u_diag.$eq$SPI_flash_diag.v:156$266_Y
+    5: $flatten\u_diag.$eq$SPI_flash_diag.v:143$263_Y
+    6: $flatten\u_diag.$eq$SPI_flash_diag.v:122$259_Y
 
   Output signals:
-    0: $flatten\u_diag.$procmux$560_CMP
-    1: $flatten\u_diag.$procmux$559_CMP
-    2: $flatten\u_diag.$procmux$549_CMP
-    3: $flatten\u_diag.$procmux$548_CMP
-    4: $flatten\u_diag.$procmux$522_CMP
-    5: $flatten\u_diag.$procmux$511_CMP
-    6: $flatten\u_diag.$procmux$508_CMP
-    7: $flatten\u_diag.$procmux$507_CMP
-    8: $flatten\u_diag.$procmux$440_CMP
-    9: $flatten\u_diag.$procmux$439_CMP
-   10: $flatten\u_diag.$procmux$434_CMP
-   11: $flatten\u_diag.$procmux$430_CMP
-   12: $flatten\u_diag.$procmux$415_CMP
-   13: $flatten\u_diag.$procmux$399_CMP
-   14: $flatten\u_diag.$procmux$398_CMP
-   15: $flatten\u_diag.$procmux$385_CMP
-   16: $flatten\u_diag.$procmux$384_CMP
-   17: $flatten\u_diag.$procmux$383_CMP
-   18: $flatten\u_diag.$procmux$327_CMP
-   19: $flatten\u_diag.$procmux$310_CMP
+    0: $flatten\u_diag.$procmux$620_CMP
+    1: $flatten\u_diag.$procmux$615_CMP
+    2: $flatten\u_diag.$procmux$610_CMP
+    3: $flatten\u_diag.$procmux$605_CMP
+    4: $flatten\u_diag.$procmux$600_CMP
+    5: $flatten\u_diag.$procmux$595_CMP
+    6: $flatten\u_diag.$procmux$590_CMP
+    7: $flatten\u_diag.$procmux$584_CMP
+    8: $flatten\u_diag.$procmux$579_CMP
+    9: $flatten\u_diag.$procmux$574_CMP
+   10: $flatten\u_diag.$procmux$569_CMP
+   11: $flatten\u_diag.$procmux$548_CMP
+   12: $flatten\u_diag.$procmux$537_CMP
+   13: $flatten\u_diag.$procmux$534_CMP
+   14: $flatten\u_diag.$procmux$531_CMP
+   15: $flatten\u_diag.$procmux$528_CMP
+   16: $flatten\u_diag.$procmux$525_CMP
+   17: $flatten\u_diag.$procmux$479_CMP
+   18: $flatten\u_diag.$procmux$478_CMP
+   19: $flatten\u_diag.$procmux$474_CMP
+   20: $flatten\u_diag.$procmux$473_CMP
+   21: $flatten\u_diag.$procmux$469_CMP
+   22: $flatten\u_diag.$procmux$468_CMP
+   23: $flatten\u_diag.$procmux$464_CMP
+   24: $flatten\u_diag.$procmux$463_CMP
+   25: $flatten\u_diag.$procmux$459_CMP
+   26: $flatten\u_diag.$procmux$458_CMP
+   27: $flatten\u_diag.$procmux$453_CMP
+   28: $flatten\u_diag.$procmux$434_CMP
+   29: $flatten\u_diag.$procmux$419_CMP
+   30: $flatten\u_diag.$procmux$418_CMP
+   31: $flatten\u_diag.$procmux$405_CMP
+   32: $flatten\u_diag.$procmux$404_CMP
+   33: $flatten\u_diag.$procmux$403_CMP
+   34: $flatten\u_diag.$procmux$347_CMP
+   35: $flatten\u_diag.$procmux$330_CMP
 
   State encoding:
-    0: 25'------------------------1  <RESET STATE>
-    1: 25'-----------------------1-
-    2: 25'----------------------1--
-    3: 25'---------------------1---
-    4: 25'--------------------1----
-    5: 25'-------------------1-----
-    6: 25'------------------1------
-    7: 25'-----------------1-------
-    8: 25'----------------1--------
-    9: 25'---------------1---------
-   10: 25'--------------1----------
-   11: 25'-------------1-----------
-   12: 25'------------1------------
-   13: 25'-----------1-------------
-   14: 25'----------1--------------
-   15: 25'---------1---------------
-   16: 25'--------1----------------
-   17: 25'-------1-----------------
-   18: 25'------1------------------
-   19: 25'-----1-------------------
-   20: 25'----1--------------------
-   21: 25'---1---------------------
-   22: 25'--1----------------------
-   23: 25'-1-----------------------
-   24: 25'1------------------------
+    0:   6'000000  <RESET STATE>
+    1:   6'000001
+    2:   6'000010
+    3:   6'000011
+    4:   6'000100
+    5:   6'000101
+    6:   6'000110
+    7:   6'000111
+    8:   6'001000
+    9:   6'001001
+   10:   6'001010
+   11:   6'001011
+   12:   6'001100
+   13:   6'001101
+   14:   6'001110
+   15:   6'001111
+   16:   6'010000
+   17:   6'010001
+   18:   6'010010
+   19:   6'010011
+   20:   6'010100
+   21:   6'010101
+   22:   6'010110
+   23:   6'010111
+   24:   6'011000
+   25:   6'011001
+   26:   6'011010
+   27:   6'011011
+   28:   6'011100
+   29:   6'011101
+   30:   6'011110
+   31:   6'011111
+   32:   6'100000
+   33:   6'100001
+   34:   6'100010
+   35:   6'100011
+   36:   6'100100
+   37:   6'100101
+   38:   6'100110
+   39:   6'100111
+   40:   6'101000
 
   Transition Table (state_in, ctrl_in, state_out, ctrl_out):
-      0:     0 5'0----   ->     0 20'00000000000000100000
-      1:     0 5'1----   ->    13 20'00000000000000100000
-      2:     1 5'---0-   ->     1 20'00000000000000000000
-      3:     1 5'---1-   ->    14 20'00000000000000000000
-      4:     2 5'-----   ->    15 20'00000000000000000100
-      5:     3 5'---1-   ->     0 20'00000000000000000000
-      6:     3 5'---0-   ->     3 20'00000000000000000000
-      7:     4 5'-0---   ->     7 20'00000000001000000000
-      8:     4 5'-1---   ->    16 20'00000000001000000000
-      9:     5 5'-----   ->    17 20'00000000000000010000
-     10:     6 5'-1---   ->    18 20'00000000100000000000
-     11:     6 5'-0---   ->    21 20'00000000100000000000
-     12:     7 5'-----   ->    19 20'00000000000000000001
-     13:     8 5'---0-   ->     8 20'00000000000000000000
-     14:     8 5'---1-   ->    20 20'00000000000000000000
-     15:     9 5'-0---   ->     2 20'00000000010000000000
-     16:     9 5'-1---   ->    21 20'00000000010000000000
-     17:    10 5'--0--   ->    10 20'00000000000010000000
-     18:    10 5'--1--   ->    22 20'00000000000010000000
-     19:    11 5'---0-   ->    11 20'00000000000000000000
-     20:    11 5'---1-   ->    23 20'00000000000000000000
-     21:    12 5'---0-   ->    12 20'00000000000000000000
-     22:    12 5'---1-   ->    24 20'00000000000000000000
-     23:    13 5'-----   ->     7 20'00000000000100000000
-     24:    14 5'-----   ->     8 20'00001000000000000000
-     25:    15 5'-----   ->     9 20'00000000000000001000
-     26:    16 5'-----   ->    10 20'00000000000001000000
-     27:    17 5'-----   ->    11 20'00010000000000000000
-     28:    18 5'-----   ->    12 20'01000000000000000000
-     29:    19 5'-----   ->     4 20'00000000000000000010
-     30:    20 5'----0   ->     5 20'00000100000000000000
-     31:    20 5'----1   ->    21 20'00000100000000000000
-     32:    21 5'-----   ->     6 20'00000001000000000000
-     33:    22 5'-----   ->     2 20'00000010000000000000
-     34:    23 5'-----   ->     3 20'00100000000000000000
-     35:    24 5'-----   ->     1 20'10000000000000000000
+      0:     0 7'0------   ->     0 36'000000000000000000000001000000000000
+      1:     0 7'1------   ->    19 36'000000000000000000000001000000000000
+      2:     1 7'-----1-   ->     0 36'000000000000000000000000000000000000
+      3:     1 7'-----0-   ->     1 36'000000000000000000000000000000000000
+      4:     2 7'----0--   ->     2 36'000000000000000000010000000000000000
+      5:     2 7'----1--   ->    20 36'000000000000000000010000000000000000
+      6:     3 7'---0---   ->     3 36'000000000000000000000100000000000000
+      7:     3 7'---1---   ->    21 36'000000000000000000000100000000000000
+      8:     4 7'-----0-   ->     4 36'000000000000000000000000000000000000
+      9:     4 7'-----1-   ->    22 36'000000000000000000000000000000000000
+     10:     5 7'-0-----   ->    36 36'000000000100000000000000000000000000
+     11:     5 7'-1-----   ->    38 36'000000000100000000000000000000000000
+     12:     6 7'--0----   ->     6 36'000000000000000000000010000000000000
+     13:     6 7'--1----   ->    23 36'000000000000000000000010000000000000
+     14:     7 7'--0----   ->     7 36'000000000000000000001000000000000000
+     15:     7 7'--1----   ->    25 36'000000000000000000001000000000000000
+     16:     8 7'-------   ->    26 36'000000000000000000000000100000000000
+     17:     9 7'-------   ->    34 36'000000000000000000000000000000000001
+     18:    10 7'-------   ->    16 36'000000000000000000000000001000000000
+     19:    11 7'-------   ->    39 36'000000000000000000000000000000010000
+     20:    12 7'-----0-   ->    12 36'000000000000000000000000000000000000
+     21:    12 7'-----1-   ->    32 36'000000000000000000000000000000000000
+     22:    13 7'-------   ->    31 36'000000000000000000000000000000000100
+     23:    14 7'-----0-   ->    14 36'000000000000000000000000000000000000
+     24:    14 7'-----1-   ->    35 36'000000000000000000000000000000000000
+     25:    15 7'-------   ->    36 36'000000000010000000000000000000000000
+     26:    16 7'-0-----   ->    10 36'000000001000000000000000000000000000
+     27:    16 7'-1-----   ->    28 36'000000001000000000000000000000000000
+     28:    17 7'-------   ->    29 36'000000000000000000000000000001000000
+     29:    18 7'-----0-   ->    18 36'000000000000000000000000000000000000
+     30:    18 7'-----1-   ->    40 36'000000000000000000000000000000000000
+     31:    19 7'-------   ->     9 36'000000000000000000100000000000000000
+     32:    20 7'-------   ->    10 36'000000100000000000000000000000000000
+     33:    21 7'-------   ->    11 36'000000000000001000000000000000000000
+     34:    22 7'-------   ->    12 36'000010000000000000000000000000000000
+     35:    23 7'-------   ->    13 36'000000000000000010000000000000000000
+     36:    24 7'-------   ->    14 36'010000000000000000000000000000000000
+     37:    25 7'-------   ->    17 36'000000000000100000000000000000000000
+     38:    26 7'-------   ->    18 36'000100000000000000000000000000000000
+     39:    27 7'-------   ->     6 36'000000000000000000000000000000000010
+     40:    28 7'-------   ->    37 36'000000000000000000000000010000000000
+     41:    29 7'-1-----   ->    15 36'000000000001000000000000000000000000
+     42:    29 7'-0-----   ->    17 36'000000000001000000000000000000000000
+     43:    30 7'-------   ->     7 36'000000000000000000000000000000100000
+     44:    31 7'-0-----   ->    13 36'000000000000000100000000000000000000
+     45:    31 7'-1-----   ->    33 36'000000000000000100000000000000000000
+     46:    32 7'------0   ->     8 36'000001000000000000000000000000000000
+     47:    32 7'------1   ->    28 36'000001000000000000000000000000000000
+     48:    33 7'-------   ->     3 36'000000000000000000000000000000001000
+     49:    34 7'-0-----   ->     9 36'000000000000000001000000000000000000
+     50:    34 7'-1-----   ->    27 36'000000000000000001000000000000000000
+     51:    35 7'-------   ->     4 36'100000000000000000000000000000000000
+     52:    36 7'-------   ->     5 36'000000000000000000000000000010000000
+     53:    37 7'-1-----   ->    24 36'000000010000000000000000000000000000
+     54:    37 7'-0-----   ->    28 36'000000010000000000000000000000000000
+     55:    38 7'-------   ->     2 36'000000000000000000000000000100000000
+     56:    39 7'-0-----   ->    11 36'000000000000010000000000000000000000
+     57:    39 7'-1-----   ->    30 36'000000000000010000000000000000000000
+     58:    40 7'-------   ->     1 36'001000000000000000000000000000000000
 
 -------------------------------------
 
 11.13.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
-Mapping FSM `$fsm$\u_diag.state$857' from module `\led_panel_4k'.
+Mapping FSM `$fsm$\u_diag.state$942' from module `\led_panel_4k'.
 
 11.14. Executing OPT pass (performing simple optimizations).
 
 11.14.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module led_panel_4k.
-<suppressed ~22 debug messages>
+<suppressed ~37 debug messages>
 
 11.14.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\led_panel_4k'.
-<suppressed ~18 debug messages>
-Removed a total of 6 cells.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
 
 11.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \led_panel_4k..
@@ -759,71 +906,30 @@ Finding identical cells in module `\led_panel_4k'.
 Removed a total of 0 cells.
 
 11.14.6. Executing OPT_DFF pass (perform DFF optimizations).
-Adding EN signal on $procdff$842 ($dff) from module led_panel_4k (D = $add$led_panel_4k.v:32$228_Y [3:0], Q = \startup_cnt).
-Adding EN signal on $flatten\u_diag.$procdff$841 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_shift_reg[7:0], Q = \u_diag.uart_shift_reg).
-Adding EN signal on $flatten\u_diag.$procdff$836 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_bit_index[3:0], Q = \u_diag.uart_bit_index).
-Adding EN signal on $flatten\u_diag.$procdff$831 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_clk_count[12:0], Q = \u_diag.uart_clk_count).
-Adding EN signal on $flatten\u_diag.$procdff$821 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_tx_line[0:0], Q = \u_diag.uart_tx_line).
-Adding EN signal on $flatten\u_diag.$procdff$796 ($dff) from module led_panel_4k (D = $flatten\u_diag.$0\byte_counter[2:0], Q = \u_diag.byte_counter).
-Adding EN signal on $flatten\u_diag.$procdff$789 ($dff) from module led_panel_4k (D = { \u_diag.data_read [6:0] \spi_miso }, Q = \u_diag.data_read).
-Adding EN signal on $flatten\u_diag.$procdff$782 ($dff) from module led_panel_4k (D = $flatten\u_diag.$0\bit_cnt[5:0], Q = \u_diag.bit_cnt).
-Adding EN signal on $flatten\u_diag.$procdff$775 ($dff) from module led_panel_4k (D = 50331648, Q = \u_diag.addr_seq).
-Adding EN signal on $flatten\u_diag.$procdff$768 ($dff) from module led_panel_4k (D = 8'11111111, Q = \u_diag.spi_cmd).
-Adding EN signal on $flatten\u_diag.$procdff$761 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\timer[23:0], Q = \u_diag.timer).
-Adding EN signal on $flatten\u_diag.$procdff$746 ($dff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_byte_to_send[7:0], Q = \u_diag.uart_byte_to_send).
-Adding EN signal on $flatten\u_diag.$procdff$739 ($adff) from module led_panel_4k (D = $flatten\u_diag.$not$SPI_flash_diag.v:122$260_Y, Q = \u_diag.diag_active).
-Adding EN signal on $flatten\u_diag.$procdff$734 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\spi_mosi[0:0], Q = \u_diag.spi_mosi).
-Adding EN signal on $flatten\u_diag.$procdff$729 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\spi_clk[0:0], Q = \u_diag.spi_clk).
-Adding EN signal on $flatten\u_diag.$procdff$724 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\spi_cs[0:0], Q = \u_diag.spi_cs).
-Setting constant 1-bit at position 0 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 1 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 2 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 3 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 4 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 5 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 6 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 7 on $auto$ff.cc:266:slice$1039 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 24 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 1-bit at position 25 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
-Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1036 ($dffe) from module led_panel_4k.
+Adding EN signal on $procdff$915 ($dff) from module led_panel_4k (D = $add$led_panel_4k.v:27$228_Y [3:0], Q = \startup_cnt).
+Adding EN signal on $flatten\u_diag.$procdff$914 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_shift_reg[7:0], Q = \u_diag.uart_shift_reg).
+Adding EN signal on $flatten\u_diag.$procdff$909 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_bit_index[3:0], Q = \u_diag.uart_bit_index).
+Adding EN signal on $flatten\u_diag.$procdff$904 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_clk_count[12:0], Q = \u_diag.uart_clk_count).
+Adding EN signal on $flatten\u_diag.$procdff$894 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_tx_line[0:0], Q = \u_diag.uart_tx_line).
+Adding EN signal on $flatten\u_diag.$procdff$869 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\byte_counter[2:0], Q = \u_diag.byte_counter).
+Adding EN signal on $flatten\u_diag.$procdff$864 ($adff) from module led_panel_4k (D = { \u_diag.data_read [6:0] \spi_miso }, Q = \u_diag.data_read).
+Adding EN signal on $flatten\u_diag.$procdff$859 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\bit_cnt[5:0], Q = \u_diag.bit_cnt).
+Adding EN signal on $flatten\u_diag.$procdff$854 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\write_seq[39:0], Q = \u_diag.write_seq).
+Adding EN signal on $flatten\u_diag.$procdff$849 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\timer[25:0], Q = \u_diag.timer).
+Adding EN signal on $flatten\u_diag.$procdff$834 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\uart_byte_to_send[7:0], Q = \u_diag.uart_byte_to_send).
+Adding EN signal on $flatten\u_diag.$procdff$829 ($adff) from module led_panel_4k (D = \LEDS, Q = \u_diag.diag_active).
+Adding EN signal on $flatten\u_diag.$procdff$824 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\spi_mosi[0:0], Q = \u_diag.spi_mosi).
+Adding EN signal on $flatten\u_diag.$procdff$819 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\spi_clk[0:0], Q = \u_diag.spi_clk).
+Adding EN signal on $flatten\u_diag.$procdff$814 ($adff) from module led_panel_4k (D = $flatten\u_diag.$0\spi_cs[0:0], Q = \u_diag.spi_cs).
 
 11.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 14 unused cells and 59 unused wires.
-<suppressed ~15 debug messages>
+Removed 8 unused cells and 78 unused wires.
+<suppressed ~9 debug messages>
 
 11.14.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module led_panel_4k.
-<suppressed ~14 debug messages>
+<suppressed ~15 debug messages>
 
 11.14.9. Rerunning OPT passes. (Maybe there is more to do..)
 
@@ -833,7 +939,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~14 debug messages>
+<suppressed ~16 debug messages>
 
 11.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -862,7 +968,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~14 debug messages>
+<suppressed ~16 debug messages>
 
 11.14.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -883,50 +989,89 @@ Optimizing module led_panel_4k.
 11.14.23. Finished OPT passes. (There is nothing left to do.)
 
 11.15. Executing WREDUCE pass (reducing word size of cells).
-Removed top 28 bits (of 32) from port B of cell led_panel_4k.$lt$led_panel_4k.v:31$227 ($lt).
-Removed top 31 bits (of 32) from port B of cell led_panel_4k.$add$led_panel_4k.v:32$228 ($add).
-Removed top 28 bits (of 32) from port Y of cell led_panel_4k.$add$led_panel_4k.v:32$228 ($add).
-Removed top 1 bits (of 2) from port B of cell led_panel_4k.$auto$opt_dff.cc:248:make_patterns_logic$1000 ($ne).
-Removed top 1 bits (of 2) from port B of cell led_panel_4k.$auto$opt_dff.cc:248:make_patterns_logic$1021 ($ne).
-Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:228$289 ($add).
-Removed top 29 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:228$289 ($add).
-Removed top 30 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:227$288 ($lt).
-Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:100$281 ($add).
-Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:100$281 ($add).
-Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:99$280 ($add).
-Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:99$280 ($add).
-Removed top 28 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:99$278 ($lt).
-Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:100$274 ($add).
-Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:100$274 ($add).
-Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:99$273 ($add).
-Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:99$273 ($add).
-Removed top 28 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:99$271 ($lt).
-Removed top 14 bits (of 24) from port B of cell led_panel_4k.$flatten\u_diag.$eq$SPI_flash_diag.v:157$265 ($eq).
-Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$sub$SPI_flash_diag.v:146$263 ($sub).
-Removed top 26 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$sub$SPI_flash_diag.v:146$263 ($sub).
-Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:119$258 ($add).
-Removed top 8 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:119$258 ($add).
+Removed top 28 bits (of 32) from port B of cell led_panel_4k.$lt$led_panel_4k.v:26$227 ($lt).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$add$led_panel_4k.v:27$228 ($add).
+Removed top 28 bits (of 32) from port Y of cell led_panel_4k.$add$led_panel_4k.v:27$228 ($add).
+Removed top 5 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$989 ($eq).
+Removed top 4 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$990 ($eq).
+Removed top 4 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$991 ($eq).
+Removed top 3 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$992 ($eq).
+Removed top 3 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$993 ($eq).
+Removed top 3 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$994 ($eq).
+Removed top 3 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$995 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$996 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$997 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$998 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$999 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1000 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1001 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1002 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1013 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1004 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1005 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1014 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1006 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1007 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1015 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1008 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1009 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1016 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1010 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1011 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1012 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1017 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1018 ($eq).
+Removed top 1 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1019 ($eq).
+Removed top 2 bits (of 6) from port B of cell led_panel_4k.$auto$fsm_map.cc:215:map_fsm$1003 ($eq).
+Removed top 1 bits (of 2) from port B of cell led_panel_4k.$auto$opt_dff.cc:248:make_patterns_logic$1227 ($ne).
+Removed top 1 bits (of 2) from port B of cell led_panel_4k.$auto$opt_dff.cc:248:make_patterns_logic$1197 ($ne).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:338$309 ($add).
+Removed top 29 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:338$309 ($add).
+Removed top 30 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:337$308 ($lt).
+Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:63$301 ($add).
+Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:63$301 ($add).
+Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:62$300 ($add).
+Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:62$300 ($add).
+Removed top 28 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:62$298 ($lt).
+Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:63$294 ($add).
+Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:63$294 ($add).
+Removed top 2 bits (of 8) from port A of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:62$293 ($add).
+Removed top 1 bits (of 8) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:62$293 ($add).
+Removed top 28 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:62$291 ($lt).
+Removed top 9 bits (of 26) from port B of cell led_panel_4k.$flatten\u_diag.$eq$SPI_flash_diag.v:271$285 ($eq).
+Removed top 4 bits (of 26) from port B of cell led_panel_4k.$flatten\u_diag.$eq$SPI_flash_diag.v:187$271 ($eq).
+Removed top 19 bits (of 26) from port B of cell led_panel_4k.$flatten\u_diag.$eq$SPI_flash_diag.v:156$266 ($eq).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$sub$SPI_flash_diag.v:145$264 ($sub).
+Removed top 26 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$sub$SPI_flash_diag.v:145$264 ($sub).
+Removed top 26 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:138$261 ($add).
+Removed top 25 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:138$261 ($add).
+Removed top 11 bits (of 26) from port B of cell led_panel_4k.$flatten\u_diag.$eq$SPI_flash_diag.v:122$259 ($eq).
+Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:121$258 ($add).
+Removed top 6 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:121$258 ($add).
 Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:39$241 ($add).
 Removed top 28 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:39$241 ($add).
 Removed top 28 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:36$240 ($lt).
 Removed top 31 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:33$239 ($add).
 Removed top 19 bits (of 32) from port Y of cell led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:33$239 ($add).
 Removed top 20 bits (of 32) from port B of cell led_panel_4k.$flatten\u_diag.$lt$SPI_flash_diag.v:32$238 ($lt).
-Removed top 28 bits (of 32) from wire led_panel_4k.$add$led_panel_4k.v:32$228_Y.
-Removed top 6 bits (of 25) from wire led_panel_4k.$auto$fsm_map.cc:170:map_fsm$884.
-Removed top 1 bits (of 8) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:100$274_Y.
-Removed top 1 bits (of 8) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:100$281_Y.
-Removed top 8 bits (of 32) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:119$258_Y.
-Removed top 29 bits (of 32) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:228$289_Y.
+Removed top 28 bits (of 32) from wire led_panel_4k.$add$led_panel_4k.v:27$228_Y.
+Removed top 6 bits (of 32) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:121$258_Y.
 Removed top 19 bits (of 32) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:33$239_Y.
+Removed top 29 bits (of 32) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:338$309_Y.
 Removed top 28 bits (of 32) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:39$241_Y.
+Removed top 1 bits (of 8) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:62$293_Y.
+Removed top 1 bits (of 8) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:62$300_Y.
+Removed top 1 bits (of 8) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:63$294_Y.
+Removed top 1 bits (of 8) from wire led_panel_4k.$flatten\u_diag.$add$SPI_flash_diag.v:63$301_Y.
+Removed top 26 bits (of 32) from wire led_panel_4k.$flatten\u_diag.$sub$SPI_flash_diag.v:145$264_Y.
 
 11.16. Executing PEEPOPT pass (run peephole optimizers).
+shiftadd pattern in led_panel_4k: shift=$flatten\u_diag.$shiftx$SPI_flash_diag.v:0$262, add/sub=$flatten\u_diag.$add$SPI_flash_diag.v:138$261, offset: 32
 
 11.17. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 0 unused cells and 7 unused wires.
-<suppressed ~1 debug messages>
+Removed 1 unused cells and 11 unused wires.
+<suppressed ~2 debug messages>
 
 11.18. Executing SHARE pass (SAT-based resource sharing).
 
@@ -972,38 +1117,38 @@ No more expansions possible.
 
 11.23. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module led_panel_4k:
-  creating $macc model for $add$led_panel_4k.v:32$228 ($add).
-  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:100$274 ($add).
-  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:100$281 ($add).
-  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:119$258 ($add).
-  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:228$289 ($add).
+  creating $macc model for $add$led_panel_4k.v:27$228 ($add).
+  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:121$258 ($add).
   creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:33$239 ($add).
+  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:338$309 ($add).
   creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:39$241 ($add).
-  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:99$273 ($add).
-  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:99$280 ($add).
-  creating $macc model for $flatten\u_diag.$sub$SPI_flash_diag.v:146$263 ($sub).
-  creating $alu model for $macc $flatten\u_diag.$sub$SPI_flash_diag.v:146$263.
-  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:99$280.
-  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:99$273.
+  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:62$293 ($add).
+  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:62$300 ($add).
+  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:63$294 ($add).
+  creating $macc model for $flatten\u_diag.$add$SPI_flash_diag.v:63$301 ($add).
+  creating $macc model for $flatten\u_diag.$sub$SPI_flash_diag.v:145$264 ($sub).
+  creating $alu model for $macc $flatten\u_diag.$sub$SPI_flash_diag.v:145$264.
+  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:63$301.
+  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:63$294.
+  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:62$300.
+  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:62$293.
   creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:39$241.
+  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:338$309.
   creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:33$239.
-  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:228$289.
-  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:119$258.
-  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:100$281.
-  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:100$274.
-  creating $alu model for $macc $add$led_panel_4k.v:32$228.
+  creating $alu model for $macc $flatten\u_diag.$add$SPI_flash_diag.v:121$258.
+  creating $alu model for $macc $add$led_panel_4k.v:27$228.
   creating $alu model for $flatten\u_diag.$lt$SPI_flash_diag.v:32$238 ($lt): new $alu
-  creating $alu cell for $flatten\u_diag.$lt$SPI_flash_diag.v:32$238: $auto$alumacc.cc:495:replace_alu$1081
-  creating $alu cell for $add$led_panel_4k.v:32$228: $auto$alumacc.cc:495:replace_alu$1086
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:100$274: $auto$alumacc.cc:495:replace_alu$1089
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:100$281: $auto$alumacc.cc:495:replace_alu$1092
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:119$258: $auto$alumacc.cc:495:replace_alu$1095
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:228$289: $auto$alumacc.cc:495:replace_alu$1098
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:33$239: $auto$alumacc.cc:495:replace_alu$1101
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:39$241: $auto$alumacc.cc:495:replace_alu$1104
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:99$273: $auto$alumacc.cc:495:replace_alu$1107
-  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:99$280: $auto$alumacc.cc:495:replace_alu$1110
-  creating $alu cell for $flatten\u_diag.$sub$SPI_flash_diag.v:146$263: $auto$alumacc.cc:495:replace_alu$1113
+  creating $alu cell for $flatten\u_diag.$lt$SPI_flash_diag.v:32$238: $auto$alumacc.cc:495:replace_alu$1282
+  creating $alu cell for $add$led_panel_4k.v:27$228: $auto$alumacc.cc:495:replace_alu$1287
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:121$258: $auto$alumacc.cc:495:replace_alu$1290
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:33$239: $auto$alumacc.cc:495:replace_alu$1293
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:338$309: $auto$alumacc.cc:495:replace_alu$1296
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:39$241: $auto$alumacc.cc:495:replace_alu$1299
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:62$293: $auto$alumacc.cc:495:replace_alu$1302
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:62$300: $auto$alumacc.cc:495:replace_alu$1305
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:63$294: $auto$alumacc.cc:495:replace_alu$1308
+  creating $alu cell for $flatten\u_diag.$add$SPI_flash_diag.v:63$301: $auto$alumacc.cc:495:replace_alu$1311
+  creating $alu cell for $flatten\u_diag.$sub$SPI_flash_diag.v:145$264: $auto$alumacc.cc:495:replace_alu$1314
   created 11 $alu and 0 $macc cells.
 
 11.24. Executing OPT pass (performing simple optimizations).
@@ -1022,7 +1167,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~14 debug messages>
+<suppressed ~16 debug messages>
 
 11.24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -1050,7 +1195,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~14 debug messages>
+<suppressed ~16 debug messages>
 
 11.24.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -1123,35 +1268,20 @@ No more expansions possible.
 
 11.29.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module led_panel_4k.
-<suppressed ~36 debug messages>
+<suppressed ~37 debug messages>
 
 11.29.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\led_panel_4k'.
 Removed a total of 0 cells.
 
 11.29.3. Executing OPT_DFF pass (perform DFF optimizations).
-Adding SRST signal on $auto$ff.cc:266:slice$1017 ($dffe) from module led_panel_4k (D = $flatten\u_diag.$procmux$395_Y, Q = \u_diag.byte_counter, rval = 3'000).
 
 11.29.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 3 unused cells and 28 unused wires.
-<suppressed ~4 debug messages>
+Removed 2 unused cells and 27 unused wires.
+<suppressed ~3 debug messages>
 
-11.29.5. Rerunning OPT passes. (Removed registers in this run.)
-
-11.29.6. Executing OPT_EXPR pass (perform const folding).
-Optimizing module led_panel_4k.
-
-11.29.7. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\led_panel_4k'.
-Removed a total of 0 cells.
-
-11.29.8. Executing OPT_DFF pass (perform DFF optimizations).
-
-11.29.9. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \led_panel_4k..
-
-11.29.10. Finished fast OPT passes.
+11.29.5. Finished fast OPT passes.
 
 11.30. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
 
@@ -1170,26 +1300,30 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~11 debug messages>
+<suppressed ~14 debug messages>
 
 11.31.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
-    Consolidated identical input bits for $mux cell $flatten\u_diag.$procmux$307:
-      Old ports: A={ 1'0 $auto$wreduce.cc:514:run$1065 [6:0] }, B={ 4'0011 \u_diag.data_read [3:0] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$279
-      New ports: A=$auto$wreduce.cc:514:run$1065 [6:0], B={ 3'011 \u_diag.data_read [3:0] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$279 [6:0]
-      New connections: $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$279 [7] = 1'0
-    Consolidated identical input bits for $mux cell $flatten\u_diag.$procmux$324:
-      Old ports: A={ 1'0 $auto$wreduce.cc:514:run$1064 [6:0] }, B={ 4'0011 \u_diag.data_read [7:4] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$272
-      New ports: A=$auto$wreduce.cc:514:run$1064 [6:0], B={ 3'011 \u_diag.data_read [7:4] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$272 [6:0]
-      New connections: $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$272 [7] = 1'0
-    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$425: { \u_diag.state [22] \u_diag.state [9] $auto$opt_reduce.cc:137:opt_pmux$856 }
+    Consolidated identical input bits for $mux cell $flatten\u_diag.$procmux$327:
+      Old ports: A={ 1'0 $auto$wreduce.cc:514:run$1269 [6:0] }, B={ 4'0011 \u_diag.data_read [3:0] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$299
+      New ports: A=$auto$wreduce.cc:514:run$1269 [6:0], B={ 3'011 \u_diag.data_read [3:0] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$299 [6:0]
+      New connections: $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$299 [7] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\u_diag.$procmux$344:
+      Old ports: A={ 1'0 $auto$wreduce.cc:514:run$1268 [6:0] }, B={ 4'0011 \u_diag.data_read [7:4] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$292
+      New ports: A=$auto$wreduce.cc:514:run$1268 [6:0], B={ 3'011 \u_diag.data_read [7:4] }, Y=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$292 [6:0]
+      New connections: $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$292 [7] = 1'0
+    New ctrl vector for $pmux cell $flatten\u_diag.$procmux$444: { $auto$opt_reduce.cc:137:opt_pmux$935 $auto$fsm_map.cc:194:map_fsm$987 [16] $auto$opt_reduce.cc:137:opt_pmux$939 }
+    Consolidated identical input bits for $pmux cell $flatten\u_diag.$procmux$497:
+      Old ports: A=40'0000000000100000000000000000000000000000, B=160'0000011000000000000000000000000000000000000000000000001000000000000000000000000000000000010010000100111101001100010000010000000000000011000000000000000000000000, Y=$flatten\u_diag.$0\write_seq[39:0]
+      New ports: A=5'01000, B=20'10000001000000100110, Y={ $flatten\u_diag.$0\write_seq[39:0] [33] $flatten\u_diag.$0\write_seq[39:0] [29] $flatten\u_diag.$0\write_seq[39:0] [25:24] $flatten\u_diag.$0\write_seq[39:0] [0] }
+      New connections: { $flatten\u_diag.$0\write_seq[39:0] [39:34] $flatten\u_diag.$0\write_seq[39:0] [32:30] $flatten\u_diag.$0\write_seq[39:0] [28:26] $flatten\u_diag.$0\write_seq[39:0] [23:1] } = { 5'00000 $flatten\u_diag.$0\write_seq[39:0] [33] 2'00 $flatten\u_diag.$0\write_seq[39:0] [0] 1'0 $flatten\u_diag.$0\write_seq[39:0] [0] 2'00 $flatten\u_diag.$0\write_seq[39:0] [0] 2'00 $flatten\u_diag.$0\write_seq[39:0] [0] $flatten\u_diag.$0\write_seq[39:0] [0] $flatten\u_diag.$0\write_seq[39:0] [0] $flatten\u_diag.$0\write_seq[39:0] [0] 1'0 $flatten\u_diag.$0\write_seq[39:0] [0] 2'00 $flatten\u_diag.$0\write_seq[39:0] [0] $flatten\u_diag.$0\write_seq[39:0] [0] 3'000 $flatten\u_diag.$0\write_seq[39:0] [0] 5'00000 }
   Optimizing cells in module \led_panel_4k.
-    Consolidated identical input bits for $pmux cell $flatten\u_diag.$procmux$567:
-      Old ports: A=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$272, B={ $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$279 24'001000000000110100001010 }, Y=$flatten\u_diag.$0\uart_byte_to_send[7:0]
-      New ports: A=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:205$232.$result[7:0]$272 [6:0], B={ $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:212$233.$result[7:0]$279 [6:0] 21'010000000011010001010 }, Y=$flatten\u_diag.$0\uart_byte_to_send[7:0] [6:0]
+    Consolidated identical input bits for $pmux cell $flatten\u_diag.$procmux$627:
+      Old ports: A=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$292, B={ $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$299 24'001000000000110100001010 }, Y=$flatten\u_diag.$0\uart_byte_to_send[7:0]
+      New ports: A=$flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:316$232.$result[7:0]$292 [6:0], B={ $flatten\u_diag.$3\to_ascii$func$SPI_flash_diag.v:323$233.$result[7:0]$299 [6:0] 21'010000000011010001010 }, Y=$flatten\u_diag.$0\uart_byte_to_send[7:0] [6:0]
       New connections: $flatten\u_diag.$0\uart_byte_to_send[7:0] [7] = 1'0
   Optimizing cells in module \led_panel_4k.
-Performed a total of 4 changes.
+Performed a total of 5 changes.
 
 11.31.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\led_panel_4k'.
@@ -1211,7 +1345,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~11 debug messages>
+<suppressed ~14 debug messages>
 
 11.31.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -1222,7 +1356,30 @@ Finding identical cells in module `\led_panel_4k'.
 Removed a total of 0 cells.
 
 11.31.13. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1045 ($dffe) from module led_panel_4k.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 32 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 35 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 36 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 37 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 38 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 39 on $auto$ff.cc:266:slice$1240 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1246 ($adffe) from module led_panel_4k.
 
 11.31.14. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
@@ -1238,11 +1395,11 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~11 debug messages>
+<suppressed ~14 debug messages>
 
 11.31.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
-    Consolidated identical input bits for $mux cell $flatten\u_diag.$procmux$662:
+    Consolidated identical input bits for $mux cell $flatten\u_diag.$procmux$752:
       Old ports: A={ 1'0 \u_diag.uart_shift_reg [7:1] }, B={ 1'0 \u_diag.uart_byte_to_send [6:0] }, Y=$flatten\u_diag.$0\uart_shift_reg[7:0]
       New ports: A=\u_diag.uart_shift_reg [7:1], B=\u_diag.uart_byte_to_send [6:0], Y=$flatten\u_diag.$0\uart_shift_reg[7:0] [6:0]
       New connections: $flatten\u_diag.$0\uart_shift_reg[7:0] [7] = 1'0
@@ -1269,7 +1426,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~11 debug messages>
+<suppressed ~14 debug messages>
 
 11.31.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -1280,7 +1437,7 @@ Finding identical cells in module `\led_panel_4k'.
 Removed a total of 0 cells.
 
 11.31.27. Executing OPT_DFF pass (perform DFF optimizations).
-Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$987 ($adffe) from module led_panel_4k.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1193 ($adffe) from module led_panel_4k.
 
 11.31.28. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
@@ -1296,7 +1453,7 @@ Running muxtree optimizer on module \led_panel_4k..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~11 debug messages>
+<suppressed ~14 debug messages>
 
 11.31.32. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \led_panel_4k.
@@ -1352,60 +1509,61 @@ Generating RTLIL representation for module `\_80_ecp5_alu'.
 Successfully finished Verilog frontend.
 
 11.32.3. Continuing TECHMAP pass.
-Using template $paramod$8749c0efa219d6160b77c501d93e918c0ebd8355\_80_ecp5_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $and.
+Using template $paramod$a8151eed7df109f18d5adf1169b40bb7b9e884a8\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
 Using extmapper simplemap for cells of type $mux.
 Using extmapper simplemap for cells of type $dff.
 Using extmapper simplemap for cells of type $reduce_bool.
-Using extmapper simplemap for cells of type $not.
-Using extmapper simplemap for cells of type $reduce_and.
-Using template $paramod$595445fe3ac6aa2edee2c508c1e1e5c86aae1b4f\_80_ecp5_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
 Using extmapper simplemap for cells of type $lut.
-Using extmapper simplemap for cells of type $ne.
-Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $not.
 Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $logic_not.
 Using extmapper simplemap for cells of type $adffe.
+Using template $paramod$441cbb21d541a2e64961151792043c9bb567c1ea\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $ne.
 Using template $paramod$1aae2e481057835cbb335f7135d1019c7cf8d22d\_90_pmux for cells of type $pmux.
-Using template $paramod$79aa992f2eb7f354d4aaf651790713cf239111fa\_80_ecp5_alu for cells of type $alu.
-Using template $paramod$cc1e387d9d5ac1d3f6e6bed180038d9c0ac48d0c\_90_pmux for cells of type $pmux.
+Using template $paramod$595445fe3ac6aa2edee2c508c1e1e5c86aae1b4f\_80_ecp5_alu for cells of type $alu.
+Using template $paramod$018d8a3a14a1bc1548087f1434a38407dd84cb3c\_90_pmux for cells of type $pmux.
+Using template $paramod$24fb226dd75c9d3f6955ec2ad61d794776778cf6\_90_pmux for cells of type $pmux.
 Using template $paramod$a04dd9d4d8b430140c4ff94b50470fb380fda2a0\_80_ecp5_alu for cells of type $alu.
 Using template $paramod$c15e84c77f007506123baf6c4be45847f0e33a3b\_90_pmux for cells of type $pmux.
-Using extmapper simplemap for cells of type $sdffce.
-Using template $paramod$215440792383f7884e57d9c95f84e9552d0bf4ac\_80_ecp5_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $logic_and.
-Using extmapper simplemap for cells of type $logic_not.
-Using template $paramod$constmap:1e3858d85fb8179e66b5a240e7f3083f84ed31f6$paramod$35a84c2bcaee82e2fc70141fee55c05d87ec60ff\_90_shift_shiftx for cells of type $shiftx.
-Using extmapper simplemap for cells of type $eq.
-Using template $paramod$constmap:f887d146485091376dc224d2622f0240ae9d020e$paramod$5580ab8b532d7799cfce101b4563e4cf308562d2\_90_shift_shiftx for cells of type $shiftx.
-Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
 Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_90_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $logic_or.
+Using template $paramod$8749c0efa219d6160b77c501d93e918c0ebd8355\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$constmap:6f6f52454fe948b4af21f78fff7eab9c34cc1cec$paramod$21d61562a45a768c07a130fa927e802964811727\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$constmap:d8dc8aa5b535099e7ade11d641536bf6d0aca949$paramod$c1651c0f80b4fabc846265363e7c14002616e108\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$215440792383f7884e57d9c95f84e9552d0bf4ac\_80_ecp5_alu for cells of type $alu.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $xor.
 Using extmapper simplemap for cells of type $pos.
-Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $logic_or.
 Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
 Using extmapper simplemap for cells of type $or.
 No more expansions possible.
-<suppressed ~1245 debug messages>
+<suppressed ~1415 debug messages>
 
 11.33. Executing OPT pass (performing simple optimizations).
 
 11.33.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module led_panel_4k.
-<suppressed ~687 debug messages>
+<suppressed ~1391 debug messages>
 
 11.33.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\led_panel_4k'.
-<suppressed ~141 debug messages>
-Removed a total of 47 cells.
+<suppressed ~1209 debug messages>
+Removed a total of 403 cells.
 
 11.33.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 11.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 153 unused cells and 612 unused wires.
-<suppressed ~154 debug messages>
+Removed 318 unused cells and 993 unused wires.
+<suppressed ~319 debug messages>
 
 11.33.5. Finished fast OPT passes.
 
@@ -1490,19 +1648,18 @@ Generating RTLIL representation for module `\OLVDS'.
 Successfully finished Verilog frontend.
 
 11.36.2. Continuing TECHMAP pass.
-Using template \$_DFF_PP0_ for cells of type $_DFF_PP0_.
 Using template $paramod\$_DFFE_PP_\_TECHMAP_WIREINIT_Q_=1'0 for cells of type $_DFFE_PP_.
-Using template $paramod\$_DFFE_PP_\_TECHMAP_WIREINIT_Q_=1'x for cells of type $_DFFE_PP_.
-Using template \$_DFFE_PP0P_ for cells of type $_DFFE_PP0P_.
+Using template \$_DFF_PP0_ for cells of type $_DFF_PP0_.
 Using template $paramod\$_DFF_P_\_TECHMAP_WIREINIT_Q_=1'0 for cells of type $_DFF_P_.
-Using template \$_DFF_PP1_ for cells of type $_DFF_PP1_.
+Using template \$_DFFE_PP0P_ for cells of type $_DFFE_PP0P_.
+Using template \$_DFFE_PP0N_ for cells of type $_DFFE_PP0N_.
 Using template \$_DFFE_PP1P_ for cells of type $_DFFE_PP1P_.
-Using template \$_SDFFE_PP0P_ for cells of type $_SDFFE_PP0P_.
 No more expansions possible.
-<suppressed ~213 debug messages>
+<suppressed ~190 debug messages>
 
 11.37. Executing OPT_EXPR pass (perform const folding).
 Optimizing module led_panel_4k.
+<suppressed ~9 debug messages>
 
 11.38. Executing SIMPLEMAP pass (map simple cells to gate primitives).
 
@@ -1513,7 +1670,7 @@ Handling GSR in led_panel_4k.
 
 11.41. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \led_panel_4k..
-Removed 0 unused cells and 600 unused wires.
+Removed 0 unused cells and 570 unused wires.
 <suppressed ~1 debug messages>
 
 11.42. Executing TECHMAP pass (map to technology primitives).
@@ -1540,7 +1697,7 @@ No more expansions possible.
 Cleaned up 0 empty switches.
 
 11.43.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3547 in module $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.
+Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6032 in module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
 Removed a total of 0 dead cases.
 
 11.43.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -1548,33 +1705,33 @@ Removed 0 redundant assignments.
 Promoted 1 assignment to connection.
 
 11.43.3.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3548'.
-  Set init value: \Q = 1'1
+Found init rule in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6033'.
+  Set init value: \Q = 1'0
 
 11.43.3.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \muxlsr in `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3547'.
+Found async reset \muxlsr in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6032'.
 
 11.43.3.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~1 debug messages>
 
 11.43.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3548'.
-Creating decoders for process `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3547'.
+Creating decoders for process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6033'.
+Creating decoders for process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6032'.
      1/1: $0\Q[0:0]
 
 11.43.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 11.43.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.\Q' using process `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3547'.
-  created $adff cell `$procdff$3553' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.\Q' using process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6032'.
+  created $adff cell `$procdff$6038' with positive edge clock and positive level reset.
 
 11.43.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 11.43.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3548'.
-Found and cleaned up 1 empty switch in `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3547'.
-Removing empty process `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3547'.
+Removing empty process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6033'.
+Found and cleaned up 1 empty switch in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6032'.
+Removing empty process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6032'.
 Cleaned up 1 empty switch.
 
 11.43.4. Executing PROC pass (convert processes to netlists).
@@ -1583,7 +1740,7 @@ Cleaned up 1 empty switch.
 Cleaned up 0 empty switches.
 
 11.43.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3561 in module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6046 in module $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.
 Removed a total of 0 dead cases.
 
 11.43.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -1591,33 +1748,33 @@ Removed 0 redundant assignments.
 Promoted 1 assignment to connection.
 
 11.43.4.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3562'.
+Found init rule in `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6047'.
   Set init value: \Q = 1'0
 
 11.43.4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \muxlsr in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3561'.
+Found async reset \muxlsr in `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6046'.
 
 11.43.4.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~1 debug messages>
 
 11.43.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3562'.
-Creating decoders for process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3561'.
+Creating decoders for process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6047'.
+Creating decoders for process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6046'.
      1/1: $0\Q[0:0]
 
 11.43.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 11.43.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.\Q' using process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3561'.
-  created $adff cell `$procdff$3567' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.\Q' using process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6046'.
+  created $adff cell `$procdff$6052' with positive edge clock and positive level reset.
 
 11.43.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 11.43.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3562'.
-Found and cleaned up 1 empty switch in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3561'.
-Removing empty process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3561'.
+Removing empty process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6047'.
+Found and cleaned up 1 empty switch in `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6046'.
+Removing empty process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6046'.
 Cleaned up 1 empty switch.
 
 11.43.5. Executing PROC pass (convert processes to netlists).
@@ -1626,7 +1783,7 @@ Cleaned up 1 empty switch.
 Cleaned up 0 empty switches.
 
 11.43.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3584 in module $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.
+Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6061 in module $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.
 Removed a total of 0 dead cases.
 
 11.43.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -1634,33 +1791,33 @@ Removed 0 redundant assignments.
 Promoted 1 assignment to connection.
 
 11.43.5.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3585'.
+Found init rule in `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6062'.
   Set init value: \Q = 1'0
 
 11.43.5.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \muxlsr in `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3584'.
+Found async reset \muxlsr in `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6061'.
 
 11.43.5.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~1 debug messages>
 
 11.43.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3585'.
-Creating decoders for process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3584'.
+Creating decoders for process `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6062'.
+Creating decoders for process `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6061'.
      1/1: $0\Q[0:0]
 
 11.43.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 11.43.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.\Q' using process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3584'.
-  created $adff cell `$procdff$3590' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.\Q' using process `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6061'.
+  created $adff cell `$procdff$6067' with positive edge clock and positive level reset.
 
 11.43.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 11.43.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3585'.
-Found and cleaned up 1 empty switch in `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3584'.
-Removing empty process `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3584'.
+Removing empty process `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6062'.
+Found and cleaned up 1 empty switch in `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6061'.
+Removing empty process `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6061'.
 Cleaned up 1 empty switch.
 
 11.43.6. Executing PROC pass (convert processes to netlists).
@@ -1669,7 +1826,7 @@ Cleaned up 1 empty switch.
 Cleaned up 0 empty switches.
 
 11.43.6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3598 in module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
+Marked 1 switch rules as full_case in process $proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6075 in module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
 Removed a total of 0 dead cases.
 
 11.43.6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -1677,39 +1834,38 @@ Removed 0 redundant assignments.
 Promoted 1 assignment to connection.
 
 11.43.6.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3599'.
+Found init rule in `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6076'.
   Set init value: \Q = 1'1
 
 11.43.6.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \muxlsr in `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3598'.
+Found async reset \muxlsr in `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6075'.
 
 11.43.6.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~1 debug messages>
 
 11.43.6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3599'.
-Creating decoders for process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3598'.
+Creating decoders for process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6076'.
+Creating decoders for process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6075'.
      1/1: $0\Q[0:0]
 
 11.43.6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 11.43.6.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.\Q' using process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3598'.
-  created $adff cell `$procdff$3604' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.\Q' using process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6075'.
+  created $adff cell `$procdff$6081' with positive edge clock and positive level reset.
 
 11.43.6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 11.43.6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$3599'.
-Found and cleaned up 1 empty switch in `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3598'.
-Removing empty process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$3598'.
+Removing empty process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:0$6076'.
+Found and cleaned up 1 empty switch in `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6075'.
+Removing empty process `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.$proc$/opt/homebrew/bin/../share/yosys/ecp5/cells_sim.v:344$6075'.
 Cleaned up 1 empty switch.
 
 11.43.7. Executing SCC pass (detecting logic loops).
-Found an SCC: $auto$ff.cc:266:slice$1888 $auto$dfflegalize.cc:941:flip_pol$3403 $auto$ff.cc:485:convert_ce_over_srst$3401 $auto$simplemap.cc:349:simplemap_lut$1426 $auto$opt_expr.cc:617:replace_const_cells$3207 $auto$ff.cc:266:slice$1887 $auto$dfflegalize.cc:941:flip_pol$3399 $auto$ff.cc:485:convert_ce_over_srst$3397 $auto$simplemap.cc:349:simplemap_lut$1429 $auto$ff.cc:266:slice$1889 $auto$dfflegalize.cc:941:flip_pol$3407 $auto$ff.cc:485:convert_ce_over_srst$3405 $auto$simplemap.cc:134:simplemap_reduce$1636 $auto$simplemap.cc:134:simplemap_reduce$1632
-Found 1 SCCs in module led_panel_4k.
-Found 1 SCCs.
+Found 0 SCCs in module led_panel_4k.
+Found 0 SCCs.
 
 11.43.8. Executing ABC9_OPS pass (helper functions for ABC9).
 
@@ -1750,26 +1906,26 @@ No more expansions possible.
 11.43.10. Executing OPT pass (performing simple optimizations).
 
 11.43.10.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.
 Optimizing module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
 Optimizing module $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.
+Optimizing module $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.
 Optimizing module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
 
 11.43.10.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF'.
 Finding identical cells in module `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
 Finding identical cells in module `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF'.
+Finding identical cells in module `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF'.
 Finding identical cells in module `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF'.
 Removed a total of 0 cells.
 
 11.43.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF..
-  Creating internal representation of mux trees.
-  No muxes found in this module.
 Running muxtree optimizer on module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Running muxtree optimizer on module $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Running muxtree optimizer on module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF..
@@ -1778,32 +1934,32 @@ Running muxtree optimizer on module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2
 Removed 0 multiplexer ports.
 
 11.43.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.
   Optimizing cells in module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
   Optimizing cells in module $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.
+  Optimizing cells in module $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.
   Optimizing cells in module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
 Performed a total of 0 changes.
 
 11.43.10.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `$paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF'.
 Finding identical cells in module `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
 Finding identical cells in module `$paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF'.
+Finding identical cells in module `$paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF'.
 Finding identical cells in module `$paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF'.
 Removed a total of 0 cells.
 
 11.43.10.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 11.43.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF..
 Finding unused cells or wires in module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF..
 Finding unused cells or wires in module $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF..
+Finding unused cells or wires in module $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF..
 Finding unused cells or wires in module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF..
 
 11.43.10.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.
 Optimizing module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
-Optimizing module $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.
 Optimizing module $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
+Optimizing module $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.
 
 11.43.10.9. Finished OPT passes. (There is nothing left to do.)
 
@@ -1815,11 +1971,11 @@ Successfully finished Verilog frontend.
 
 11.43.11.2. Continuing TECHMAP pass.
 Using template $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF for cells of type $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.
+Using template $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF for cells of type $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.
 Using template $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF for cells of type $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
 Using template $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF for cells of type $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
-Using template $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF for cells of type $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.
 No more expansions possible.
-<suppressed ~86 debug messages>
+<suppressed ~98 debug messages>
 
 11.43.12. Executing Verilog-2005 frontend: /opt/homebrew/bin/../share/yosys/abc9_model.v
 Parsing Verilog input from `/opt/homebrew/bin/../share/yosys/abc9_model.v' to AST representation.
@@ -1869,12 +2025,12 @@ Successfully finished Verilog frontend.
 
 11.43.16.2. Continuing TECHMAP pass.
 Using template $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C for cells of type $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C.
-Using template $paramod\LUT4\INIT=16'1001011010101010 for cells of type LUT4.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
 Using extmapper simplemap for cells of type $not.
 Using extmapper simplemap for cells of type $xor.
-Using extmapper simplemap for cells of type $and.
-Using extmapper simplemap for cells of type $or.
 Using template $paramod\LUT2\INIT=4'1010 for cells of type LUT2.
+Using template $paramod\LUT4\INIT=16'1001011010101010 for cells of type LUT4.
 Using extmapper simplemap for cells of type $mux.
 No more expansions possible.
 <suppressed ~209 debug messages>
@@ -1952,27 +2108,25 @@ Module led_panel_4k: replaced 18 cells with 120 new cells, skipped 39 cells.
        4 $_AND_
 
 11.43.19. Executing AIGMAP pass (map logic to AIG).
-Module led_panel_4k: replaced 260 cells with 1472 new cells, skipped 430 cells.
-  replaced 4 cell types:
-     112 $_OR_
+Module led_panel_4k: replaced 664 cells with 3442 new cells, skipped 548 cells.
+  replaced 3 cell types:
+     402 $_OR_
        8 $_XOR_
-       3 $_ORNOT_
-     137 $_MUX_
-  not replaced 14 cell types:
+     254 $_MUX_
+  not replaced 13 cell types:
        1 $scopeinfo
-     120 $_NOT_
-      84 $_AND_
-      29 TRELLIS_FF
+     177 $_NOT_
+     145 $_AND_
+       5 TRELLIS_FF
+       8 $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp
        2 $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF_$abc9_byp
-      26 $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp
-      51 $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF_$abc9_byp
-      26 $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF
-      35 $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C
-       1 $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF
-       1 $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF_$abc9_byp
-      51 $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF
-       1 $__ABC9_SCC_BREAKER
+       8 $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF_$abc9_byp
+      36 $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C
+       8 $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF
+       8 $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF
+      74 $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF
        2 $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF
+      74 $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF_$abc9_byp
 
 11.43.19.1. Executing ABC9_OPS pass (helper functions for ABC9).
 
@@ -1980,7 +2134,7 @@ Module led_panel_4k: replaced 260 cells with 1472 new cells, skipped 430 cells.
 
 11.43.19.3. Executing XAIGER backend.
 <suppressed ~11 debug messages>
-Extracted 634 AND gates and 2084 wires from module `led_panel_4k' to a netlist network with 114 inputs and 223 outputs.
+Extracted 1333 AND gates and 4178 wires from module `led_panel_4k' to a netlist network with 101 inputs and 219 outputs.
 
 11.43.19.4. Executing ABC9_EXE pass (technology mapping using ABC9).
 
@@ -1992,49 +2146,49 @@ ABC: + read_lut <abc-temp-dir>/input.lut
 ABC: + read_box <abc-temp-dir>/input.box 
 ABC: + &read <abc-temp-dir>/input.xaig 
 ABC: + &ps 
-ABC: <abc-temp-dir>/input : i/o =    114/    223  and =     462  lev =   10 (1.02)  mem = 0.02 MB  box = 115  bb = 80
+ABC: <abc-temp-dir>/input : i/o =    101/    219  and =     951  lev =   14 (1.03)  mem = 0.03 MB  box = 128  bb = 92
 ABC: + &scorr 
 ABC: Warning: The network is combinational.
 ABC: + &sweep 
 ABC: + &dc2 
 ABC: + &dch -f 
 ABC: + &ps 
-ABC: <abc-temp-dir>/input : i/o =    114/    223  and =     382  lev =    9 (0.94)  mem = 0.02 MB  ch =   41  box = 110  bb = 80
-ABC: cst =       0  cls =     38  lit =      41  unused =     587  proof =     0
+ABC: <abc-temp-dir>/input : i/o =    101/    219  and =     741  lev =   12 (0.79)  mem = 0.02 MB  ch =   97  box = 123  bb = 92
+ABC: cst =       0  cls =     88  lit =      97  unused =     842  proof =     0
 ABC: + &if -W 300 -v 
 ABC: K = 7. Memory (bytes): Truth =    0. Cut =   64. Obj =  148. Set =  672. CutMin = no
-ABC: Node =     382.  Ch =    38.  Total mem =    0.21 MB. Peak cut mem =    0.02 MB.
-ABC: P:  Del = 2367.00.  Ar =     419.0.  Edge =      636.  Cut =     2923.  T =     0.00 sec
-ABC: P:  Del = 2367.00.  Ar =     418.0.  Edge =      644.  Cut =     2921.  T =     0.00 sec
-ABC: P:  Del = 2367.00.  Ar =     305.0.  Edge =      586.  Cut =     4147.  T =     0.00 sec
-ABC: F:  Del = 2367.00.  Ar =     231.0.  Edge =      564.  Cut =     3271.  T =     0.00 sec
-ABC: A:  Del = 2367.00.  Ar =     230.0.  Edge =      509.  Cut =     3007.  T =     0.00 sec
-ABC: A:  Del = 2367.00.  Ar =     230.0.  Edge =      509.  Cut =     2972.  T =     0.00 sec
-ABC: Total time =     0.00 sec
+ABC: Node =     741.  Ch =    88.  Total mem =    0.27 MB. Peak cut mem =    0.06 MB.
+ABC: P:  Del = 2732.00.  Ar =     871.0.  Edge =     1210.  Cut =    10558.  T =     0.00 sec
+ABC: P:  Del = 2655.00.  Ar =     877.0.  Edge =     1230.  Cut =    10117.  T =     0.00 sec
+ABC: P:  Del = 2655.00.  Ar =     625.0.  Edge =     1233.  Cut =    20350.  T =     0.00 sec
+ABC: F:  Del = 2655.00.  Ar =     422.0.  Edge =     1055.  Cut =    11051.  T =     0.00 sec
+ABC: A:  Del = 2655.00.  Ar =     402.0.  Edge =      944.  Cut =     9980.  T =     0.00 sec
+ABC: A:  Del = 2655.00.  Ar =     400.0.  Edge =      942.  Cut =     9823.  T =     0.00 sec
+ABC: Total time =     0.01 sec
 ABC: + &write -n <abc-temp-dir>/output.aig 
 ABC: + &mfs 
 ABC: + &ps -l 
-ABC: <abc-temp-dir>/input : i/o =    114/    223  and =     384  lev =   10 (0.95)  mem = 0.02 MB  box = 110  bb = 80
-ABC: Mapping (K=7)  :  lut =    142  edge =     490  lev =    4 (0.62)  Boxes are not in a topological order. Switching to level computation without boxes.
-ABC: levB =   10  mem = 0.01 MB
-ABC: LUT = 142 : 2=38 26.8 %  3=49 34.5 %  4=28 19.7 %  5=12 8.5 %  6=10 7.0 %  7=5 3.5 %  Ave = 3.45
+ABC: <abc-temp-dir>/input : i/o =    101/    219  and =     783  lev =   13 (0.92)  mem = 0.02 MB  box = 123  bb = 92
+ABC: Mapping (K=7)  :  lut =    238  edge =     889  lev =    5 (0.45)  Boxes are not in a topological order. Switching to level computation without boxes.
+ABC: levB =   13  mem = 0.01 MB
+ABC: LUT = 238 : 2=51 21.4 %  3=50 21.0 %  4=79 33.2 %  5=31 13.0 %  6=23 9.7 %  7=4 1.7 %  Ave = 3.74
 ABC: + &write -n <abc-temp-dir>/output.aig 
 ABC: + time 
-ABC: elapse: 0.02 seconds, total: 0.02 seconds
+ABC: elapse: 0.09 seconds, total: 0.09 seconds
 
 11.43.19.6. Executing AIGER frontend.
-<suppressed ~691 debug messages>
-Removed 481 unused cells and 1400 unused wires.
+<suppressed ~657 debug messages>
+Removed 927 unused cells and 1871 unused wires.
 
 11.43.19.7. Executing ABC9_OPS pass (helper functions for ABC9).
-ABC RESULTS:              $lut cells:      145
+ABC RESULTS:              $lut cells:      241
+ABC RESULTS:   $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp cells:        8
 ABC RESULTS:   $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF_$abc9_byp cells:        2
-ABC RESULTS:   $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp cells:       26
-ABC RESULTS:   $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF_$abc9_byp cells:       51
-ABC RESULTS:   $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C cells:       30
-ABC RESULTS:   $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF_$abc9_byp cells:        1
-ABC RESULTS:           input signals:       90
-ABC RESULTS:          output signals:      138
+ABC RESULTS:   $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF_$abc9_byp cells:        8
+ABC RESULTS:   $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C cells:       31
+ABC RESULTS:   $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF_$abc9_byp cells:       74
+ABC RESULTS:           input signals:       98
+ABC RESULTS:          output signals:      135
 Removing temp directory.
 
 11.43.20. Executing TECHMAP pass (map to technology primitives).
@@ -2049,16 +2203,15 @@ Successfully finished Verilog frontend.
 Using template $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF for cells of type $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF.
 Using template $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF_$abc9_byp for cells of type $paramod$37e41664cab9052a9b41c89036e0524f666a0fee\TRELLIS_FF_$abc9_byp.
 Using template $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C for cells of type $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C.
-Using template $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF for cells of type $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
 Using template $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF for cells of type $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+Using template $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF for cells of type $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF.
+Using template $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF_$abc9_byp for cells of type $paramod$fc0db0418c65f8f3e9cd6d60036af078dabe316c\TRELLIS_FF_$abc9_byp.
 Using template $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp for cells of type $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp.
+Using template $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF for cells of type $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF.
 Using template $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF_$abc9_byp for cells of type $paramod$b50ed6cf3f2b5c0e07657602cb4455d90f2562f9\TRELLIS_FF_$abc9_byp.
-Using template $paramod\$__ABC9_SCC_BREAKER\WIDTH=32'00000000000000000000000000000001 for cells of type $__ABC9_SCC_BREAKER.
-Using template $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF for cells of type $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF.
-Using template $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF_$abc9_byp for cells of type $paramod$af6cfab7b64a03625b4e26db341709ec2a848ad1\TRELLIS_FF_$abc9_byp.
 No more expansions possible.
-<suppressed ~216 debug messages>
-Removed 36 unused cells and 3980 unused wires.
+<suppressed ~229 debug messages>
+Removed 31 unused cells and 6361 unused wires.
 
 11.44. Executing TECHMAP pass (map to technology primitives).
 
@@ -2138,159 +2291,266 @@ Successfully finished Verilog frontend.
 
 11.44.2. Continuing TECHMAP pass.
 Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
-Using template $paramod$6be53ab59e0a69757fc32adb071ddcb64e8c87b6\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
-Using template $paramod$31d0fe9872e147e32329f1888afc564130486200\$lut for cells of type $lut.
-Using template $paramod$364c9ffbffac467d60dfec81bba4e18476c15602\$lut for cells of type $lut.
-Using template $paramod$0fcb06ed76df01e8d45bc2b9e6c8a9b43fa42cb4\$lut for cells of type $lut.
-Using template $paramod$5e9374f44a27c3f8a1c38af244ec43ceb4fb8d4f\$lut for cells of type $lut.
-Using template $paramod$7e9df0afb32b76fe5fce0691b8752aca650057fa\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
-Using template $paramod$cda338a8cf555c38c80080d89bb0bff454a6e16f\$lut for cells of type $lut.
-Using template $paramod$a5dd9ee10fc2202a29791f7d68d4afcce241aee5\$lut for cells of type $lut.
-Using template $paramod$728e616c918eb05878d70b2bb240e381ea2847b9\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010101 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000010 for cells of type $lut.
+Using template $paramod$c4cd21e71c150e6aee29ec3ca657c3e96e6467ef\$lut for cells of type $lut.
 Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
-Using template $paramod$251994398653c4cf8de320f1e306e535d5d2d624\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
-Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
-Using template $paramod$a5516fc31d1e552de2435200bb732b4d4ad63a9c\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0010 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
-Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
-Using template $paramod$ccac38627f6cf3d00b6cddd85ae3ae4ff39ddba7\$lut for cells of type $lut.
-Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
-Using template $paramod$ab8bb87959c5d7cfa27886cee1355b38e054a61a\$lut for cells of type $lut.
-Using template $paramod$723eb79ef8d5d376f3f196f4acfa8e347145a0fa\$lut for cells of type $lut.
-Using template $paramod$eba7de026ff587370e320127e266317dae097a89\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
-Using template $paramod$c4a3b10a433eedb517f008b7869cdc7d305e7d36\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010011 for cells of type $lut.
-Using template $paramod$b9d8b7e91a2c68da033af948ea0bd8bdebbaf6b2\$lut for cells of type $lut.
-Using template $paramod$0ee51557e0dc2ece3e3af1af349ded147c0c3078\$lut for cells of type $lut.
+Using template $paramod$ad741188a8c0fa07c111295c0d82aaf317b1cef3\$lut for cells of type $lut.
 Using template $paramod$47a8214374025465e226fa66bee690ff33268a25\$lut for cells of type $lut.
-Using template $paramod$e134ec2a47a2462a591072e65d34fb15b81c90e0\$lut for cells of type $lut.
-Using template $paramod$92e355976b917ecb25b3c4eac8698580eefb8d29\$lut for cells of type $lut.
-Using template $paramod$b99736e793e8777eccc1f4163fac046996a81c66\$lut for cells of type $lut.
-Using template $paramod$493e8d935fbe3dedc145096ef0db82cc40842603\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11111101 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
-Using template $paramod$486e9253c65fbb8e04c0c19bc627fa9f3113c6b6\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101100 for cells of type $lut.
-Using template $paramod$7e15ca11d4cdcbf9821cd432931c974c1d165f93\$lut for cells of type $lut.
-Using template $paramod$6cfdab6012516832f9c34967e7d501b8db5adae7\$lut for cells of type $lut.
-Using template $paramod$2f3958ac4584c17a882458edcb70431ce1a16fa7\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101010 for cells of type $lut.
-Using template $paramod$51af922f60873b84a860fa6c050a02bb67e68c4a\$lut for cells of type $lut.
-Using template $paramod$a15fd389a2f54cb7b94707b25934d226e68d9e2e\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11111110 for cells of type $lut.
-Using template $paramod$d35161d1d7976dcc02e7c7d51172431be85143b4\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101010 for cells of type $lut.
-Using template $paramod$2a9137b0bd391448ef4b5d31ebac76c273018562\$lut for cells of type $lut.
+Using template $paramod$f9813472aa48e533b3838c6f2316dc2e78c66111\$lut for cells of type $lut.
+Using template $paramod$c28a8b7ce0535d090c4cfb52e9c74affd52b110c\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod$cf652acbfbf67d2248e3045cd0f09c58ca55886c\$lut for cells of type $lut.
+Using template $paramod$eba7de026ff587370e320127e266317dae097a89\$lut for cells of type $lut.
+Using template $paramod$251994398653c4cf8de320f1e306e535d5d2d624\$lut for cells of type $lut.
+Using template $paramod$16ade38fbbb10611bb374f4344d479069ea067e7\$lut for cells of type $lut.
+Using template $paramod$a5dd9ee10fc2202a29791f7d68d4afcce241aee5\$lut for cells of type $lut.
+Using template $paramod$364c9ffbffac467d60dfec81bba4e18476c15602\$lut for cells of type $lut.
+Using template $paramod$d35591db0e34e8fc03859ae37ad18d50a378dbf6\$lut for cells of type $lut.
+Using template $paramod$6be53ab59e0a69757fc32adb071ddcb64e8c87b6\$lut for cells of type $lut.
+Using template $paramod$e51a8a571bee774247b38f52d6e85fd62ae52cea\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod$728e616c918eb05878d70b2bb240e381ea2847b9\$lut for cells of type $lut.
+Using template $paramod$2285e2d79a9914229009922ef2f39106c5142dd3\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$101238f3d8d49ab12a9b49a2f01cd503b26e9c61\$lut for cells of type $lut.
+Using template $paramod$30305e55a780880b9c824fe3509a4d981acb0f2b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101000 for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod$16894c241be5ea1f024e9339dea788b4dbe184ae\$lut for cells of type $lut.
 Using template $paramod$359fe4e746656bf9c72aecaff84fc7bdea9f55a5\$lut for cells of type $lut.
+Using template $paramod$097592bb16245531f0716c5ddb18d7090f9c7d9d\$lut for cells of type $lut.
+Using template $paramod$a67d86c4587901d11829654f4d36e31f5a8b21f5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00101010 for cells of type $lut.
+Using template $paramod$39b152c23ff13b5f73c75d9562771e9c0580756b\$lut for cells of type $lut.
+Using template $paramod$97472f517efe00e2e4bbd270b2ef0f8e6d9a1199\$lut for cells of type $lut.
+Using template $paramod$a743caf801766df40bcc22d49baa12a0bdc2f7fe\$lut for cells of type $lut.
+Using template $paramod$7e9df0afb32b76fe5fce0691b8752aca650057fa\$lut for cells of type $lut.
+Using template $paramod$88a106be73851c7a5d1740739afdb4dbd65330dc\$lut for cells of type $lut.
+Using template $paramod$72f34d582228db1758443cfca49cd423e4dc9271\$lut for cells of type $lut.
+Using template $paramod$5e9374f44a27c3f8a1c38af244ec43ceb4fb8d4f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$60c930a1f58df5dbb56c34cd3f82ae9a179a2b2a\$lut for cells of type $lut.
+Using template $paramod$109987d365962408493bd7b1942d41daf77ce03a\$lut for cells of type $lut.
+Using template $paramod$990f0fb2b3d003f8b16e47a6e2203c03f05c2581\$lut for cells of type $lut.
+Using template $paramod$b1680225cc6a5792caa95f54b8b3218fae21705d\$lut for cells of type $lut.
+Using template $paramod$0d5e420ccfc2dddc13533c0817d1e17e68a2c136\$lut for cells of type $lut.
+Using template $paramod$2f35f125a78690286f0cd2faecbaee9c64828b65\$lut for cells of type $lut.
+Using template $paramod$6955e868d5a6d878ca92371d071055c83c94e264\$lut for cells of type $lut.
+Using template $paramod$4976b5f7a7b9f6e596e742c7d9dd919d8c62448f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000111 for cells of type $lut.
+Using template $paramod$a5516fc31d1e552de2435200bb732b4d4ad63a9c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010101 for cells of type $lut.
+Using template $paramod$d7856980c8e3df62f97c26ab34037f33a9e831b5\$lut for cells of type $lut.
+Using template $paramod$47d4b8e5ffcbb8ee8e8cb88e9854fd6268b661c2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001100 for cells of type $lut.
+Using template $paramod$c441dbd41fa7b52ce609b1fb3e8a706905598601\$lut for cells of type $lut.
+Using template $paramod$afa9400186bbe7dc72d432eddcf2ab88f956bfb2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001100 for cells of type $lut.
+Using template $paramod$d6a246575d0ba3dcbbccd768ad41b602f82ff057\$lut for cells of type $lut.
+Using template $paramod$1632c1c0242796acfc963a05742c4acd2f475c4e\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010011 for cells of type $lut.
+Using template $paramod$83c1b6108170249166239e09804c5f4542556524\$lut for cells of type $lut.
+Using template $paramod$66caeb00a39d236782a97659e3bd99621b74681b\$lut for cells of type $lut.
+Using template $paramod$27dd7ea71d2126c74d85758e5a06b7f432d9242f\$lut for cells of type $lut.
+Using template $paramod$c8672a04205edb89dbafd0e20f13a70811947e6c\$lut for cells of type $lut.
+Using template $paramod$f85f1073c412d406200a6a72283f918c8b751314\$lut for cells of type $lut.
+Using template $paramod$7e5b59d9e4c49b05c353ba4669bf91c851786e5a\$lut for cells of type $lut.
+Using template $paramod$11ec7271d8e6e5aeaace08c13e4c601f10e31038\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$d28189bf08361a7c7f274614f25dbb57436b6b97\$lut for cells of type $lut.
+Using template $paramod$7f1ac77c5d84ef62fa0ac317f9798af74d02a33d\$lut for cells of type $lut.
+Using template $paramod$86c12f645dfb4533ac9d6707bbd8625e6511e4f2\$lut for cells of type $lut.
+Using template $paramod$98c377328f303d3ed9039ca0db26b18f36e929b2\$lut for cells of type $lut.
+Using template $paramod$06e62c2045624c211a1abe4f2f36c8f22c688165\$lut for cells of type $lut.
+Using template $paramod$3a91c2aaaca7e8cb33c2d5c8226b4e1cdd80ec8d\$lut for cells of type $lut.
+Using template $paramod$d6ca727e39f31d51d29072e0f33aa09c65e37336\$lut for cells of type $lut.
+Using template $paramod$d1adabdee6bb661811c1daf4205e514ec5a1ae62\$lut for cells of type $lut.
+Using template $paramod$7bb6a37e65823eeb4b38c370fec30ab082759a14\$lut for cells of type $lut.
+Using template $paramod$04b5b18fe326279d27970f18774660308c2a0957\$lut for cells of type $lut.
+Using template $paramod$68992113512b543ae4667d4058fd6fbccad99a3a\$lut for cells of type $lut.
+Using template $paramod$c325df35120e6b272cedc8185df58462fcc5f7e1\$lut for cells of type $lut.
+Using template $paramod$709de57d2785ba42cbf79b5b78414e5a87816ad9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101111 for cells of type $lut.
+Using template $paramod$1578333f1a5078051b84dbcbad362e8087bf5284\$lut for cells of type $lut.
+Using template $paramod$723eb79ef8d5d376f3f196f4acfa8e347145a0fa\$lut for cells of type $lut.
+Using template $paramod$5348912da867a611a8088b6b8b27a62d65f1de6e\$lut for cells of type $lut.
+Using template $paramod$80d119b846de9eb67cf123b4d4c105633f15e6f8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod$82b4a585d1edcb5c6e755dc9bd3392228a1c1304\$lut for cells of type $lut.
+Using template $paramod$552f239bcb761a69d9eb6562aa5d0c7777596540\$lut for cells of type $lut.
+Using template $paramod$89de210e11c16138f89688ab911d555676147dc8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000110 for cells of type $lut.
+Using template $paramod$873c285bdccf0ac2b60d2304ea5cd14bf211d2a6\$lut for cells of type $lut.
+Using template $paramod$f8f63b209b7230e81958663ff24fef1613156af7\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
+Using template $paramod$332530260df33f1e6567b344a898a29636fd4f0f\$lut for cells of type $lut.
+Using template $paramod$b431bfd938e35871dd0b7668e1503c7e8b9d491c\$lut for cells of type $lut.
+Using template $paramod$3919ec162f58a1b5574ce9bb3688ab1593012ee6\$lut for cells of type $lut.
+Using template $paramod$8e44661def013b6bf9fe6f8b049ef2c838d749f9\$lut for cells of type $lut.
+Using template $paramod$32eced4fe94493f35f3e670fbf53f6a508aa6169\$lut for cells of type $lut.
+Using template $paramod$896ed47860542f5b317e8ecb6db17e90c36ffa18\$lut for cells of type $lut.
+Using template $paramod$956920eccadbb73a5f8ec962e076fa3240dca5f3\$lut for cells of type $lut.
+Using template $paramod$dc9ef9f316c76bc0c70955b665ca81de83b8058d\$lut for cells of type $lut.
+Using template $paramod$f61366d569cc96fe3afd70ce011c49070975caf0\$lut for cells of type $lut.
+Using template $paramod$5c7dd9734333b56114840ccac5adaab98446de21\$lut for cells of type $lut.
+Using template $paramod$b9d8b7e91a2c68da033af948ea0bd8bdebbaf6b2\$lut for cells of type $lut.
+Using template $paramod$3d7168c8134c4765b84a7b86d5ef7e1e65bbf4a0\$lut for cells of type $lut.
+Using template $paramod$0ee51557e0dc2ece3e3af1af349ded147c0c3078\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
 Using template $paramod$619b7c9a4d44585e10b42f7fb79b16304cca97c5\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001110 for cells of type $lut.
-Using template $paramod$297e1cab0e400ca6545d117ee3614a909ecbfa60\$lut for cells of type $lut.
+Using template $paramod$d25c5ed7cce01a2a4804202e877356eeec4db6a1\$lut for cells of type $lut.
+Using template $paramod$ee82f1504b2c48e70160208feb4e1f2a1b612b8d\$lut for cells of type $lut.
+Using template $paramod$de4bc97149bcf262e2c17952b5272c303f6faa3d\$lut for cells of type $lut.
+Using template $paramod$fbeae4d13c6561566bb87c819d405873ec370e64\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101010 for cells of type $lut.
+Using template $paramod$ce56cc6bca0132a7bfe03e4a294d17239cd8d1fa\$lut for cells of type $lut.
+Using template $paramod$7d718ff59adc012add9b409fcd954bc5df2caca2\$lut for cells of type $lut.
+Using template $paramod$f4e81e96930b124fd8547b9929d51ce9d99a200f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1101 for cells of type $lut.
+Using template $paramod$e4d96f9bc2b931aa6c2488d28db99e95b7d85bcd\$lut for cells of type $lut.
+Using template $paramod$598c5881b69a883f608db690b749d94c566b3e52\$lut for cells of type $lut.
+Using template $paramod$a15fd389a2f54cb7b94707b25934d226e68d9e2e\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
+Using template $paramod$6d7cc275871d0ceead401cadfae2ff1124665ec4\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001111 for cells of type $lut.
+Using template $paramod$fe9a0158d0352193457c4f5b6282ac86d35fb3ee\$lut for cells of type $lut.
 No more expansions possible.
-<suppressed ~1076 debug messages>
+<suppressed ~2109 debug messages>
 
 11.45. Executing OPT_LUT_INS pass (discard unused LUT inputs).
 Optimizing LUTs in led_panel_4k.
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7107.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7110.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[21].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[21].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[21].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[21].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[21].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[20].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[20].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[20].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[20].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[20].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[20].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[19].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[19].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[19].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[19].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[19].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[19].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[18].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[18].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[18].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[18].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[18].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[18].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[17].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[17].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[15].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[13].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[12].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[12].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[11].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[10].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[5].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[0].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[23].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[23].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[23].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[23].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 2)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[23].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 2)
-  Optimizing lut $abc$7105$lut$aiger7104$320.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
-  Optimizing lut $abc$7105$lut$aiger7104$320.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[0].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[23].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$7105$lut$aiger7104$320.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$7105$lut$aiger7104$332.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$aiger7104$419.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$aiger7104$426.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$aiger7104$630.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$auto$fsm_map.cc:118:implement_pattern_cache$943.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$auto$fsm_map.cc:118:implement_pattern_cache$976.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[10].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[11].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$0\uart_bit_index[3:0][3].genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[5].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[0].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[10].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[11].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[12].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[13].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[13].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[15].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[15].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[17].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[18].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[19].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[20].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[21].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[21].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[23].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$7105$lut$flatten\u_diag.$procmux$506.Y[5].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7107.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7110.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7124.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7129.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7132.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7133.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$7110.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
-Removed 0 unused cells and 350 unused wires.
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13557.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13537.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13531.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$904.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$904.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$888.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
+  Optimizing lut $abc$13523$lut$aiger13522$883.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$873.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$873.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$873.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$852.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$839.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$839.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$654.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$647.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$647.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$642.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$642.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$637.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$633.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$995.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$995.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$995.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$995.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$995.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$772.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$767.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$740.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$740.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$flatten\u_diag.$procmux$524.Y[8].genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$13523$lut$aiger13522$719.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$704.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$704.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$704.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$704.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$704.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$709.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$709.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$551.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$551.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$603.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$603.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$603.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$603.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 1)
+  Optimizing lut $abc$13523$lut$aiger13522$603.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$556.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$592.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$592.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$592.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$597.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$597.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$597.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$431.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$431.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$453.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$333.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$1010.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$709.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$333.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$389.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$13523$lut$aiger13522$467.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$509.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$533.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$526.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$603.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$551.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$556.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$564.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$556.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$576.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$583.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$587.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$603.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$607.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$13523$lut$aiger13522$611.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$13523$lut$aiger13522$995.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$642.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$647.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$654.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$704.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$704.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$719.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$740.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$744.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$13523$lut$aiger13522$748.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$13523$lut$aiger13522$772.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$772.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$782.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$13523$lut$aiger13522$786.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$823.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$839.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$13523$lut$aiger13522$852.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$856.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$852.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$883.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$888.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$13523$lut$aiger13522$995.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$13523$lut$aiger13522$664.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$flatten\u_diag.$procmux$524.Y[7].genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$13523$lut$flatten\u_diag.$0\uart_bit_index[3:0][3].genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$654.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
+  Optimizing lut $abc$13523$lut$flatten\u_diag.$procmux$497.Y[4].genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$13523$lut$aiger13522$719.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13528.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13531.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13531.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13533.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13537.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13557.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13541.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13537.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13546.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1549:reintegrate$13557.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+Removed 0 unused cells and 624 unused wires.
 
 11.46. Executing AUTONAME pass.
-Renamed 7769 objects in module led_panel_4k (63 iterations).
-<suppressed ~775 debug messages>
+Renamed 12283 objects in module led_panel_4k (114 iterations).
+<suppressed ~1092 debug messages>
 
 11.47. Executing HIERARCHY pass (managing design hierarchy).
 Attribute `top' found on module `led_panel_4k'. Setting top module to led_panel_4k.
@@ -2306,22 +2566,22 @@ Removed 0 unused modules.
 
 === led_panel_4k ===
 
-   Number of wires:                369
-   Number of wire bits:            778
-   Number of public wires:         369
-   Number of public wire bits:     778
+   Number of wires:                494
+   Number of wire bits:           1234
+   Number of public wires:         494
+   Number of public wire bits:    1234
    Number of ports:                 15
    Number of port bits:             23
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                440
+   Number of cells:                628
      $scopeinfo                      1
-     CCU2C                          30
-     L6MUX21                        25
-     LUT4                          223
-     PFUMX                          52
-     TRELLIS_FF                    109
+     CCU2C                          31
+     L6MUX21                        35
+     LUT4                          371
+     PFUMX                          93
+     TRELLIS_FF                     97
 
 11.49. Executing CHECK pass (checking for obvious problems).
 Checking module led_panel_4k...
@@ -2329,6 +2589,6 @@ Found and reported 0 problems.
 
 12. Executing JSON backend.
 
-End of script. Logfile hash: fd375edd7e, CPU: user 0.43s system 0.01s, MEM: 53.08 MB peak
+End of script. Logfile hash: 49e0d96b82, CPU: user 0.53s system 0.02s, MEM: 75.42 MB peak
 Yosys 0.56 (git sha1 9c447ad9d4b1ea589369364eea38b4d70da2c599, clang++ 17.0.0 -fPIC -O3)
-Time spent: 30% 29x read_verilog (0 sec), 15% 11x techmap (0 sec), ...
+Time spent: 22% 29x read_verilog (0 sec), 18% 11x techmap (0 sec), ...
