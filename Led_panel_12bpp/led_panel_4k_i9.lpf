@@ -13,7 +13,7 @@ LOCATE COMP    "RXD" SITE "H18";
 IOBUF PORT     "RXD" IO_TYPE=LVCMOS33;
 
 
-# --- Asignaciones HUB75 (Mi intento) ---
+# --- Asignaciones HUB75 ---
 
 # Señales de control
 LOCATE COMP     "LP_CLK" SITE "C17";
@@ -25,7 +25,7 @@ IOBUF PORT      "LATCH" IO_TYPE=LVCMOS33;
 LOCATE COMP     "NOE" SITE "C1";
 IOBUF PORT      "NOE" IO_TYPE=LVCMOS33;
 
-# Señales de dirección de fila (ejemplo con 4 bits: A,B,C,D)
+# Señales de dirección de fila (A,B,C,D, E)
 LOCATE COMP     "ROW[0]" SITE "E2";
 LOCATE COMP     "ROW[1]" SITE "D2";
 LOCATE COMP     "ROW[2]" SITE "C2";
@@ -52,3 +52,22 @@ LOCATE COMP     "RGB1[2]" SITE "D3";
 IOBUF PORT      "RGB1[0]" IO_TYPE=LVCMOS33;
 IOBUF PORT      "RGB1[1]" IO_TYPE=LVCMOS33;
 IOBUF PORT      "RGB1[2]" IO_TYPE=LVCMOS33;
+
+
+# --- SPI Flash Externa (W25Q128) ---
+
+# Chip Select (Active Low)
+LOCATE COMP "spi_cs"    SITE "B18";  # Pin 121
+IOBUF  PORT "spi_cs"    IO_TYPE=LVCMOS33 PULLMODE=UP DRIVE=8;
+
+# Clock
+LOCATE COMP "spi_clk"   SITE "A19";  # Pin 123
+IOBUF  PORT "spi_clk"   IO_TYPE=LVCMOS33 PULLMODE=NONE DRIVE=8;
+
+# MOSI (Master Out Slave In) - Envía datos a la memoria
+LOCATE COMP "spi_mosi"  SITE "B20";  # Pin 117
+IOBUF  PORT "spi_mosi"  IO_TYPE=LVCMOS33 PULLMODE=NONE DRIVE=8;
+
+# MISO (Master In Slave Out) - Recibe datos de la memoria
+LOCATE COMP "spi_miso"  SITE "B19";  # Pin 119
+IOBUF  PORT "spi_miso"  IO_TYPE=LVCMOS33 PULLMODE=NONE;

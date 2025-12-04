@@ -10,6 +10,8 @@ COMM_OBJS += memory.v
 COMM_OBJS += comp.v
 COMM_OBJS += lsr_led.v
 COMM_OBJS += mux_led.v
+COMM_OBJS += SPI_flash_diag.v
+COMM_OBJS += uart_tx.v
 
 
 SIM_OBJS =  ../../verilog_model/sky130_fd_sc_hd.v

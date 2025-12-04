@@ -1,169 +1,67 @@
-module led_panel_4k(
-    input         clk,
-    input         rst,
-    input         init,
-    output        LP_CLK,
-    output        LATCH,
-    output        NOE,
-    output  [4:0] ROW,
-    output  [2:0] RGB0,
-    output  [2:0] RGB1
+module led_panel_4k (
+    input wire clk,           // 25MHz (Pin P3)
+    input wire resetn,        // Botón Reset (Active Low - Pin K18)
+    input wire RXD,           // UART RX (Pin H18) - No usado pero definido en LPF
+
+    // Interfaz SPI Flash Externa
+    output wire spi_cs,       // B18
+    output wire spi_clk,      // A19
+    output wire spi_mosi,     // B20
+    input  wire spi_miso,     // B19
+
+    // UART y Estado
+    output wire TXD,          // UART TX (Pin J17)
+    output wire [0:0] LEDS,   // LED de estado (Pin U16)
+
+    // Señales HUB75 (Definidas en LPF, las ponemos a 0 por seguridad)
+    output wire LP_CLK,
+    output wire LATCH,
+    output wire NOE,
+    output wire [4:0] ROW,
+    output wire [2:0] RGB0,
+    output wire [2:0] RGB1
 );
 
-    wire w_ZR;
-    wire w_ZC;
-    wire w_ZD;
-    wire w_ZI;
-    wire w_LD;
-    wire w_SHD;
-    wire w_RST_R;
-    wire w_RST_C;
-    wire w_RST_D;
-    wire w_RST_I;
-    wire w_INC_R;
-    wire w_INC_C;
-    wire w_INC_D;
-    wire w_INC_I;
-    wire [10:0] count_delay;
-    wire [10:0] delay;
-    wire [1:0] index;
+    // --- Gestión de Reset ---
+    // Combinamos el reset interno (arranque suave) con el botón externo
+    reg [3:0] startup_cnt = 0;
+    reg sys_rst_n = 0;
 
-    reg clk1;
-
-    // ======== Caracteristicas de la matriz ========
-    parameter NUM_COLS = 64;
-    parameter NUM_ROWS = 64;
-    parameter NUM_PIXELS = NUM_COLS * NUM_ROWS;
-    parameter HALF_SCREEN = NUM_PIXELS / 2;
-    parameter BIT_DEPTH = 4;
-    parameter TOTAL_BIT_DEPTH = 3 * BIT_DEPTH;
-    parameter DELAY = 50;
-
-    wire [($clog2(NUM_COLS)-1):0] COL;
-
-    // ----------------------------------------------
-    //  LÓGICA DE ANIMACIÓN
-    // ----------------------------------------------
-    parameter TOTAL_FRAMES = 15;      // AJUSTAR ESTO A LA CAPACIDAD DE LA ANIMACION
-    parameter ANIM_SPEED   = 3000000; // Velocidad (Mayor numero = ma's lento). 3M ~= 20fps a 27MHz
-
-    reg [7:0]  current_frame;
-    reg [31:0] anim_timer;
-
-    // Bloque para cambiar de frame automaticamente
     always @(posedge clk) begin
-        if (rst) begin
-            anim_timer    <= 0;
-            current_frame <= 0;
+        if (startup_cnt < 15) begin
+            startup_cnt <= startup_cnt + 1;
+            sys_rst_n <= 0;
         end else begin
-            if (anim_timer >= ANIM_SPEED) begin
-                anim_timer <= 0;
-                if (current_frame >= TOTAL_FRAMES - 1)
-                    current_frame <= 0;
-                else
-                    current_frame <= current_frame + 1;
-            end else begin
-                anim_timer <= anim_timer + 1;
-            end
-        end
-    end
-    // ----------------------------------------------
-
-    wire [11:0] PIX_ADDR;
-    wire [23:0] mem_data;
-
-    wire [2:0] tmp_rgb;
-    wire tmp_noe;
-    wire tmp_latch;
-
-    assign LATCH = ~tmp_latch;
-    assign NOE   = tmp_noe;
-
-    // Divisor de reloj (ajustar si es necesario para tu FPGA específica)
-    reg [4:0] clk_counter;
-    always @(posedge clk) begin
-        if (rst) begin
-            clk_counter <= 0;
-            clk1        <= 0;
-        end else begin
-            if(clk_counter == 1) begin // Ajustado a 1 para simetria,
-                                       //o dejar en 2 según el diseño de Camargod
-                clk1        <= ~clk1;
-                clk_counter <= 0;
-            end
-            else
-                clk_counter <= clk_counter + 1;
+            sys_rst_n <= 1;
         end
     end
 
-    // Direccionamiento de pixel: Concatena Fila y Columna
-    assign PIX_ADDR = {ROW, COL};
+    // Reset general: Activo si el botón se pulsa (0) O si está arrancando (0)
+    wire rst_global_n = sys_rst_n & resetn;
 
-    // Reloj de salida hacia el panel
-    assign LP_CLK = clk1 & PX_CLK_EN;
+    // --- Instancia del Diagnóstico SPI ---
+    // Usamos LEDS[0] para ver el parpadeo de estado
+    wire diag_led;
+    assign LEDS[0] = diag_led; // Invertimos porque a veces los LEDs en placa son Active Low (si no parpadea, quita el ~)
 
-    // --- Instancias de Contadores y Control ---
-
-    count #(.width(( $clog2(HALF_SCREEN) -1) )) count_row (
-        .clk(clk1), .reset(w_RST_R), .inc(w_INC_R), .outc(ROW), .zero(w_ZR)
+    spi_flash_diag u_diag (
+        .clk(clk),
+        .rst_n(rst_global_n),
+        .spi_cs(spi_cs),
+        .spi_clk(spi_clk),
+        .spi_mosi(spi_mosi),
+        .spi_miso(spi_miso),
+        .uart_tx_line(TXD),
+        .diag_active(diag_led)
     );
 
-    count #(.width(($clog2(NUM_COLS) -1) )) count_col (
-        .clk(clk1), .reset(w_RST_C), .inc(w_INC_C), .outc(COL), .zero(w_ZC)
-    );
-
-    count #(.width (10)) cnt_delay (
-        .clk(clk1), .reset(w_RST_D), .inc(w_INC_D), .outc(count_delay)
-    );
-
-    count #(.width (1)) count_index (
-        .clk(clk1), .reset(w_RST_I), .inc(w_INC_I), .outc(index), .zero(w_ZI)
-    );
-
-    lsr_led #(.init_value(DELAY), .width(10)) lsr_led0 (
-        .clk(clk1), .load(w_LD), .shift(w_SHD), .s_A(delay)
-    );
-
-    comp_4k #(.width(10)) compa (
-        .in1(delay), .in2(count_delay), .out(w_ZD)
-    );
-
-    // --- MEMORIA ACTUALIZADA PARA GIFS ---
-    memory #(
-        .N_FRAMES(TOTAL_FRAMES) // Pasamos la cantidad de frames
-    ) mem0 (
-        .clk(clk1),
-        .pixel_addr(PIX_ADDR[10:0]), // Usamos los 11 bits bajos (Row+Col)
-        .frame_num(current_frame),   // Seleccionamos el frame actual
-        .rdata(mem_data)
-    );
-    // -------------------------------------
-
-    mux_led mux0 (
-        .in0(mem_data), .out0({RGB0, RGB1}), .sel(index)
-    );
-
-    ctrl_lp4k ctrl0 (
-        .clk(clk1),
-        .rst(rst),
-        .init(1'b1),
-        .ZR(w_ZR),
-        .ZC(w_ZC),
-        .ZD(w_ZD),
-        .ZI(w_ZI),
-        .RST_R(w_RST_R),
-        .RST_C(w_RST_C),
-        .RST_D(w_RST_D),
-        .RST_I(w_RST_I),
-        .INC_R(w_INC_R),
-        .INC_C(w_INC_C),
-        .INC_D(w_INC_D),
-        .INC_I(w_INC_I),
-        .LD(w_LD),
-        .SHD(w_SHD),
-        .LATCH(tmp_latch),
-        .NOE(tmp_noe),
-        .PX_CLK_EN(PX_CLK_EN)
-    );
+    // --- Apagar pines de la Matriz (Safety) ---
+    // Evita que la matriz haga cosas raras mientras pruebas la memoria
+    assign LP_CLK = 0;
+    assign LATCH  = 0;
+    assign NOE    = 1; // NOE alto apaga los LEDs (Output Enable negado)
+    assign ROW    = 5'b0;
+    assign RGB0   = 3'b0;
+    assign RGB1   = 3'b0;
 
 endmodule
