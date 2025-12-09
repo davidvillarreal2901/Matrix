@@ -1,13 +1,13 @@
 module spi_loader (
     input wire clk,           // 25MHz
     input wire rst_n,
-
+    
     // Pines Físicos Flash
     output reg spi_cs,
     output reg spi_clk,
     output reg spi_mosi,
     input wire spi_miso,
-
+    
     // Interfaz hacia la RAM
     output reg [11:0] ram_addr,
     output reg [23:0] ram_data,
@@ -41,7 +41,7 @@ module spi_loader (
             timer <= 0;
         end else begin
             case(state)
-                // 1. INICIO
+                // 1. INICIO / NUEVO FRAME
                 S_INIT: begin
                     spi_cs <= 1;
                     ram_wren <= 0;
@@ -62,18 +62,17 @@ module spi_loader (
                         bit_cnt <= 31;
                         timer <= 1;
                     end else begin
-                        if(timer[0]) begin
+                        if(timer[0]) begin          // Timer Impar: Bajada -> Cambiar Datos (MOSI)
                             spi_clk <= 0;
                             spi_mosi <= shift_out[bit_cnt];
-                        end else begin
-                            spi_clk <= 1;
+                        end else begin              // Timer Par: Subida -> Latch en Flash
+                            spi_clk <= 1;           // IMPORTANTE: El reloj DEBE subir aquí
 
                             if(bit_cnt == 0) begin
                                 // Último bit enviado correctamente (con clk=1)
                                 state <= S_READ_PIXEL;
                                 bit_cnt <= 23;
                                 timer <= 0;
-
                             end else begin
                                 bit_cnt <= bit_cnt - 1;
                             end
@@ -85,35 +84,30 @@ module spi_loader (
 
                 // 3. LEER PIXEL (R, G, B) Y ESCRIBIR A RAM
                 S_READ_PIXEL: begin
-                    if(timer[0] == 0) begin
+                    if(timer[0] == 0) begin // Bajada (SPI_CLK -> 0)
                         spi_clk <= 0;
                         timer <= timer + 1;
-
                         ram_wren <= 0;
-
-                    end else begin
+                    end else begin // Subida (SPI_CLK -> 1) -> Leer MISO
                         spi_clk <= 1;
-
-                        // Muestreamos el dato en el flanco de subida (Correcto para la FPGA)
                         ram_data[bit_cnt] <= spi_miso;
 
                         if(bit_cnt == 0) begin
+                            // Pixel Completo
                             ram_wren <= 1;
-
-                            // Lógica de fin de pantalla
                             if(ram_addr == 4095) begin
                                 spi_cs <= 1;
                                 spi_clk <= 0;
                                 state <= S_WAIT;
                             end else begin
-                                bit_cnt <= 23; 
+                                bit_cnt <= 23;
                             end
                         end else begin
+
                             bit_cnt <= bit_cnt - 1;
                         end
                         timer <= timer + 1;
                     end
-
 
                     if(ram_wren) ram_addr <= ram_addr + 1;
                 end
@@ -122,20 +116,18 @@ module spi_loader (
                     ram_wren <= 0;
                     timer <= timer + 1;
 
-                    // Acá se definen los FPS
+                    // Acá ajustamos los FPS
                     if(timer > FRAME_DELAY) begin
                         timer <= 0;
 
                         // Avanzar al siguiente frame
                         flash_ptr <= flash_ptr + FRAME_SIZE;
 
-
                         if (flash_ptr >= 24'h400000) begin
                              flash_ptr <= START_ADDR;
                         end
-                        // -------------------------------------
 
-                        state <= S_INIT
+                        state <= S_INIT;
                     end
                 end
             endcase
