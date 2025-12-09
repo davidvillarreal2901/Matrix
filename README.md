@@ -1,46 +1,38 @@
-# Documentación Técnica: Controlador de Matriz LED 64x64 (FPGA + ESP32)
+# Documentación
 
-**Versión del Proyecto:** 1.0  
-**Fecha:** Diciembre 2025  
-**Plataforma:** Lattice ECP5 (Colorlight i9)  
-**Programador Externo:** ESP32
-
----
-
-## 1. Introducción y Alcance
-Este proyecto implementa un sistema embebido capaz de controlar paneles LED RGB P3/P4 con interfaz HUB75 de 64x64 píxeles. El sistema utiliza una FPGA para el refresco de alta velocidad y la lectura de memoria, y un microcontrolador ESP32 como puente de programación para actualizar el contenido de la memoria Flash SPI sin necesidad de hardware JTAG especializado.
-
-### Características Principales
-* **Refresco de Pantalla:** Controlado por FPGA (Verilog) para alta tasa de refresco.
-* **Almacenamiento:** Animaciones (GIFs convertidos a binario) en Flash SPI W25Q64.
-* **Actualización en Caliente:** Carga de nuevas imágenes vía USB -> ESP32 -> Flash SPI.
-* **Protocolo Seguro:** Handshake (apretón de manos) byte a byte para evitar desbordamientos de buffer durante la grabación.
-* **Borrado Inteligente:** Capacidad de borrar sectores específicos o rangos de memoria.
+**Versión del Proyecto:** 2.0 (Extendida)
+**Plataforma:** Lattice ECP5 (Colorlight i9)
+**Lenguaje HDL:** Verilog
+**Programador:** ESP32 (SPI Bridge)
 
 ---
 
-## 2. Requisitos del Sistema
+## 0. Requisitos del Sistema
 
-### 2.1 Hardware
+### 0.1 Hardware
 1.  **FPGA Board:** Colorlight i9 (Lattice LFE5U-45F).
 2.  **Display:** Matriz LED 64x64 RGB (Driver HUB75E, Scan 1/32).
 3.  **Memoria:** Winbond W25Q64 (8MB SPI Flash) soldada en la placa FPGA.
 4.  **Programador:** ESP32 Development Board (DOIT DevKit V1 o similar).
 5.  **Conectividad:** Cables Dupont (Hembra-Hembra/Macho) para conexión SPI.
 
-### 2.2 Software y Toolchain
+### 0.2 Software y Toolchain
 1.  **Síntesis HDL:** Yosys (Síntesis), Nextpnr-ecp5 (Place & Route), Project Trellis (Bitstream).
 2.  **Firmware ESP32:** Arduino IDE con soporte para ESP32.
 3.  **Scripts de Host (PC):** Python 3.8+ (Librería `pyserial`).
 
+
 ---
 
-## 3. Arquitectura del Sistema
+## 1. Introducción y Arquitectura General
 
-El sistema sigue una arquitectura **Productor-Consumidor** desacoplada mediante una memoria RAM de doble puerto.
+Este sistema implementa un controlador de video para paneles LED HUB75 de 64x64 píxeles. La arquitectura se basa en un diseño **Productor-Consumidor** desacoplado mediante una memoria de doble puerto.
 
-### 3.1 Diagrama de Bloques (Top Level)
+* **Productor (SPI Loader):** Lee datos crudos desde la memoria Flash SPI externa y llena el buffer de video.
+* **Consumidor (LED Driver):** Lee el buffer de video y genera las señales de refresco HUB75 con modulación BCM (Binary Code Modulation) para lograr profundidad de color de 12 bits.
 
+### 1.1 Diagrama de Bloques (Top Level)
+Estra es la estructura general del proyecto.
 ```mermaid
 graph LR
     PC[PC / Python Scripts] -- USB/Serial --> ESP32
@@ -56,128 +48,6 @@ graph LR
     Controller --> Matrix[Matriz LED 64x64]
     end
 ```
----
-
-## 4. Descripción de Módulos FPGA (Datapath y Lógica)
-
-### 4.1 Módulo `spi_loader.v` (SPI Master)
-Este módulo actúa como el maestro del bus SPI para leer la memoria Flash y llenar la RAM de video. Implementa la lógica de lectura secuencial para animaciones.
-
-* **Función:** Lee tramas de 12288 bytes (64x64 píxeles x 3 colores) cíclicamente desde la dirección base `0x300000`.
-* **Protocolo:** SPI Mode 0 (CPOL=0, CPHA=0), Comando `03h` (Standard Read).
-* **Control de Flujo:** Máquina de Estados Finita (FSM) de 4 estados.
-
-**Flujo de Estados (FSM):**
-1. **S_INIT:** Reinicio y espera inicial.
-2. **S_CMD:** Envía comando `03h` + Dirección de 24 bits.
-3. **S_READ_PIXEL:** Genera reloj SPI, lee MISO, ensambla 24 bits y escribe en RAM.
-4. **S_WAIT:** Espera el tiempo de `FRAME_DELAY` y calcula la siguiente dirección.
-
-* **Límite de Memoria:** El sistema verifica si el puntero de lectura supera `0x400000`. Si es así, reinicia la lectura a `START_ADDR` para hacer un bucle infinito.
-
-### 4.2 Módulo `ctrl_lp4k.v` (Video Controller)
-Genera la temporización HUB75 para el barrido de la pantalla.
-
-* **Entrada:** Datos RGB desde `ram_dual`.
-* **Salida:** Señales RGB (R1/G1/B1/R2/G2/B2), CLK, LAT, OE y Dirección de línea (A-E).
-* **Lógica:** Escaneo 1/32 (2 líneas activas simultáneamente: superior e inferior).
-
-### 4.3 Módulo `ram_dual.v` (Video Buffer)
-Memoria de doble puerto real (True Dual Port RAM). Actúa como buffer intermedio para desacoplar la velocidad de lectura de la Flash (SPI lento) de la velocidad de refresco del panel (HUB75 rápido).
-* **Puerto A:** Escritura (Controlado por `spi_loader`).
-* **Puerto B:** Lectura (Controlado por `ctrl_lp4k`).
-
----
-
-## 5. Subsistema de Programación (ESP32)
-
-El ESP32 actúa como un programador SPI dedicado. El firmware soporta comandos para gestionar la memoria Flash W25Q64 externamente.
-
-### 5.1 Protocolo de Comunicación (Serial)
-La comunicación PC <-> ESP32 se realiza a 115200 baudios con un protocolo de handshake para evitar pérdida de datos.
-
-| Comando | Descripción | Flujo de Datos | Respuesta ESP32 |
-| :--- | :--- | :--- | :--- |
-| **'S'** | Iniciar Escritura | PC -> 'S' | `SYNC_WRITE_OK` |
-| **'E'** | Iniciar Borrado | PC -> 'E' | `SYNC_ERASE_OK` |
-| **(Datos)**| Cabecera Tamaño | 4 Bytes (Little Endian) | `START:<size>` |
-| **(Loop)** | Envío de Datos | Bloques de 256 Bytes | `'K'` (Ack) por bloque |
-
-### 5.2 Diagrama de Conexiones Físicas
-Estas conexiones corresponden a la configuración definida en el firmware del ESP32 (`SPI_upload.ino`).
-
-**IMPORTANTE:** La FPGA debe estar en estado de *Reset* o con los pines en *Alta Impedancia* durante la programación.
-
-| Pin ESP32 | Pin Flash (W25Q64) | Función | Notas |
-| :--- | :--- | :--- | :--- |
-| **GND** | Pin 4 (GND) | Tierra | **Obligatorio** unir masas |
-| **GPIO 32** | Pin 1 (/CS) | Chip Select | Active Low |
-| **GPIO 33** | Pin 6 (CLK) | Clock | SPI Clock (4MHz) |
-| **GPIO 35** | Pin 2 (MISO) | Data Out | Entrada en ESP32 |
-| **GPIO 25** | Pin 5 (MOSI) | Data In | Salida en ESP32 |
-
----
-
-## 6. Guía de Uso de Scripts (Python)
-
-### 6.1 `flash_uploaderESP.py` (Escritura)
-Script principal para cargar animaciones `.bin`.
-* **Uso:** `python flash_uploaderESP.py <PUERTO> <ARCHIVO.BIN>`
-* **Características:**
-    * Sincronización automática (soporta `SYNC_OK` y `SYNC_WRITE_OK`).
-    * Barra de progreso en tiempo real.
-    * Verificación de Handshake ('K') byte a byte.
-
-### 6.2 `borrar_rango.py` (Mantenimiento)
-(Este script utiliza la lógica `smartEraseRoutine` del ESP32).
-* **Función:** Permite borrar sectores específicos de memoria. Útil para limpiar residuos de animaciones previas que eran más grandes que la actual.
-* **Lógica:** El ESP32 recibe dirección de inicio y tamaño, verifica alineación a 4KB (sector), y borra secuencialmente enviando una 'X' por cada sector borrado.
-
-### 6.3 Conversión de Imágenes
-Scripts auxiliares (como `gif_to_bin.py`) transforman archivos GIF estándar en el formato crudo (Raw RGB) que espera la FPGA.
-* **Formato de Salida:** Secuencia de bytes RGB (24 bits por pixel), sin cabeceras, ordenado por frames de 64x64 píxeles.
-
----
-
-## 7. Solución de Problemas Comunes (Troubleshooting)
-
-### A. La imagen se ve con colores incorrectos (Ej. Blanco se ve Rosa)
-* **Causa:** El mapeo de bits RGB en la FPGA no coincide con el hardware del panel físico (algunos paneles usan orden BGR).
-* **Solución:** Modificar la asignación de bits en `spi_loader.v` o `led_panel_4k.v`.
-
-### B. La animación parpadea o se corta
-* **Causa:** El límite de memoria en `spi_loader.v` (`0x400000`) no coincide con el tamaño real de la animación grabada.
-* **Solución:** Ajustar la constante de límite o asegurar que se borre la memoria sobrante para evitar leer "basura".
-
-### C. Error "Resource Busy" en Python
-* **Causa:** El puerto COM está ocupado por otra aplicación (usualmente el Monitor Serie de Arduino IDE).
-* **Solución:** Cerrar todas las terminales o programas que usen el puerto Serial y reintentar.
-
-### D. La escritura se congela en "Sincronizando..."
-* **Causa:** El ESP32 no responde o los cables RX/TX están invertidos.
-* **Solución:** Presionar el botón `EN` (Reset) en el ESP32 justo antes de ejecutar el script. Verificar conexión USB.
-
-
-
-POrueba::
-
-# Documentación Técnica: Controlador de Matriz LED 64x64 (FPGA + ESP32)
-
-**Versión del Proyecto:** 2.0 (Extendida)
-**Plataforma:** Lattice ECP5 (Colorlight i9)
-**Lenguaje HDL:** Verilog
-**Programador:** ESP32 (SPI Bridge)
-
----
-
-## 1. Introducción y Arquitectura General
-
-Este sistema implementa un controlador de video para paneles LED HUB75 de 64x64 píxeles. La arquitectura se basa en un diseño **Productor-Consumidor** desacoplado mediante una memoria de doble puerto.
-
-* **Productor (SPI Loader):** Lee datos crudos desde la memoria Flash SPI externa y llena el buffer de video.
-* **Consumidor (LED Driver):** Lee el buffer de video y genera las señales de refresco HUB75 con modulación BCM (Binary Code Modulation) para lograr profundidad de color de 12 bits.
-
-### 1.1 Diagrama de Bloques (Top Level)
 
 El módulo principal `led_panel_4k` orquesta la conexión entre los submódulos.
 
@@ -354,3 +224,79 @@ El ESP32 actúa como un programador externo. Pone la FPGA en Reset (o asume que 
 4.  **Confirmación:** ESP32 verifica escritura y responde 'K' por cada bloque.
 
 *Nota: Es crítico que la FPGA no intente acceder al bus SPI mientras el ESP32 está escribiendo. Mantener el pin de Reset de la FPGA activo durante la carga.*
+
+Las conexiones necesarias para esto son:
+
+**IMPORTANTE:** La FPGA debe estar en estado de *Reset* o con los pines en *Alta Impedancia* durante la programación.
+
+| Pin ESP32 | Pin Flash (W25Q64) | Función | Notas |
+| :--- | :--- | :--- | :--- |
+| **GND** | Pin 4 (GND) | Tierra | **Obligatorio** unir masas |
+| **GPIO 32** | Pin 1 (/CS) | Chip Select | Active Low |
+| **GPIO 33** | Pin 6 (CLK) | Clock | SPI Clock (4MHz) |
+| **GPIO 35** | Pin 2 (MISO) | Data Out | Entrada en ESP32 |
+| **GPIO 25** | Pin 5 (MOSI) | Data In | Salida en ESP32 |
+
+
+---
+
+## 5. Guía de Uso de Scripts (Python)
+
+### 5.1 `flash_uploaderESP.py` (Escritura)
+Script principal para cargar animaciones `.bin`.
+* **Uso:** `python flash_uploaderESP.py <PUERTO> <ARCHIVO.BIN>`
+* **Características:**
+    * Sincronización automática (soporta `SYNC_OK` y `SYNC_WRITE_OK`).
+    * Barra de progreso en tiempo real.
+    * Verificación de Handshake ('K') byte a byte.
+
+### 5.2 `borrar_rango.py` (Mantenimiento)
+(Este script utiliza la lógica `smartEraseRoutine` del ESP32).
+* **Función:** Permite borrar sectores específicos de memoria. Útil para limpiar residuos de animaciones previas que eran más grandes que la actual.
+* **Lógica:** El ESP32 recibe dirección de inicio y tamaño, verifica alineación a 4KB (sector), y borra secuencialmente enviando una 'X' por cada sector borrado.
+
+### 5.3 Conversión de Imágenes
+Scripts auxiliares (como `gif_to_bin.py`) transforman archivos GIF estándar en el formato crudo (Raw RGB) que espera la FPGA.
+* **Formato de Salida:** Secuencia de bytes RGB (24 bits por pixel), sin cabeceras, ordenado por frames de 64x64 píxeles.
+
+---
+
+## 6. Módulo: Interfaz de Memoria (SPI Flash Master)
+
+### 6.1 Especificaciones y Restricciones
+* **Dispositivo Objetivo:** Memoria Flash Winbond W25Q128
+
+* **Operación:** Lectura secuencial de los bytes correspondientes a los píxeles.
+
+### 6.2 Algoritmo de Lectura (Comportamental)
+Descripción del flujo para obtener los datos.
+1. Bajar Chip Select (CS).
+2. Enviar comando de lectura (0x03).
+3. Enviar dirección de memoria (24 bits).
+4. Recibir flujo de datos.
+
+![Diagrama de Flujo SPI](diagrama_flujo.png)
+
+#### Unidad de Control (FSM)
+Máquina de estados que gestiona la secuencia de señales: `CS_n`, `SCLK`, y validación de datos `Data_Ready`.
+
+![FSM SPI](FSM.png)
+
+### 6.4 Simulación del Módulo SPI
+![Simulación SPI](SIM_SPI.png)
+**Análisis de Resultados:**
+> En la simulación se observa  cómo al enviar el comando `0x03`, la línea spi_clk responde tras 2 ciclos de reloj mostrando el divisor del reloj para reducir la frecuencia para. En la simulacion se muestra como en MISO se devuelve la informacion tras recibir el comando tras los 32 bis correspondientes a comando y direccion.
+
+
+
+### 6.5 Comprobacion de funcionamiento
+
+Se hace la prueba de lectura de la SPI flash con un analizador logico para comprobar su correcto funcionamiento como se ve en la imagen:
+
+![Comprobacion SPI](spi_analiza_foto.jpeg)
+
+Se utiliza la herramienta Pulse View para poder visualizar las señales entre la FPGA y la memoria SPI flash:
+
+![Comprobacion  señales SPI](spi_señales.png)
+
+Se puede apreciar como en MOSI sale el comando de lectura con una dirección, la SPI flash responde con FF lo cual es correcto pues la dirección a la que se mando la señal no tiene dato alguno.
