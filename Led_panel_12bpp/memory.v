@@ -3,7 +3,6 @@ module memory#(
     // 64 cols * 32 rows = 2048 words per frame
     parameter WORDS_PER_FRAME = 2048,
     parameter N_FRAMES = 15, // De momento caben 15, pero hay que ajustar seg'un se pueda
-                             //TAMBI'EN REVISAR EN EL TOP
     // Tamaño total = Frames * Words per frame
     parameter MEM_SIZE = WORDS_PER_FRAME * N_FRAMES
 )(
@@ -13,7 +12,7 @@ module memory#(
     output reg [23:0] rdata
 );
 
-    // Memoria inferida (Block RAM)
+    // Memoria inferida
     reg [23:0] MEM [0:MEM_SIZE-1];
 
     initial begin

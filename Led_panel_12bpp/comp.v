@@ -1,8 +1,9 @@
 module comp_4k#(
+  // Código de Camargo
   parameter width = 10
 )(
   input [width:0]  in1,
-  input [width:0]  in2,  
+  input [width:0]  in2,
   output  reg       out
 );
 

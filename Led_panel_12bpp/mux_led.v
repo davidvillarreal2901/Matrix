@@ -7,7 +7,6 @@ module mux_led(
   always @*
   begin
       case (sel)
-//        7'b1000000: mem_rdata = dpram_dout;
         2'b00: out0 = {in0[20], in0[16], in0[12], in0[8],  in0[4], in0[0]};
         2'b01: out0 = {in0[21], in0[17], in0[13], in0[9],  in0[5], in0[1]};
         2'b10: out0 = {in0[22], in0[18], in0[14], in0[10], in0[6], in0[2]};

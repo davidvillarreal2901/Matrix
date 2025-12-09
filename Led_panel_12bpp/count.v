@@ -1,4 +1,5 @@
 module count#(
+  // Código de Camargod
     parameter width = 5
 )(
     input   clk,

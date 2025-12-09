@@ -1,4 +1,5 @@
 module ctrl_lp4k(
+  //Código de CAmargod
     input   clk,
     input   init,
     input   rst,

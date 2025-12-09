@@ -3,7 +3,7 @@ BLOCK ASYNCPATHS;
 LOCATE COMP    "clk" SITE "P3";
 IOBUF PORT     "clk" IO_TYPE=LVCMOS33;
 FREQUENCY PORT "clk" 25.0 MHz;
-LOCATE COMP    "LEDS[0]" SITE "U16";
+LOCATE COMP    "LEDS[0]" SITE "L2";
 IOBUF PORT     "LEDS[0]" IO_TYPE=LVCMOS33;
 LOCATE COMP    "resetn" SITE "K18";
 IOBUF PORT     "resetn" PULLMODE=UP IO_TYPE=LVCMOS33 DRIVE=4;
@@ -13,7 +13,7 @@ LOCATE COMP    "RXD" SITE "H18";
 IOBUF PORT     "RXD" IO_TYPE=LVCMOS33;
 
 
-# --- Asignaciones HUB75 ---
+# Asignaciones HUB75 (Matrix)
 
 # Señales de control
 LOCATE COMP     "LP_CLK" SITE "C17";
@@ -54,20 +54,23 @@ IOBUF PORT      "RGB1[1]" IO_TYPE=LVCMOS33;
 IOBUF PORT      "RGB1[2]" IO_TYPE=LVCMOS33;
 
 
-# --- SPI Flash Externa (W25Q128) ---
+# SPI Externa
 
-# Chip Select (Active Low)
-LOCATE COMP "spi_cs"    SITE "B18";  # Pin 121
+# Chip Select
+LOCATE COMP "spi_cs"    SITE "H16";
 IOBUF  PORT "spi_cs"    IO_TYPE=LVCMOS33 PULLMODE=UP DRIVE=8;
 
-# Clock
-LOCATE COMP "spi_clk"   SITE "A19";  # Pin 123
+# Clock (Salida GPIO normal, sin USRMCLK)
+LOCATE COMP "spi_clk"   SITE "G18";
 IOBUF  PORT "spi_clk"   IO_TYPE=LVCMOS33 PULLMODE=NONE DRIVE=8;
 
-# MOSI (Master Out Slave In) - Envía datos a la memoria
-LOCATE COMP "spi_mosi"  SITE "B20";  # Pin 117
+# MOSI (FPGA -> Memoria) DI
+LOCATE COMP "spi_mosi"  SITE "F18";
 IOBUF  PORT "spi_mosi"  IO_TYPE=LVCMOS33 PULLMODE=NONE DRIVE=8;
 
-# MISO (Master In Slave Out) - Recibe datos de la memoria
-LOCATE COMP "spi_miso"  SITE "B19";  # Pin 119
+# MISO (Memoria -> FPGA) DO
+LOCATE COMP "spi_miso"  SITE "H17";
 IOBUF  PORT "spi_miso"  IO_TYPE=LVCMOS33 PULLMODE=NONE;
+
+#para obligar a que use la externa
+SYSCONFIG MASTER_SPI_PORT=DISABLE CONFIG_IOVOLTAGE=3.3;

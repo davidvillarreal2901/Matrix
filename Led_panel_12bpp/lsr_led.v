@@ -1,4 +1,5 @@
 module lsr_led#(
+// Código Camargod
     parameter init_value = 100,
     parameter width      = 10
 ) (clk , shift , load , s_A);
