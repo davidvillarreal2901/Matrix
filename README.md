@@ -1,8 +1,14 @@
 # Documentación
+**Integrantes:**  
+| Nombre Completo | Identificación (SIA) | Correo intitucional |
+|-----------------|----------------------|----------------|
+| David Ricardo Villarreal Archila     | 1005154067              | [dvillarreal@unal.edu.co](dvillareal@unal.edu.co)|
+| Juan Felipe Arias Ruiz   | 1001077136          | [juariasru@unal.edu.co](juariasru@unal.edu.co)|
+|Laura Camila Barrera León | 1016942896 | [labarreral@unal.edu.co](labarreral@unal.edu.co)
+---
 
-**Versión del Proyecto:** 2.0 (Extendida)
 **Plataforma:** Lattice ECP5 (Colorlight i9)
-**Lenguaje HDL:** Verilog
+**Lenguajes:** Verilog, python, C++
 **Programador:** ESP32 (SPI Bridge)
 
 ---
@@ -12,7 +18,7 @@
 ### 0.1 Hardware
 1.  **FPGA Board:** Colorlight i9 (Lattice LFE5U-45F).
 2.  **Display:** Matriz LED 64x64 RGB (Driver HUB75E, Scan 1/32).
-3.  **Memoria:** Winbond W25Q64 (8MB SPI Flash) soldada en la placa FPGA.
+3.  **Memoria:** Winbond W25Q128JV (128MB SPI Flash).
 4.  **Programador:** ESP32 Development Board (DOIT DevKit V1 o similar).
 5.  **Conectividad:** Cables Dupont (Hembra-Hembra/Macho) para conexión SPI.
 
@@ -121,7 +127,7 @@ stateDiagram-v2
       Prepara dirección Flash
     end note
     
-    S_CMD --> S_READ_PIXEL : Comando 03h Enviado
+    S_CMD --> S_READ_PIXEL : Comando 03h + dirección Enviado
     note right of S_CMD
       Envía 8 bits comando
       + 24 bits dirección
@@ -300,3 +306,198 @@ Se utiliza la herramienta Pulse View para poder visualizar las señales entre la
 ![Comprobacion  señales SPI](spi_señales.png)
 
 Se puede apreciar como en MOSI sale el comando de lectura con una dirección, la SPI flash responde con FF lo cual es correcto pues la dirección a la que se mando la señal no tiene dato alguno.
+
+## 7. Diagramas Detallados por Módulo
+
+A continuación se presentan los diagramas de flujo (Lógica de Control) y los esquemas de ruta de datos (Datapath) para los bloques principales del diseño FPGA.
+
+### 7.1 Módulo: SPI Loader (Productor)
+Este módulo se encarga de la interfaz física con la memoria Flash y el llenado del buffer de video.
+
+#### 🔄 Diagrama de Flujo (FSM Control)
+Representa la lógica de la Máquina de Estados Finita que gobierna la lectura SPI.
+
+```mermaid
+flowchart TD
+    INIT([Inicio / Reset]) --> IDLE{Timer > Estabilización?}
+    IDLE -- No --> IDLE
+    IDLE -- Sí --> SEND_CMD[Estado: S_CMD<br/>Bajar CS_n<br/>Cargar Comando 03h + Dirección]
+    
+    SEND_CMD --> SEND_BIT{Bits Enviados == 0?}
+    SEND_BIT -- No --> SHIFT_OUT[Generar Clock SPI<br/>Desplazar MOSI]
+    SHIFT_OUT --> SEND_BIT
+    
+    SEND_BIT -- Sí --> READ_PIXEL[Estado: S_READ_PIXEL<br/>Preparar Lectura MISO]
+    
+    READ_PIXEL --> GEN_CLK[Generar Flanco Reloj]
+    GEN_CLK --> SAMPLE[Muestrear Bit MISO]
+    SAMPLE --> CHECK_PIXEL{Pixel Completo<br/>24 bits?}
+    
+    CHECK_PIXEL -- No --> GEN_CLK
+    CHECK_PIXEL -- Sí --> WRITE_RAM[Activar Write Enable RAM<br/>Incrementar Dirección RAM]
+    
+    WRITE_RAM --> CHECK_FRAME{RAM Llena<br/>Addr == 4095?}
+    
+    CHECK_FRAME -- No --> READ_PIXEL
+    CHECK_FRAME -- Sí --> WAIT_STATE[Estado: S_WAIT<br/>Subir CS_n<br/>Detener SPI]
+    
+    WAIT_STATE --> CHECK_FPS{Timer > Frame Delay?}
+    CHECK_FPS -- No --> WAIT_STATE
+    CHECK_FPS -- Sí --> CALC_ADDR[Calcular Siguiente Dir Flash]
+    CALC_ADDR --> INIT
+```
+
+#### 🛣️ Datapath (Ruta de Datos)
+Muestra cómo fluyen los datos desde el pin `MISO` hasta la `RAM`, gestionados por los contadores internos.
+```mermaid
+graph LR
+    subgraph "External Flash"
+        MISO_PIN((MISO Pin))
+    end
+
+    subgraph "SPI Loader Datapath"
+        %% Registros y Lógica
+        ShiftReg["Desplazador de Entrada<br/>(Serial a Paralelo)"]
+        ColorReg["Registro RGB<br/>(24 bits: R,G,B)"]
+        
+        FlashPtr["Puntero Flash<br/>(Registro Dirección Base)"]
+        RamPtr["Contador Dirección RAM<br/>(0 a 4095)"]
+        
+        %% Conexiones
+        MISO_PIN --> ShiftReg
+        ShiftReg -- "Cada 24 bits" --> ColorReg
+        
+        FlashPtr -- "Comando + Dirección" --> MOSI_GEN[Generador MOSI]
+        MOSI_GEN --> MOSI_PIN((MOSI Pin))
+    end
+
+    subgraph "Video RAM"
+        RAM_D[Puerto A: Data In]
+        RAM_A[Puerto A: Address]
+        RAM_WE[Puerto A: Write En]
+    end
+
+    %% Flujo Final
+    ColorReg --> RAM_D
+    RamPtr --> RAM_A
+    FSM_Control((FSM Control)) -.-> RAM_WE
+    FSM_Control -.-> FlashPtr
+    FSM_Control -.-> RamPtr
+```
+---
+
+### 7.2 Módulo: LED Controller (Consumidor)
+Este módulo implementa la lógica de visualización HUB75 y la modulación BCM (Binary Code Modulation).
+
+#### 🔄 Diagrama de Flujo (Lógica de Barrido)
+Secuencia de operaciones para pintar un cuadro completo en la matriz.
+```mermaid
+flowchart TD
+    START(["Inicio Frame"]) --> INIT_VARS["Reset Contadores<br/>Fila=0, Bit=0"]
+    
+    INIT_VARS --> LOAD_ROW["Estado: GET_PIXEL<br/>Iniciar Carga de Fila"]
+    
+    LOAD_ROW --> LOOP_COL{"Columna < 64?"}
+    LOOP_COL -- Sí --> READ_RAM["Leer RAM<br/>Inc Columna"]
+    READ_RAM --> LOOP_COL
+    
+    LOOP_COL -- No --> LATCH_DATA["Estado: SEND_ROW<br/>Pulso LATCH<br/>Actualizar Salida"]
+    
+    LATCH_DATA --> OE_ON["Estado: DELAY_ROW<br/>Bajar Output Enable (LEDs ON)"]
+    
+    OE_ON --> WAIT_PWM{"Contador == Peso Bit?"}
+    WAIT_PWM -- No --> WAIT_PWM
+    WAIT_PWM -- Sí --> OE_OFF["Subir Output Enable (LEDs OFF)"]
+    
+    OE_OFF --> NEXT_BIT["Estado: NEXT_BIT<br/>Desplazar Peso PWM (<<1)"]
+    
+    NEXT_BIT --> CHECK_BITS{"Bit Plane < 4?"}
+    CHECK_BITS -- Sí --> LOAD_ROW
+    
+    CHECK_BITS -- No --> NEXT_ROW["Estado: INC_ROW<br/>Reset Peso PWM<br/>Incrementar Fila"]
+    
+    NEXT_ROW --> CHECK_FRAME{"Fila < 32?"}
+    CHECK_FRAME -- Sí --> LOAD_ROW
+    CHECK_FRAME -- No --> START
+```
+#### 🛣️ Datapath (Generación de Video)
+Detalla cómo se transforman los datos de la RAM en señales eléctricas para el panel, incluyendo la lógica de modulación de color.
+
+```mermaid
+graph TD
+    subgraph "Generación de Direcciones"
+        CntRow["Contador Filas<br/>(0-31)"]
+        CntCol["Contador Columnas<br/>(0-63)"]
+        Concat[Concatenador]
+        
+        CntRow --> Concat
+        CntCol --> Concat
+    end
+
+    subgraph "Memoria de Video"
+        RAM_Dual[(Dual Port RAM)]
+        Concat -- "Dirección Lectura" --> RAM_Dual
+    end
+
+    subgraph "Procesamiento de Pixel"
+        Data_Raw[Dato RGB 24-bit]
+        Mux_Color[Multiplexor MUX_LED]
+        Bit_Sel["Selector de Bit<br/>(Controlado por FSM)"]
+        
+        RAM_Dual -- "RGB Crudo" --> Data_Raw
+        Data_Raw --> Mux_Color
+        Bit_Sel -- "Selecciona bit 0..3" --> Mux_Color
+    end
+
+    subgraph "Lógica BCM (PWM)"
+        Shift_LSR["LSR_LED<br/>(Registro de Desplazamiento)"]
+        Cnt_Delay[Contador de Tiempo]
+        Comparator[Comparador Magnitud]
+        
+        Shift_LSR -- "Peso Actual (1,2,4,8)" --> Comparator
+        Cnt_Delay -- "Tiempo Transcurrido" --> Comparator
+    end
+
+    subgraph "Salida HUB75"
+        Pins_RGB((Pines RGB1/RGB2))
+        Pin_OE((Pin OE))
+        Pin_Row((Pines A-E))
+        
+        Mux_Color --> Pins_RGB
+        Comparator -- "Señal Fin PWM" --> Pin_OE
+        CntRow --> Pin_Row
+    end
+
+```
+
+
+## 8. Guía de Uso
+
+### Preaparación ESP32
+Carga el código de la carpeta ESP32 a la ESP mediante el IDE de arduino
+
+### Preparación de Imágenes
+Convierte tus GIFs o imágenes al formato binario crudo (Raw RGB 24-bit):
+
+```bash
+python scripts/gif_to_bin.py mi_animacion.gif animacion.bin
+```
+
+### Carga a Memoria Flash
+Conecta el ESP32 a la PC y a la Flash de la FPGA. Asegúrate de que la FPGA esté apagada o en Reset.
+
+```bash
+# Subir archivo binario
+python scripts/flash_uploaderESP.py COM3 animacion.bin
+```
+### Carga del bitstream
+
+Conecta la fpga a la SPI, asegúrate que la ESP32 esté desconectada de alimentación o desconectada del todo.
+
+```bash
+make configure_i9
+```
+
+Luego de sintetizar y subir el bitstream estará la pantalla encendida y recorriendo la dirección establecida de memoria (Por defecto en el código está del 0x300000 a 0x40000)
+
+*Nota: Sí, profe, fue hecho en MacOS y funciona en Linux también, porque no somos OS lovers 🐧🫱🏼‍🫲🏽🍎      😎🪬* 
